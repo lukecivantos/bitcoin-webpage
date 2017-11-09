@@ -1,0 +1,74 @@
+{
+  "name": "Bitcoin Core",
+  "parent": "null",
+  "children": [
+    {
+      "name": "Bitcoin XT",
+      "parent": "Bitcoin Core"
+    },
+    {
+      "name": "Bitcoin Core",
+      "parent": "Bitcoin Core",
+      "children": [
+        {
+          "name": "Bitcoin Classic",
+          "parent": "Bitcoin Core"
+        },
+        {
+          "name": "Bitcoin Core",
+          "parent": "Bitcoin Core",
+          "children": [
+            {
+              "name": "Bitcoin Unlimited",
+              "parent": "Bitcoin Core"
+            },
+            {
+              "name": "Bitcoin Core",
+              "parent": "Bitcoin Core",
+              "children": [
+                {
+                  "name": "Segregated Witness",
+                  "parent": "Bitcoin Core"
+                },
+                {
+                  "name": "Bitcoin Core",
+                  "parent": "Bitcoin Core",
+                  "children": [
+                    {
+                      "name": "Bitcoin Cash",
+                      "parent": "Bitcoin Core"
+                    },
+                    {
+                      "name": "Bitcoin Core",
+                      "parent": "Bitcoin Core",
+                      "children": [
+                        {
+                          "name": "Bitcoin Gold",
+                          "parent": "Bitcoin Core"
+                        },
+                        {
+                          "name": "Bitcoin Core",
+                          "parent": "Bitcoin Core",
+                          "children": [
+                            {
+                              "name": "Segregated Witness 2x",
+                              "parent": "Bitcoin Core"
+                            },
+                            {
+                              "name": "Bitcoin Core",
+                              "parent": "Bitcoin Core"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+       ]
+    }
+  ]
+}
