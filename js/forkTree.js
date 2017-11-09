@@ -9,7 +9,7 @@ var margin = {top: 20, right: 350, bottom: 60, left: 250},
 
 
 queue()
-    .defer(d3.json, "data/malaria-parasites.json")
+    .defer(d3.json, "data/forks.json")
     .await(function(error, malariaParasitesJson) {
 
         // --> PROCESS DATA
