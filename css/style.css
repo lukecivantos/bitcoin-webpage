@@ -1,3 +1,11 @@
+body {
+    background-color: black;
+
+}
+#top-text {
+    color: white;
+    font-family: "Courier New";
+}
 
 .node circle {
     fill: #fff;
@@ -21,4 +29,8 @@ select {
     height: 40px;
     width: 200px;
     margin-left: 50px;
+}
+
+#block {
+    height: 600px;
 }
