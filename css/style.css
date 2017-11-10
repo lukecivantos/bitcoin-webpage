@@ -19,8 +19,7 @@ h2 {
 
 .node circle {
     fill: #fff;
-    stroke: steelblue;
-    stroke-width: 3px;
+    stroke: none;
 }
 
 .link {
@@ -34,6 +33,7 @@ h2 {
 
 .node text {
     font: 12px sans-serif;
+    color: white;
 }
 
 .node--internal text {
@@ -85,3 +85,13 @@ h3{
     padding: 175px;
 }
 
+.node-text{
+    fill:white;
+}
+.node--internal text {
+    text-shadow: none;
+}
+
+.node circle:hover{
+    fill: #f5ff1d;
+}

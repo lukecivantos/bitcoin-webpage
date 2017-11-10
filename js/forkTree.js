@@ -61,6 +61,7 @@ queue()
 
         // adds the text to the node
         node.append("text")
+            .attr("class", "node-text")
             .attr("dy", ".35em")
             .attr("x", function(d) { return d.children ? -13 : 13; })
             .style("text-anchor", function(d) {
