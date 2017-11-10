@@ -2,6 +2,15 @@ body {
     background-color: black;
 
 }
+
+h1 {
+    color: white;
+}
+
+h2 {
+    color: white;
+}
+
 #top-text {
     color: white;
     font-family: "Courier New";
@@ -18,8 +27,13 @@ body {
     stroke: #ccc;
     stroke-width: 2px;
 }
+.node {
+    color: white;
+}
 
-.node text { font: 12px sans-serif; }
+.node text {
+    font: 12px sans-serif;
+}
 
 .node--internal text {
     text-shadow: 0 1px 0 #fff, 0 -1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff;
