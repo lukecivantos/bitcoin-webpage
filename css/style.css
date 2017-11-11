@@ -95,3 +95,35 @@ h3{
 .node circle:hover{
     fill: #f5ff1d;
 }
+
+/*for price line chart */
+
+.line {
+    fill:none;
+    stroke: white;
+    stroke-width: 1px;
+}
+
+.x-axis{
+    stroke: white;
+}
+
+.x-axis line{
+    stroke: white;
+}
+
+.x-axis path{
+    stroke: white;
+}
+
+.y-axis{
+    stroke: white;
+}
+
+.y-axis line{
+    stroke: white;
+}
+
+.y-axis path{
+    stroke: white;
+}
