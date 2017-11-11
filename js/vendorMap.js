@@ -60,12 +60,13 @@ VendorMap.prototype.updateVis = function() {
     // Add empty layer groups for the markers / map objects
     vis.stationMarkers = L.layerGroup().addTo(vis.map);
     vis.subwayStations = L.layerGroup().addTo(vis.map);
-    /*vis.displayData.forEach(function (d) {
+    console.log(vis.displayData.venues);
+    vis.displayData.venues.forEach(function (d) {
         // Create marker
-        //vis.mark = L.marker([d.lat,d.long]).bindPopup(d.name + "<br>" + d.nbBikes + " Bikes<br>" + d.nbEmptyDocks + " Empty Docks");
-        // Add marker to layer group
-        //vis.stationMarkers.addLayer(vis.mark);
-    });*/
+        vis.mark = L.marker([d.lat,d.lon]).bindPopup(d.name + "<br>" + "Category: " + d.category);
+        //Add marker to layer group
+        vis.stationMarkers.addLayer(vis.mark);
+    });
 /*
     // Decide Features
     function styleMBTA(feature) {
