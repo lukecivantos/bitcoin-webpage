@@ -25,7 +25,9 @@ VendorMap.prototype.initVis = function() {
     var vis = this;
 
     // Instantiate Map
-    vis.map = L.map('vendorMap').setView(vis.mapPosition, 13);
+    vis.map = L.map('vendorMap', {
+        preferCanvas: true
+    }).setView(vis.mapPosition, 13);
 
     L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'}).addTo(vis.map);
@@ -60,12 +62,12 @@ VendorMap.prototype.updateVis = function() {
     // Add empty layer groups for the markers / map objects
     vis.stationMarkers = L.layerGroup().addTo(vis.map);
     vis.subwayStations = L.layerGroup().addTo(vis.map);
-    /*vis.displayData.venues.forEach(function (d) {
+    vis.displayData.venues.forEach(function (d) {
         // Create marker
-        vis.mark = L.marker([d.lat,d.lon]).bindPopup(d.name + "<br>" + "Category: " + d.category);
+        vis.mark = L.circleMarker([d.lat,d.lon]).bindPopup(d.name + "<br>" + "Category: " + d.category);
         //Add marker to layer group
         vis.stationMarkers.addLayer(vis.mark);
-    });*/
+    });
 /*
     // Decide Features
     function styleMBTA(feature) {
