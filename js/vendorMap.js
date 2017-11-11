@@ -60,7 +60,6 @@ VendorMap.prototype.updateVis = function() {
     // Add empty layer groups for the markers / map objects
     vis.stationMarkers = L.layerGroup().addTo(vis.map);
     vis.subwayStations = L.layerGroup().addTo(vis.map);
-    console.log(vis.displayData.venues);
     /*vis.displayData.venues.forEach(function (d) {
         // Create marker
         vis.mark = L.marker([d.lat,d.lon]).bindPopup(d.name + "<br>" + "Category: " + d.category);

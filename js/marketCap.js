@@ -1,29 +1,23 @@
 
-//loadData();
-
-var firstSentence = "In January 2009, history was made when the mysterious Satoshi Nakamoto released the first software program implementing Bitcoin."
-var typed = new Typed('#top-text', {
-    strings: [firstSentence, "Enter to learn more."],
-    typeSpeed: 30
-});
 
 // Variable for the visualization instance
 var vendorMap;
 
-var url =  'https://coinmap.org/api/v1/venues/';
+var url =  'https://api.coinmarketcap.com/v1/ticker/?convert=EUR&limit=10';
+var url2 = 'https://api.lionshare.capital/api/markets';
 var proxyurl = "https://cors-anywhere.herokuapp.com/";
 var proxy = 'http://michaeloppermann.com/proxy.php?format=xml&url=';
-
+var url3 = "http://coincap.io/history/365day/BTC";
 
 jQuery.ajax({
-    url: proxyurl +url,
+    url: proxyurl +url3,
     type: "GET",
 
     contentType: 'application/json; charset=utf-8',
     success: function(resultData) {
         //here is your json.
         // process it
-        vendorMap = new VendorMap("vendorMap", resultData,[40.7589, -73.9851]);
+        console.log(resultData);
 
 
 
