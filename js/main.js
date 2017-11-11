@@ -7,6 +7,8 @@ var typed = new Typed('#top-text', {
     typeSpeed: 30
 });
 
+// Variable for the visualization instance
+var vendorMap;
 
 var url =  'https://coinmap.org/api/v1/venues/';
 var proxyurl = "https://cors-anywhere.herokuapp.com/";
@@ -21,8 +23,7 @@ jQuery.ajax({
     success: function(resultData) {
         //here is your json.
         // process it
-        console.log(resultData);
-        StationMap("vendorMap", resultData,[42.360082, -71.058880]);
+        vendorMap = new VendorMap("vendorMap", resultData,[42.360082, -71.058880]);
 
 
 

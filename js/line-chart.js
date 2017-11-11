@@ -65,7 +65,6 @@ function loadData() {
         // Store csv data in global variable
         data = csv;
 
-        console.log(data);
 
         x.domain([
             d3.min(data,function (d) {return d.Date}),
@@ -104,7 +103,6 @@ function loadData() {
 
 // Render visualization
 function updateVisualization() {
-    console.log(data);
 
 
 

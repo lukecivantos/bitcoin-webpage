@@ -6,7 +6,7 @@
  *  @param _data            -- Array with all stations of the bike-sharing network
  */
 
-StationMap = function(_parentElement, _data, _mapPosition) {
+VendorMap = function(_parentElement, _data, _mapPosition) {
 
     this.parentElement = _parentElement;
     this.data = _data;
@@ -21,11 +21,11 @@ StationMap = function(_parentElement, _data, _mapPosition) {
  *  Initialize station map
  */
 
-StationMap.prototype.initVis = function() {
+VendorMap.prototype.initVis = function() {
     var vis = this;
 
     // Instantiate Map
-    vis.map = L.map('station-map').setView(vis.mapPosition, 13);
+    vis.map = L.map('vendorMap').setView(vis.mapPosition, 13);
 
     L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'}).addTo(vis.map);
@@ -38,7 +38,7 @@ StationMap.prototype.initVis = function() {
  *  Data wrangling
  */
 
-StationMap.prototype.wrangleData = function() {
+VendorMap.prototype.wrangleData = function() {
     var vis = this;
 
     // Currently no data wrangling/filtering needed
@@ -54,19 +54,18 @@ StationMap.prototype.wrangleData = function() {
  *  The drawing function
  */
 
-StationMap.prototype.updateVis = function() {
+VendorMap.prototype.updateVis = function() {
     var vis = this;
 
     // Add empty layer groups for the markers / map objects
     vis.stationMarkers = L.layerGroup().addTo(vis.map);
     vis.subwayStations = L.layerGroup().addTo(vis.map);
-
-    vis.displayData.forEach(function (d) {
+    /*vis.displayData.forEach(function (d) {
         // Create marker
         //vis.mark = L.marker([d.lat,d.long]).bindPopup(d.name + "<br>" + d.nbBikes + " Bikes<br>" + d.nbEmptyDocks + " Empty Docks");
         // Add marker to layer group
         //vis.stationMarkers.addLayer(vis.mark);
-    });
+    });*/
 /*
     // Decide Features
     function styleMBTA(feature) {

@@ -10,6 +10,8 @@
 
     <!-- CSS libraries -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/leaflet.css">
+
 
     <!-- Custom CSS code -->
     <link rel="stylesheet" href="css/scrolling-nav.css">
@@ -86,14 +88,14 @@
             <div class="padding"></div>
         </div>
     </div>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <h3>The Move to Mainstream</h3>
             <br>
-            <div id="vendorMap"></div>
             <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero odio fugiat voluptatem dolor, provident officiis, id iusto! Obcaecati incidunt, qui nihil beatae magnam et repudiandae ipsa exercitationem, in, quo totam.</p>
             <div class="padding"></div>
         </div>
+        <div id="vendorMap"></div>
     </div>
 </section>
 
@@ -128,21 +130,22 @@
 <script src="js/queue.v1.min.js"></script>
 <script src="js/typed.js"></script>
 <script src="js/leaflet.js"></script>
-<script src="js/d3.js"></script>
-
-<!-- Visualization objects -->
-
-<!-- Load data, create visualizations -->
-<script src="js/main.js"></script>
-<script src="js/forkTree.js"></script>
-<script src="js/map.js"></script>
-<script src="js/line-chart.js"></script>
-
 <!-- Plugin JavaScript -->
 <script src="js/jquery-easing/jquery.easing.min.js"></script>
 
 <!-- Custom JavaScript for this theme -->
 <script src="js/scrolling-nav.js"></script>
+
+<!-- Visualization objects -->
+<script src="js/d3.js"></script>
+
+<!-- Load data, create visualizations -->
+<script src="js/forkTree.js"></script>
+<script src="js/vendorMap.js"></script>
+<script src="js/line-chart.js"></script>
+
+
+<script src="js/main.js"></script>
 
 </body>
 </html>
