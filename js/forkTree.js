@@ -3,8 +3,8 @@
 // set the dimensions and margins of the diagram
 
 
-var margin = {top: 20, right: 350, bottom: 60, left: 250},
-    width = 1000 - margin.left - margin.right,
+var margin = {top: 20, right: 35, bottom: 60, left: 25},
+    width = 700 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
 

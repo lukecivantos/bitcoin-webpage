@@ -1,5 +1,5 @@
 var margin = {top: 20, right: 350, bottom: 60, left: 250},
-    width = 1000 - margin.left - margin.right,
+    width = 1300 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
 var svg3 = d3.select("#line-chart").append("svg")
