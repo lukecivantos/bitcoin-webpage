@@ -67,41 +67,24 @@ VendorMap.prototype.updateVis = function() {
         // Create marker
         //d.name + "<br>" + "Category: " + d.category
         vis.mark = L.circleMarker([d.lat,d.lon]).bindPopup(function () {
-            var url =  'https://coinmap.org/api/v1/venues/';
+
+            var el = document.createElement('div');
+            el.classList.add("my-class");
+
+
+            var url = 'https://coinmap.org/api/v1/venues/';
             var proxyurl = "https://cors-anywhere.herokuapp.com/";
-            var proxy = 'http://michaeloppermann.com/proxy.php?format=xml&url=';
 
-            jQuery.ajax({
-                url: proxyurl + url + d.id,
-                type: "GET",
-
-                contentType: 'application/json; charset=utf-8',
-                success: function(resultData) {
-                    //here is your json.
-                    // process it
-                    return resultData.city;
-
-
-                },
-                error : function(jqXHR, textStatus, errorThrown) {
-                },
-
-                timeout: 120000,
+            $.getJSON(proxyurl + url + d.id, function(data){
+                console.log(data);
+                el.innerHTML =
+                    '<p class="mapTool">Name: ' + data.venue.name + '</p><br><p>City: '+ data.venue.city +
+                    '</p><br><p>Website: ' + data.venue.website + '</p>';
             });
+            return el;
         });
         //Add marker to layer group
         vis.stationMarkers.addLayer(vis.mark);
     });
-/*
-    // Decide Features
-    function styleMBTA(feature) {
-        return {color: feature.properties.LINE};
-    }
-
-    // Set Style to Function
-    L.geoJson(vis.MBTAData, {
-            style: styleMBTA
-        }
-    ).addTo(vis.map);
-*/
 };
+

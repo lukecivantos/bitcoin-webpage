@@ -144,3 +144,12 @@ h4 {
     margin: auto;
     text-align: center;
 }
+
+.mapTool {
+    color: Black;
+}
+
+
+.leaflet-popup-content {
+    width:auto !important;
+}
