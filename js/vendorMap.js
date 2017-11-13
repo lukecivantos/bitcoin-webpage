@@ -78,8 +78,8 @@ VendorMap.prototype.updateVis = function() {
             $.getJSON(proxyurl + url + d.id, function(data){
                 console.log(data);
                 el.innerHTML =
-                    '<p class="mapTool">Name: ' + data.venue.name + '</p><br><p>City: '+ data.venue.city +
-                    '</p><br><p>Website: ' + data.venue.website + '</p>';
+                    '<p class="mapTool">Name: ' + data.venue.name + '</p><p>City: '+ data.venue.city +
+                    '</p><p><a href="' + data.venue.website + '">Website: ' + data.venue.website + '</a></p>';
             });
             return el;
         });
