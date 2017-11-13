@@ -2,7 +2,7 @@ var margin = {top: 20, right: 350, bottom: 60, left: 250},
     width = 1300 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
-var svg3 = d3.select("#line-chart").append("svg")
+var svg3 = d3.select("#priceChart").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
     .append("g")
