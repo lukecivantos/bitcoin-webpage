@@ -45,6 +45,7 @@ VendorMap.prototype.wrangleData = function() {
 
     // Currently no data wrangling/filtering needed
     vis.displayData = vis.data;
+    console.log(vis.displayData);
 
     // Update the visualization
     vis.updateVis();
@@ -64,7 +65,30 @@ VendorMap.prototype.updateVis = function() {
     vis.subwayStations = L.layerGroup().addTo(vis.map);
     vis.displayData.venues.forEach(function (d) {
         // Create marker
-        vis.mark = L.circleMarker([d.lat,d.lon]).bindPopup(d.name + "<br>" + "Category: " + d.category);
+        //d.name + "<br>" + "Category: " + d.category
+        vis.mark = L.circleMarker([d.lat,d.lon]).bindPopup(function () {
+            var url =  'https://coinmap.org/api/v1/venues/';
+            var proxyurl = "https://cors-anywhere.herokuapp.com/";
+            var proxy = 'http://michaeloppermann.com/proxy.php?format=xml&url=';
+
+            jQuery.ajax({
+                url: proxyurl + url + d.id,
+                type: "GET",
+
+                contentType: 'application/json; charset=utf-8',
+                success: function(resultData) {
+                    //here is your json.
+                    // process it
+                    return resultData.city;
+
+
+                },
+                error : function(jqXHR, textStatus, errorThrown) {
+                },
+
+                timeout: 120000,
+            });
+        });
         //Add marker to layer group
         vis.stationMarkers.addLayer(vis.mark);
     });

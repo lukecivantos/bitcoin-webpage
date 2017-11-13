@@ -3,9 +3,9 @@
 // set the dimensions and margins of the diagram
 
 
-var margin = {top: 20, right: 35, bottom: 60, left: 25},
-    width = 700 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
+var marginFork = {top: 0, right: 150, bottom: 60, left: 100};
+var widthFork = 550 - marginFork.left - marginFork.right;
+var heightFork = 500 - marginFork.top - marginFork.bottom;
 
 
 queue()
@@ -16,7 +16,7 @@ queue()
 
         // declares a tree layout and assigns the size
         var treemap = d3.tree()
-            .size([height, width]);
+            .size([heightFork, widthFork]);
 
         //  assigns the data to a hierarchy using parent-child relationships
         var nodes = d3.hierarchy(malariaParasitesJson, function(d) {
@@ -27,11 +27,11 @@ queue()
         nodes = treemap(nodes);
 
         var svg = d3.select("#tree-area").append("svg")
-                .attr("width", width + margin.left + margin.right)
-                .attr("height", height + margin.top + margin.bottom),
+                .attr("width", widthFork + marginFork.left + marginFork.right)
+                .attr("height", heightFork + marginFork.top + marginFork.bottom),
             g = svg.append("g")
                 .attr("transform",
-                    "translate(" + margin.left + "," + margin.top + ")");
+                    "translate(" + marginFork.left + "," + marginFork.top + ")");
 
         // adds the links between the nodes
         var link = g.selectAll(".link")
