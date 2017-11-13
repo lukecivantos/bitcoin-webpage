@@ -65,6 +65,7 @@ function loadData() {
         // Store csv data in global variable
         data = csv;
 
+        console.log(data);
 
         x.domain([
             d3.min(data,function (d) {return d.Date}),
@@ -93,6 +94,69 @@ function loadData() {
             .attr("class", "line")
             .attr("d", lineFunction(data));
 
+        var monthYear = d3.timeFormat("%m/%d/%Y");
+
+
+        var textPop = svg3.append("text")
+            .attr("class","tracerText")
+            .attr("text-anchor", "start")
+            .attr("y", 15)
+            .attr("x", 0)
+            .attr("opacity",0)
+            .style('fill', 'white')
+            .attr("font-size","14px")
+            .attr("font-weight","bold")
+            .text("");
+
+        var textDate = svg3.append("text")
+            .attr("class","tracerText")
+            .attr("text-anchor", "start")
+            .attr("y", 35)
+            .attr("x", 0)
+            .attr("opacity",0)
+            .style("fill", "white")
+            .text("");
+
+        var tracerLine = svg3.append("rect")
+            .attr("class","tracer")
+            .attr("height",height)
+            .attr("width",0.5)
+            .attr("fill", "white")
+            .attr("x",0)
+            .attr("y",0)
+            .attr("opacity",0);
+
+
+        svg3.selectAll("mouse-catcher.rect")
+            .data(data)
+            .enter()
+            .append("rect")
+            .attr("class","mouse-catcher")
+            .attr("height",height)
+            .attr("width",50)
+            .attr("x",function (d) {
+                return x(d.Date);
+            })
+            .style("opacity",0)
+            .on("mouseover", function(d) {
+                tracerLine.attr("x",x(d.Date));
+                tracerLine.attr("opacity",1);
+                textPop.attr("x",x(d.Date) + 5);
+                textPop.attr("opacity",1);
+                textPop.text("Price: $" + d.Close_Price);
+                textDate.attr("x",x(d.Date) + 5);
+                textDate.attr("opacity",1);
+                textDate.text(monthYear(d.Date));
+            })
+            .on("mouseout", function() {
+                tracerLine.attr("opacity",0);
+                textPop.attr("opacity",0);
+                textDate.attr("opacity",0);
+            });
+
+
+
+
         //  updateVisualization();
 
     });
@@ -103,8 +167,12 @@ function loadData() {
 
 // Render visualization
 function updateVisualization() {
+    console.log(data);
 
+
+
+// function for line
+// add line to the already appended path
 
 
 }
-
