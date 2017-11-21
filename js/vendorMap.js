@@ -82,6 +82,9 @@ VendorMap.prototype.updateVis = function() {
                     '</p><p><a href="' + data.venue.website + '">Website: ' + data.venue.website + '</a></p>';
             });
             return el;
+        },
+        {
+            offset: new L.Point(10, 10)
         });
         //Add marker to layer group
         vis.stationMarkers.addLayer(vis.mark);
