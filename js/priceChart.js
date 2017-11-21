@@ -167,7 +167,6 @@ function loadData() {
 
 // Render visualization
 function updateVisualization() {
-    console.log(data);
 
 
 

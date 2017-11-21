@@ -1,62 +1,77 @@
 {
   "name": "Bitcoin Core",
   "parent": "null",
+  "blurb": "Bitcoin Core represents the first published code for Bitcoin.",
   "children": [
     {
       "name": "Bitcoin XT",
-      "parent": "Bitcoin Core"
+      "parent": "Bitcoin Core",
+      "blurb": "Bitcoin XT represents the first Fork of Bitcoin."
     },
     {
       "name": "Bitcoin Core",
       "parent": "Bitcoin Core",
+      "blurb": "Bitcoin Core represents the first published code for Bitcoin.",
       "children": [
         {
           "name": "Bitcoin Classic",
-          "parent": "Bitcoin Core"
+          "parent": "Bitcoin Core",
+          "blurb": "Bitcoin Classic represents the first published code for Bitcoin."
         },
         {
           "name": "Bitcoin Core",
           "parent": "Bitcoin Core",
+          "blurb": "Bitcoin Core represents the first published code for Bitcoin.",
           "children": [
             {
               "name": "Bitcoin Unlimited",
-              "parent": "Bitcoin Core"
+              "parent": "Bitcoin Core",
+              "blurb": "Bitcoin Unlimited is the..."
             },
             {
               "name": "Bitcoin Core",
               "parent": "Bitcoin Core",
+              "blurb": "Bitcoin Core represents the first published code for Bitcoin.",
               "children": [
                 {
                   "name": "Segregated Witness",
-                  "parent": "Bitcoin Core"
+                  "parent": "Bitcoin Core",
+                  "blurb": "Segregated Witness is the..."
                 },
                 {
                   "name": "Bitcoin Core",
                   "parent": "Bitcoin Core",
+                  "blurb": "Bitcoin Core represents the first published code for Bitcoin.",
                   "children": [
                     {
                       "name": "Bitcoin Cash",
-                      "parent": "Bitcoin Core"
+                      "parent": "Bitcoin Core",
+                      "blurb": "Bitcoin Cash is the..."
                     },
                     {
                       "name": "Bitcoin Core",
                       "parent": "Bitcoin Core",
+                      "blurb": "Bitcoin Core represents the first published code for Bitcoin.",
                       "children": [
                         {
                           "name": "Bitcoin Gold",
-                          "parent": "Bitcoin Core"
+                          "parent": "Bitcoin Core",
+                          "blurb": "Bitcoin Gold is the..."
                         },
                         {
                           "name": "Bitcoin Core",
                           "parent": "Bitcoin Core",
+                          "blurb": "Bitcoin Core represents the first published code for Bitcoin.",
                           "children": [
                             {
                               "name": "Segregated Witness 2x",
-                              "parent": "Bitcoin Core"
+                              "parent": "Bitcoin Core",
+                              "blurb": "Segregated Witness 2x is the..."
                             },
                             {
                               "name": "Bitcoin Core",
-                              "parent": "Bitcoin Core"
+                              "parent": "Bitcoin Core",
+                              "blurb": "Bitcoin Core represents the first published code for Bitcoin."
                             }
                           ]
                         }

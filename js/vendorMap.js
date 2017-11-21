@@ -45,7 +45,6 @@ VendorMap.prototype.wrangleData = function() {
 
     // Currently no data wrangling/filtering needed
     vis.displayData = vis.data;
-    console.log(vis.displayData);
 
     // Update the visualization
     vis.updateVis();
@@ -76,7 +75,6 @@ VendorMap.prototype.updateVis = function() {
             var proxyurl = "https://cors-anywhere.herokuapp.com/";
 
             $.getJSON(proxyurl + url + d.id, function(data){
-                console.log(data);
                 el.innerHTML =
                     '<p class="mapTool">Name: ' + data.venue.name + '</p><p>City: '+ data.venue.city +
                     '</p><p><a href="' + data.venue.website + '">Website: ' + data.venue.website + '</a></p>';

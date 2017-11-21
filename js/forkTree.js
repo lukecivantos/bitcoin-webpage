@@ -53,7 +53,16 @@ queue()
                 return "node" +
                     (d.children ? " node--internal" : " node--leaf"); })
             .attr("transform", function(d) {
-                return "translate(" + d.y + "," + d.x + ")"; });
+                return "translate(" + d.y + "," + d.x + ")"; })
+            .on("click", function (d) {
+                console.log(d);
+                d3.select("#forkBlurb").text(d.data.blurb);
+                if (d.parent.data.name == null) {
+                    d3.select("#forkParent").text("Parent: None");
+                } else {
+                    d3.select("#forkParent").text(d.data.name + " was a result of Fork number " + d.depth + ".");
+                }
+            });
 
         // adds the circle to the node
         node.append("circle")
