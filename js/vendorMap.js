@@ -45,13 +45,13 @@ VendorMap.prototype.initVis = function() {
 VendorMap.prototype.wrangleData = function(coords) {
     var vis = this;
 
-    console.log(coords);
 
     // Currently no data wrangling/filtering needed
     vis.displayData = vis.data;
+    console.log(vis.displayData);
 
     if (coords != null) {
-        vis.map.setView(new L.LatLng(coords[0], coords[1]), 13);
+        vis.map.setView(new L.LatLng(coords[0], coords[1]), 14);
     }
 
     // Update the visualization
@@ -86,13 +86,15 @@ VendorMap.prototype.updateVis = function() {
             $.getJSON(proxyurl + url + d.id, function(data){
                 el.innerHTML =
                     '<p class="mapTool">Name: ' + data.venue.name + '</p><p>City: '+ data.venue.city +
-                    '</p><p><a href="' + data.venue.website + '">Website: ' + data.venue.website + '</a></p>';
+                    '</p><p>Website: <a href="' + data.venue.website + '">' + data.venue.website + '</a></p>';
             });
             return el;
-        },
+        }
+        /*,
         {
-            offset: new L.Point(10, 10)
-        });
+            offset: new L.Point(-60, 0)
+        }*/
+        );
         //Add marker to layer group
         vis.stationMarkers.addLayer(vis.mark);
     });
