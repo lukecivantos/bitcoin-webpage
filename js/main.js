@@ -33,3 +33,19 @@ jQuery.ajax({
 
     timeout: 120000,
 });
+
+
+
+function adjustZip() {
+    var bla = $('#txtSearch').val();
+
+    d3.csv("data/zips.csv", function(data) {
+        var newData = data.filter(function (d) {
+            return (d.zip_code == bla);
+        });
+        var lat = newData[0].latitude;
+        var long = newData[0].longitude;
+
+        vendorMap.wrangleData([lat,long]);
+    });
+}

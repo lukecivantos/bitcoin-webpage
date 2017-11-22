@@ -55,7 +55,6 @@ queue()
             .attr("transform", function(d) {
                 return "translate(" + d.y + "," + d.x + ")"; })
             .on("click", function (d) {
-                console.log(d);
                 d3.select("#forkBlurb").text(d.data.blurb);
                 if (d.parent.data.name == null) {
                     d3.select("#forkParent").text("Parent: None");

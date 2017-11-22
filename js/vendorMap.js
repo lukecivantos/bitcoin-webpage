@@ -42,14 +42,21 @@ VendorMap.prototype.initVis = function() {
  *  Data wrangling
  */
 
-VendorMap.prototype.wrangleData = function() {
+VendorMap.prototype.wrangleData = function(coords) {
     var vis = this;
+
+    console.log(coords);
 
     // Currently no data wrangling/filtering needed
     vis.displayData = vis.data;
 
+    if (coords != null) {
+        vis.map.setView(new L.LatLng(coords[0], coords[1]), 13);
+    }
+
     // Update the visualization
     vis.updateVis();
+
 
 };
 
@@ -90,4 +97,3 @@ VendorMap.prototype.updateVis = function() {
         vis.stationMarkers.addLayer(vis.mark);
     });
 };
-

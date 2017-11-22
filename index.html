@@ -114,6 +114,11 @@
             <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero odio fugiat voluptatem dolor, provident officiis, id iusto! Obcaecati incidunt, qui nihil beatae magnam et repudiandae ipsa exercitationem, in, quo totam.</p>
         </div>
         <br>
+        <div id="zipSearch">
+            <input type = "text" id = "txtSearch" onkeydown = "if (event.keyCode == 13)
+                            document.getElementById('btnSearch').click()"/>
+            <input type = "button" id = "btnSearch" value = "Find Zip" onclick = "adjustZip();"/>
+        </div>
         <div id="vendorMap"></div>
     </div>
 </section>

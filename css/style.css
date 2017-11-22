@@ -153,3 +153,9 @@ h4 {
 .leaflet-popup-content {
     width:auto !important;
 }
+
+#zipSearch {
+    padding-bottom: 20px;
+    text-align: center;
+    margin: auto;
+}
