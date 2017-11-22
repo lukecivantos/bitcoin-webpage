@@ -29,7 +29,9 @@ VendorMap.prototype.initVis = function() {
         preferCanvas: true
     }).setView(vis.mapPosition, 13);
 
-    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+
+
+    L.tileLayer('http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'}).addTo(vis.map);
 
     vis.wrangleData();

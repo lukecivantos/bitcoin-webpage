@@ -18,6 +18,7 @@ loadData();
 
 var data;
 
+
 var x = d3.scaleLinear()
     .range([0, width]);
 
