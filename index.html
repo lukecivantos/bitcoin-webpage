@@ -114,20 +114,20 @@
             <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero odio fugiat voluptatem dolor, provident officiis, id iusto! Obcaecati incidunt, qui nihil beatae magnam et repudiandae ipsa exercitationem, in, quo totam.</p>
         </div>
         <br>
-        <select>
-            <option value="volvo">All Store Types</option>
-            <option value="saab">Atm</option>
-            <option value="mercedes">Grocery</option>
-            <option value="audi">Food</option>
-            <option value="audi">Shopping</option>
-            <option value="audi">lodging</option>
-            <option value="audi">Nightlife</option>
-            <option value="audi">Attraction</option>
-            <option value="audi">Cafe</option>
-            <option value="audi">Transport</option>
-            <option value="audi">Sports</option>
-
-        </select>
+        <form action="">
+            <input type="checkbox" name="default" value="default" checked="checked"> Default
+            <input type="checkbox" name="atm" value="atm" checked="checked"> Atm
+            <input type="checkbox" name="grocery" value="grocery" checked="checked"> Grocery
+            <input type="checkbox" name="food" value="food" checked="checked"> Food
+            <input type="checkbox" name="shopping" value="shopping" checked="checked"> Shopping
+            <input type="checkbox" name="lodging" value="lodging" checked="checked"> Lodging
+            <input type="checkbox" name="nightlife" value="nightlife" checked="checked"> Nightlife
+            <input type="checkbox" name="attraction" value="attraction" checked="checked"> Attraction
+            <input type="checkbox" name="cafe" value="cafe" checked="checked"> Cafe
+            <input type="checkbox" name="transport" value="transport" checked="checked"> Transport
+            <input type="checkbox" name="sports" value="sports" checked="checked"> Sports
+        </form>
+        <br>
         <div id="zipSearch">
             <input type = "text" id = "txtSearch" onkeydown = "if (event.keyCode == 13)
                             document.getElementById('btnSearch').click()"/>
