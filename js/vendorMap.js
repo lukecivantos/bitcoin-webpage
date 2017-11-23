@@ -71,10 +71,57 @@ VendorMap.prototype.updateVis = function() {
     // Add empty layer groups for the markers / map objects
     vis.stationMarkers = L.layerGroup().addTo(vis.map);
     vis.subwayStations = L.layerGroup().addTo(vis.map);
+
+
+    function styleColor(feature) {
+        switch(feature) {
+            case 'atm':
+                return "red";
+                break;
+            case 'shopping':
+                return "green";
+                break;
+            case 'food':
+                return "orange";
+                break;
+            case 'grocery':
+                return "yellow";
+                break;
+            case 'lodging':
+                return "purple";
+                break;
+            case 'nighlife':
+                return "lime";
+                break;
+            case 'attraction':
+                return "aqua";
+                break;
+            case 'cafe':
+                return "fuchsia";
+                break;
+            case 'transport':
+                return "silver";
+                break;
+            case 'sports':
+                return "white";
+                break;
+            case 'default':
+                return "blue";
+                break;
+            default:
+                return "blue"
+        }
+    }
+
     vis.displayData.venues.forEach(function (d) {
         // Create marker
         //d.name + "<br>" + "Category: " + d.category
-        vis.mark = L.circleMarker([d.lat,d.lon]).bindPopup(function () {
+        vis.mark = L.circleMarker([d.lat,d.lon],
+            {
+                color: styleColor(d.category),
+                fillColor: styleColor(d.category)
+            }
+            ).bindPopup(function () {
 
             var el = document.createElement('div');
             el.classList.add("my-class");
@@ -89,10 +136,11 @@ VendorMap.prototype.updateVis = function() {
                     '</p><p>Website: <a href="' + data.venue.website + '">' + data.venue.website + '</a></p>';
             });
             return el;
-        }
-        /*,
+        }/*
         {
-            offset: new L.Point(-60, 0)
+            //offset: new L.Point(-60, 0)
+            color: "green",
+            fillColor: "green"
         }*/
         );
         //Add marker to layer group
