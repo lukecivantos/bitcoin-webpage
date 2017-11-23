@@ -8,12 +8,19 @@ var typed = new Typed('#top-text', {
 });
 
 // Variable for the visualization instance
-var vendorMap;
+var vendorMap, marketCap;
+
+var marketCapData = [];
+
+// Set ordinal color scale
+var colorScale = d3.scaleOrdinal(d3.schemeCategory20);
+
+// convert Strings into date objects
+var parseCapDate = d3.timeParse("%e-%b-%y")
 
 var url =  'https://coinmap.org/api/v1/venues/';
 var proxyurl = "https://cors-anywhere.herokuapp.com/";
 var proxy = 'http://michaeloppermann.com/proxy.php?format=xml&url=';
-
 
 jQuery.ajax({
     url: proxyurl +url,
@@ -34,6 +41,138 @@ jQuery.ajax({
     timeout: 120000,
 });
 
+queue()
+    .defer(d3.csv,"data/BitcoinMarketCap.csv")
+    .defer(d3.csv,"data/EthereumMarketCap.csv")
+    .defer(d3.csv,"data/BitcoinCashMarketCap.csv")
+    .defer(d3.csv,"data/RippleMarketCap.csv")
+    .defer(d3.csv,"data/DashMarketCap.csv")
+    .defer(d3.csv,"data/LitecoinMarketCap.csv")
+    .await(loadCapData);
+
+function loadCapData(error, bitcoinCap, ethereumCap, bitcoinCashCap, rippleCap, dashCap, litecoinCap){
+
+    console.log("hello");
+    console.log(bitcoinCap);
+    console.log(ethereumCap);
+    console.log(bitcoinCashCap);
+    console.log(rippleCap);
+    console.log(dashCap);
+    console.log(litecoinCap);
+
+    for (var i = 0; i < bitcoinCap.length; i++){
+        var layer = {};
+        layer["Year"] = bitcoinCap[i].Date;
+        layer["Bitcoin"] = bitcoinCap[i].marketCap;
+
+        // check for ethereum
+        var ethereum = ethereumCap.filter(function(d){
+            return d.Date == bitcoinCap[i].Date;
+        })
+
+        // add ethereum to layer
+        if (ethereum[0] != undefined){
+            layer["Ethereum"] = ethereum[0].marketCap;
+        }
+        else{
+            layer["Ethereum"] = 0;
+        }
+
+        // check for bitcoinCash
+        var cash = bitcoinCashCap.filter(function(d){
+            return d.Date == bitcoinCap[i].Date;
+        })
+
+        // add bitcoinCash to layer
+        if (cash[0] != undefined){
+            layer["BitcoinCash"] =cash[0].marketCap;
+        }
+        else{
+            layer["BitcoinCash"] = 0;
+        }
+
+        // check for ripple
+        var ripple = rippleCap.filter(function(d){
+            return d.Date == bitcoinCap[i].Date;
+        })
+
+        // add ripple to layer
+        if (ripple[0] != undefined){
+            layer["Ripple"] = ripple[0].marketCap;
+        }
+        else{
+            layer["Ripple"] = 0;
+        }
+
+        // check for dash
+        var dash = dashCap.filter(function(d){
+            return d.Date == bitcoinCap[i].Date;
+        })
+
+        // add dash to layer
+        if (dash[0] != undefined){
+            layer["Dash"] = dash[0].marketCap;
+        }
+        else{
+            layer["Dash"] = 0;
+        }
+
+        // check for litecoin
+        var litecoin = litecoinCap.filter(function(d){
+            return d.Date == bitcoinCap[i].Date;
+        })
+
+        // add ethereum to layer
+        if (litecoin[0] != undefined){
+            layer["Litecoin"] = litecoin[0].marketCap;
+        }
+        else{
+            layer["Litecoin"] = 0;
+        }
+
+        marketCapData.push(layer);
+    }
+
+    // convert strings to numbers
+    marketCapData.forEach(function(d){
+        d.Bitcoin = parseFloat(d.Bitcoin.replace(/,/g, ''));
+
+        if (d.BitcoinCash != 0){
+            d.BitcoinCash = parseFloat(d.BitcoinCash.replace(/,/g, ''));
+        }
+        if (d.Dash != 0){
+            d.Dash = parseFloat(d.Dash.replace(/,/g, ''));
+        }
+        if (d.Ethereum != 0){
+            d.Ethereum = parseFloat(d.Ethereum.replace(/,/g, ''));
+        }
+        if (d.Litecoin != 0){
+            d.Litecoin = parseFloat(d.Litecoin.replace(/,/g, ''));
+        }
+        if (d.Ripple != 0){
+            d.Ripple = parseFloat(d.Ripple.replace(/,/g, ''));
+        }
+        d.Year = parseCapDate(d.Year);
+    })
+
+    console.log(marketCapData);
+
+
+    // Update color scale (all column headers except "Year")
+    // We will use the color scale later for the stacked area chart
+    colorScale.domain(d3.keys(marketCapData[0]).filter(function(d){ return d != "Year"; }))
+
+    // check that correct keys are extracted
+    console.log(d3.keys(marketCapData[0]).filter(function(d){ return d != "Year"; }));
+    createStackedVis();
+}
+
+function createStackedVis(){
+
+    // create instance of StackedAreaChart
+    marketCap = new StackedAreaChart("stacked-area", marketCapData);
+}
+
 
 
 function adjustZip() {
@@ -49,3 +188,33 @@ function adjustZip() {
         vendorMap.wrangleData([lat,long]);
     });
 }
+
+
+
+// // Variable for the visualization instance
+// var marketCapMap;
+//
+// var url =  'https://api.coinmarketcap.com/v1/ticker/?convert=EUR&limit=10';
+// var url2 = 'https://api.lionshare.capital/api/markets';
+// var proxyurl = "https://cors-anywhere.herokuapp.com/";
+// var proxy = 'http://michaeloppermann.com/proxy.php?format=xml&url=';
+// var url3 = "http://coincap.io/history/365day/BTC";
+//
+// jQuery.ajax({
+//     url: proxyurl +url3,
+//     type: "GET",
+//
+//     contentType: 'application/json; charset=utf-8',
+//     success: function(resultData) {
+//         //here is your json.
+//         // process it
+//         console.log(resultData);
+//
+//
+//
+//     },
+//     error : function(jqXHR, textStatus, errorThrown) {
+//     },
+//
+//     timeout: 120000,
+// });
