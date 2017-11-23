@@ -49,3 +49,8 @@ function adjustZip() {
         vendorMap.wrangleData([lat,long]);
     });
 }
+
+function adjustCategory(v) {
+    console.log(v);
+    vendorMap.wrangleData();
+}

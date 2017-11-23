@@ -45,7 +45,6 @@ VendorMap.prototype.initVis = function() {
 VendorMap.prototype.wrangleData = function(coords) {
     var vis = this;
 
-
     // Currently no data wrangling/filtering needed
     vis.displayData = vis.data;
     console.log(vis.displayData);
@@ -70,7 +69,6 @@ VendorMap.prototype.updateVis = function() {
 
     // Add empty layer groups for the markers / map objects
     vis.stationMarkers = L.layerGroup().addTo(vis.map);
-    vis.subwayStations = L.layerGroup().addTo(vis.map);
 
 
     function styleColor(feature) {
