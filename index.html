@@ -17,7 +17,6 @@
     <link rel="stylesheet" href="css/scrolling-nav.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
 
 <body id="page-top">
 
@@ -115,20 +114,20 @@
             <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero odio fugiat voluptatem dolor, provident officiis, id iusto! Obcaecati incidunt, qui nihil beatae magnam et repudiandae ipsa exercitationem, in, quo totam.</p>
         </div>
         <br>
-        <select>
-            <option value="volvo">All Store Types</option>
-            <option value="saab">Atm</option>
-            <option value="mercedes">Grocery</option>
-            <option value="audi">Food</option>
-            <option value="audi">Shopping</option>
-            <option value="audi">lodging</option>
-            <option value="audi">Nightlife</option>
-            <option value="audi">Attraction</option>
-            <option value="audi">Cafe</option>
-            <option value="audi">Transport</option>
-            <option value="audi">Sports</option>
-
-        </select>
+        <form action="">
+            <input type="checkbox" name="default" id="default" value="default" checked="checked" onclick = "adjustCategory(document.getElementById('default').value);"> Default
+            <input type="checkbox" name="atm" id="atm" value="atm" checked="checked" onclick = "adjustCategory(document.getElementById('atm').value);"> Atm
+            <input type="checkbox" name="grocery" id="grocery" value="grocery" checked="checked" onclick = "adjustCategory(document.getElementById('grocery').value);"> Grocery
+            <input type="checkbox" name="food" id="food" value="food" checked="checked" onclick = "adjustCategory(document.getElementById('food').value);"> Food
+            <input type="checkbox" name="shopping" id="shopping" value="shopping" checked="checked" onclick = "adjustCategory(document.getElementById('shopping').value);"> Shopping
+            <input type="checkbox" name="lodging" id="lodging" value="lodging" checked="checked" onclick = "adjustCategory(document.getElementById('lodging').value);"> Lodging
+            <input type="checkbox" name="nightlife" id="nightlife" value="nightlife" checked="checked" onclick = "adjustCategory(document.getElementById('nightlife').value);"> Nightlife
+            <input type="checkbox" name="attraction" id="attraction" value="attraction" checked="checked" onclick = "adjustCategory(document.getElementById('attraction').value);"> Attraction
+            <input type="checkbox" name="cafe" id="cafe" value="cafe" checked="checked" onclick = "adjustCategory(document.getElementById('cafe').value);"> Cafe
+            <input type="checkbox" name="transport" id="transport" value="transport" checked="checked" onclick = "adjustCategory(document.getElementById('transport').value);"> Transport
+            <input type="checkbox" name="sports" id="sports" value="sports" checked="checked" onclick = "adjustCategory(document.getElementById('sports').value);"> Sports
+        </form>
+        <br>
         <div id="zipSearch">
             <input type = "text" id = "txtSearch" onkeydown = "if (event.keyCode == 13)
                             document.getElementById('btnSearch').click()"/>
