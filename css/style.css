@@ -165,3 +165,8 @@ form {
     color: white;
 }
 
+#checkers{
+    color: white;
+    text-align: center;
+    margin:auto;
+}
