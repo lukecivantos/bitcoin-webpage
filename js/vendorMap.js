@@ -134,13 +134,7 @@ VendorMap.prototype.updateVis = function() {
                     '</p><p>Website: <a href="' + data.venue.website + '">' + data.venue.website + '</a></p>';
             });
             return el;
-        }/*
-        {
-            //offset: new L.Point(-60, 0)
-            color: "green",
-            fillColor: "green"
-        }*/
-        );
+        });
         //Add marker to layer group
         vis.stationMarkers.addLayer(vis.mark);
     });
