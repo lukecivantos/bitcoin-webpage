@@ -30,6 +30,8 @@ jQuery.ajax({
     success: function(resultData) {
         //here is your json.
         // process it
+        console.log(resultData);
+        d3.select("#mapText").text("As more and more people begin to adopt Bitcoin, its acceptance at various vendors grows as well. Currently, we know that "+ resultData.venues.length + " locations across the world accept the cryptocurrency. Below, you can search your area for physical locations that accept Bitcoin.")
         vendorMap = new VendorMap("vendorMap", resultData,[40.7589, -73.9851]);
 
 

@@ -179,3 +179,9 @@ form {
     text-align: left;
     font-size: 18px;
 }
+#mapText {
+    text-align: center;
+    margin: auto;
+    padding-left: 200px;
+    padding-right: 200px;
+}
