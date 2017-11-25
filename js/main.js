@@ -16,7 +16,7 @@ var marketCapData = [];
 var colorScale = d3.scaleOrdinal(d3.schemeCategory20b);
 
 // convert Strings into date objects
-var parseCapDate = d3.timeParse("%e-%b-%y")
+var parseCapDate = d3.timeParse("%e-%b-%y");
 
 var url =  'https://coinmap.org/api/v1/venues/';
 var proxyurl = "https://cors-anywhere.herokuapp.com/";
@@ -62,7 +62,7 @@ function loadCapData(error, bitcoinCap, ethereumCap, bitcoinCashCap, rippleCap, 
         // check for ethereum
         var ethereum = ethereumCap.filter(function(d){
             return d.Date == bitcoinCap[i].Date;
-        })
+        });
 
         // add ethereum to layer
         if (ethereum[0] != undefined){
@@ -75,7 +75,7 @@ function loadCapData(error, bitcoinCap, ethereumCap, bitcoinCashCap, rippleCap, 
         // check for bitcoinCash
         var cash = bitcoinCashCap.filter(function(d){
             return d.Date == bitcoinCap[i].Date;
-        })
+        });
 
         // add bitcoinCash to layer
         if (cash[0] != undefined){
@@ -88,7 +88,7 @@ function loadCapData(error, bitcoinCap, ethereumCap, bitcoinCashCap, rippleCap, 
         // check for ripple
         var ripple = rippleCap.filter(function(d){
             return d.Date == bitcoinCap[i].Date;
-        })
+        });
 
         // add ripple to layer
         if (ripple[0] != undefined){
@@ -101,7 +101,7 @@ function loadCapData(error, bitcoinCap, ethereumCap, bitcoinCashCap, rippleCap, 
         // check for dash
         var dash = dashCap.filter(function(d){
             return d.Date == bitcoinCap[i].Date;
-        })
+        });
 
         // add dash to layer
         if (dash[0] != undefined){
@@ -114,7 +114,7 @@ function loadCapData(error, bitcoinCap, ethereumCap, bitcoinCashCap, rippleCap, 
         // check for litecoin
         var litecoin = litecoinCap.filter(function(d){
             return d.Date == bitcoinCap[i].Date;
-        })
+        });
 
         // add ethereum to layer
         if (litecoin[0] != undefined){
@@ -153,7 +153,7 @@ function loadCapData(error, bitcoinCap, ethereumCap, bitcoinCashCap, rippleCap, 
 
     // Update color scale (all column headers except "Year")
     // We will use the color scale later for the stacked area chart
-    colorScale.domain(d3.keys(marketCapData[0]).filter(function(d){ return d != "Year"; }))
+    colorScale.domain(d3.keys(marketCapData[0]).filter(function(d){ return d != "Year"; }));
 
     // check that correct keys are extracted
     createStackedVis();

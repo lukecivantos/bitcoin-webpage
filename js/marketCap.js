@@ -14,7 +14,7 @@ StackedAreaChart = function(_parentElement, _data){
     // DEBUG RAW DATA
 
     this.initVis();
-}
+};
 
 
 
@@ -37,7 +37,7 @@ StackedAreaChart.prototype.initVis = function(){
         .attr("height", vis.height + vis.margin.top + vis.margin.bottom)
         .append("g")
         .attr("transform", "translate(" + vis.margin.left + "," + vis.margin.top + ")")
-        .attr("overflow", "visible")
+        .attr("overflow", "visible");
 
     // TO-DO: Overlay with path clipping
     vis.svg.append("defs").append("clipPath")
@@ -50,7 +50,7 @@ StackedAreaChart.prototype.initVis = function(){
     vis.svg.append("text")
         .attr("id", "category-label")
         .attr("x", -10)
-        .attr("y",-10)
+        .attr("y",-10);
 
     // Scales and axes
     vis.x = d3.scaleTime()
@@ -62,7 +62,7 @@ StackedAreaChart.prototype.initVis = function(){
 
     vis.xAxis = d3.axisBottom()
         .scale(vis.x)
-        .ticks(6)
+        .ticks(6);
 
     vis.yAxis = d3.axisLeft()
         .scale(vis.y);
@@ -92,14 +92,14 @@ StackedAreaChart.prototype.initVis = function(){
         .curve(d3.curveCardinal)
         .x(function(d){return vis.x(d.data.Year); })
         .y0(function(d){return vis.y(d[0]); })
-        .y1(function(d){return vis.y(d[1]); })
+        .y1(function(d){return vis.y(d[1]); });
 
     // TO-DO: Tooltip placeholder
 
 
     // TO-DO: (Filter, aggregate, modify data)
     vis.wrangleData();
-}
+};
 
 
 
@@ -115,7 +115,7 @@ StackedAreaChart.prototype.wrangleData = function(){
 
     // Update the visualization
     vis.updateVis();
-}
+};
 
 
 
@@ -153,7 +153,7 @@ StackedAreaChart.prototype.updateVis = function(){
         })
         .attr("d", function(d) {
             return vis.area(d);
-        })
+        });
 
 
     // TO-DO: Update tooltip text
@@ -164,4 +164,4 @@ StackedAreaChart.prototype.updateVis = function(){
     // Call axis functions with the new domain
     vis.svg.select(".x-axis").call(vis.xAxis);
     vis.svg.select(".y-axis").call(vis.yAxis);
-}
+};
