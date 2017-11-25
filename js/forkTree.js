@@ -45,6 +45,7 @@ queue()
                     + " " + d.parent.y + "," + d.parent.x;
             });
 
+        console.log(nodes.descendants());
         // adds each node as a group
         var node = g.selectAll(".node")
             .data(nodes.descendants())
@@ -55,7 +56,9 @@ queue()
             .attr("transform", function(d) {
                 return "translate(" + d.y + "," + d.x + ")"; })
             .on("click", function (d) {
+                d3.select("#forkName").text(d.data.name);
                 d3.select("#forkBlurb").text(d.data.blurb);
+                d3.select("#forkResult").text(d.data.result);
                 if (d.parent.data.name == null) {
                     d3.select("#forkParent").text("Parent: None");
                 } else {

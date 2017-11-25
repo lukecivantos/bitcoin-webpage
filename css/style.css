@@ -170,3 +170,8 @@ form {
     text-align: center;
     margin:auto;
 }
+
+#forkName {
+    text-align: left;
+    font-size: 20px;
+}
