@@ -12,7 +12,6 @@ StackedAreaChart = function(_parentElement, _data){
     this.displayData = []; // see data wrangling
 
     // DEBUG RAW DATA
-    console.log(this.data);
 
     this.initVis();
 }
@@ -83,7 +82,6 @@ StackedAreaChart.prototype.initVis = function(){
     vis.stackedData = vis.stack(vis.data);
 
     // check to see stack data worked correctly
-    console.log(vis.stackedData);
 
     // TO-DO: Rearrange data
 
@@ -148,7 +146,6 @@ StackedAreaChart.prototype.updateVis = function(){
         .attr("class", "area")
         .on("mouseover", function(d){
             d3.select("#category-label").text(d.key);
-            console.log(d.key);
         })
         .merge(categories)
         .style("fill", function(d,i) {

@@ -66,7 +66,6 @@ function loadData() {
         // Store csv data in global variable
         data = csv;
 
-        console.log(data);
 
         x.domain([
             d3.min(data,function (d) {return d.Date}),
@@ -88,7 +87,7 @@ function loadData() {
         svg3.select("g.y-axis")
             .call(yAxis);
 
-        lineFunction.x(function(d) { return x(d.Date); })
+        lineFunction.x(function(d) { return x(d.Date); });
         lineFunction.y(function(d) { return y(d.Close_Price); });
 
         svg3.select(".line")

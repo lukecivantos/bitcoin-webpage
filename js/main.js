@@ -52,14 +52,6 @@ queue()
 
 function loadCapData(error, bitcoinCap, ethereumCap, bitcoinCashCap, rippleCap, dashCap, litecoinCap){
 
-    console.log("hello");
-    console.log(bitcoinCap);
-    console.log(ethereumCap);
-    console.log(bitcoinCashCap);
-    console.log(rippleCap);
-    console.log(dashCap);
-    console.log(litecoinCap);
-
     for (var i = 0; i < bitcoinCap.length; i++){
         var layer = {};
         layer["Year"] = bitcoinCap[i].Date;
@@ -153,9 +145,8 @@ function loadCapData(error, bitcoinCap, ethereumCap, bitcoinCashCap, rippleCap, 
             d.Ripple = parseFloat(d.Ripple.replace(/,/g, ''));
         }
         d.Year = parseCapDate(d.Year);
-    })
+    });
 
-    console.log(marketCapData);
 
 
     // Update color scale (all column headers except "Year")
@@ -163,7 +154,6 @@ function loadCapData(error, bitcoinCap, ethereumCap, bitcoinCashCap, rippleCap, 
     colorScale.domain(d3.keys(marketCapData[0]).filter(function(d){ return d != "Year"; }))
 
     // check that correct keys are extracted
-    console.log(d3.keys(marketCapData[0]).filter(function(d){ return d != "Year"; }));
     createStackedVis();
 }
 
@@ -185,12 +175,11 @@ function adjustZip() {
         var lat = newData[0].latitude;
         var long = newData[0].longitude;
 
-        vendorMap.wrangleData([lat,long]);
+        vendorMap.wrangleData([lat,long],null);
     });
 }
 
 function adjustCategory(v) {
-    console.log(v);
-    vendorMap.wrangleData();
+    vendorMap.wrangleData(null,v);
 }
 

@@ -34,41 +34,23 @@ VendorMap.prototype.initVis = function() {
     L.tileLayer('http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'}).addTo(vis.map);
 
-    vis.wrangleData();
-};
 
 
-/*
- *  Data wrangling
- */
-
-VendorMap.prototype.wrangleData = function(coords) {
-    var vis = this;
-
-    // Currently no data wrangling/filtering needed
     vis.displayData = vis.data;
-    console.log(vis.displayData);
 
-    if (coords != null) {
-        vis.map.setView(new L.LatLng(coords[0], coords[1]), 14);
-    }
-
-    // Update the visualization
-    vis.updateVis();
-
-
-};
-
-
-/*
- *  The drawing function
- */
-
-VendorMap.prototype.updateVis = function() {
-    var vis = this;
 
     // Add empty layer groups for the markers / map objects
-    vis.stationMarkers = L.layerGroup().addTo(vis.map);
+    vis.atmMarkers = L.layerGroup().addTo(vis.map);
+    vis.shoppingMarkers = L.layerGroup().addTo(vis.map);
+    vis.foodMarkers = L.layerGroup().addTo(vis.map);
+    vis.groceryMarkers = L.layerGroup().addTo(vis.map);
+    vis.lodgingMarkers = L.layerGroup().addTo(vis.map);
+    vis.nightlifeMarkers = L.layerGroup().addTo(vis.map);
+    vis.attractionMarkers = L.layerGroup().addTo(vis.map);
+    vis.cafeMarkers = L.layerGroup().addTo(vis.map);
+    vis.transportMarkers = L.layerGroup().addTo(vis.map);
+    vis.sportsMarkers = L.layerGroup().addTo(vis.map);
+    vis.defaultMarkers = L.layerGroup().addTo(vis.map);
 
 
     function styleColor(feature) {
@@ -88,7 +70,7 @@ VendorMap.prototype.updateVis = function() {
             case 'lodging':
                 return "purple";
                 break;
-            case 'nighlife':
+            case 'nightlife':
                 return "lime";
                 break;
             case 'attraction':
@@ -111,6 +93,7 @@ VendorMap.prototype.updateVis = function() {
         }
     }
 
+
     vis.displayData.venues.forEach(function (d) {
         // Create marker
         //d.name + "<br>" + "Category: " + d.category
@@ -119,7 +102,7 @@ VendorMap.prototype.updateVis = function() {
                 color: styleColor(d.category),
                 fillColor: styleColor(d.category)
             }
-            ).bindPopup(function () {
+        ).bindPopup(function () {
 
             var el = document.createElement('div');
             el.classList.add("my-class");
@@ -130,18 +113,63 @@ VendorMap.prototype.updateVis = function() {
 
             $.getJSON(proxyurl + url + d.id, function(data){
                 el.innerHTML =
-                    '<p class="mapTool">Name: ' + data.venue.name + '</p><p>City: '+ data.venue.city +
+                    '<p class="mapTool">Name: ' + data.venue.name + '</p><p>Category: '+ data.venue.category +'</p></p><p>City: '+ data.venue.city +
                     '</p><p>Website: <a href="' + data.venue.website + '">' + data.venue.website + '</a></p>';
             });
             return el;
-        }/*
-        {
-            //offset: new L.Point(-60, 0)
-            color: "green",
-            fillColor: "green"
-        }*/
-        );
-        //Add marker to layer group
-        vis.stationMarkers.addLayer(vis.mark);
+        });
+
+        try {
+            //Add marker to layer group
+            vis[d.category + "Markers"].addLayer(vis.mark);
+        }
+        catch (e) {
+            // statements to handle any exceptions
+            vis.defaultMarkers.addLayer(vis.mark);
+
+        }
     });
+
+
+
+    vis.wrangleData();
+};
+
+
+/*
+ *  Data wrangling
+ */
+
+VendorMap.prototype.wrangleData = function(coords,key) {
+    var vis = this;
+
+    // Currently no data wrangling/filtering needed
+    vis.displayData = vis.data;
+
+    if (coords != null) {
+        vis.map.setView(new L.LatLng(coords[0], coords[1]), 14);
+    }
+
+    // Update the visualization
+    vis.updateVis(key);
+
+
+};
+
+
+/*
+ *  The drawing function
+ */
+
+VendorMap.prototype.updateVis = function(key) {
+    var vis = this;
+
+    if (key != null) {
+
+        if (document.getElementById(key).checked) {
+            vis.map.addLayer(vis[key + "Markers"]);
+        } else {
+            vis.map.removeLayer(vis[key + "Markers"]);
+        }
+    }
 };
