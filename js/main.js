@@ -13,7 +13,7 @@ var vendorMap, marketCap;
 var marketCapData = [];
 
 // Set ordinal color scale
-var colorScale = d3.scaleOrdinal(d3.schemeCategory20);
+var colorScale = d3.scaleOrdinal(d3.schemeCategory20b);
 
 // convert Strings into date objects
 var parseCapDate = d3.timeParse("%e-%b-%y")
