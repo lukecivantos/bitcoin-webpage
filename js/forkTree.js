@@ -57,6 +57,7 @@ queue()
                 return "translate(" + d.y + "," + d.x + ")"; })
             .on("click", function (d) {
                 d3.select("#forkName").text(d.data.name);
+                d3.select("#forkDate").text(d.data.date);
                 d3.select("#forkBlurb").text(d.data.blurb);
                 d3.select("#forkResult").text(d.data.result);
                 if (d.parent.data.name == null) {

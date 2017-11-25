@@ -1,6 +1,7 @@
 {
   "name": "Bitcoin Core",
   "parent": "null",
+  "date": "January 3rd 2009",
   "blurb": "Bitcoin Core represents the first published code for Bitcoin.",
   "children": [
     {
@@ -13,6 +14,7 @@
     {
       "name": "Bitcoin Core",
       "parent": "Bitcoin Core",
+      "date": "January 3rd 2009",
       "blurb": "Bitcoin Core represents the first published code for Bitcoin.",
       "children": [
         {
@@ -25,6 +27,7 @@
         {
           "name": "Bitcoin Core",
           "parent": "Bitcoin Core",
+          "date": "January 3rd 2009",
           "blurb": "Bitcoin Core represents the first published code for Bitcoin.",
           "children": [
             {
@@ -37,6 +40,7 @@
             {
               "name": "Bitcoin Core",
               "parent": "Bitcoin Core",
+              "date": "January 3rd 2009",
               "blurb": "Bitcoin Core represents the first published code for Bitcoin.",
               "children": [
                 {
@@ -49,6 +53,7 @@
                 {
                   "name": "Bitcoin Core",
                   "parent": "Bitcoin Core",
+                  "date": "January 3rd 2009",
                   "blurb": "Bitcoin Core represents the first published code for Bitcoin.",
                   "children": [
                     {
@@ -61,6 +66,7 @@
                     {
                       "name": "Bitcoin Core",
                       "parent": "Bitcoin Core",
+                      "date": "January 3rd 2009",
                       "blurb": "Bitcoin Core represents the first published code for Bitcoin.",
                       "children": [
                         {
@@ -73,6 +79,7 @@
                         {
                           "name": "Bitcoin Core",
                           "parent": "Bitcoin Core",
+                          "date": "January 3rd 2009",
                           "blurb": "Bitcoin Core represents the first published code for Bitcoin."
                         }
                       ]
