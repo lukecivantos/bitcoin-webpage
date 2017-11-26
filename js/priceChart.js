@@ -1,177 +1,194 @@
-var margin = {top: 20, right: 350, bottom: 60, left: 50},
-    width = 850 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
-
-var svg3 = d3.select("#priceChart").append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
-    .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-// Date parser
 var formatDate = d3.timeFormat("%Y");
-var parseDate = d3.timeParse("%Y-%m-%d %I:%M:%S");
 
-loadData();
+PriceChart = function(_parentElement, _data, _eventHandler){
+    this.parentElement = _parentElement;
+    this.data = _data;
+    this.eventHandler = _eventHandler;
+    this.currentBrushRegion = null;
 
-//Scales
+    this.initVis();
+}
 
-var data;
+PriceChart.prototype.initVis = function() {
 
+    var vis = this;
 
-var x = d3.scaleLinear()
-    .range([0, width]);
+    vis.margin = { top: 20, right: 350, bottom: 60, left: 50 };
 
+    vis.width = 850 - vis.margin.left - vis.margin.right,
+        vis.height = 500 - vis.margin.top - vis.margin.bottom;
 
-var y = d3.scaleLinear()
-    .range([height, 0]);
+    // SVG drawing area
+    vis.svg = d3.select("#" + vis.parentElement).append("svg")
+        .attr("width", vis.width + vis.margin.left + vis.margin.right)
+        .attr("height", vis.height + vis.margin.top + vis.margin.bottom)
+        .append("g")
+        .attr("transform", "translate(" + vis.margin.left + "," + vis.margin.top + ")");
 
-//Axis
-var xAxis = d3.axisBottom()
-    .tickFormat(formatDate);
+    // Define the clipping region (copied from lab)
+    vis.svg.append("defs").append("clipPath")
+        .attr("id", "clip")
+        .append("rect")
+        .attr("width", vis.width)
+        .attr("height", vis.height)
 
-var yAxis = d3.axisLeft();
-
-
-svg3.append("g")
-    .attr("class", "axis x-axis")
-    .attr("transform", "translate(" + 0 + "," + height + ")")
-
-
-svg3.append("g")
-    .attr("class", "axis y-axis")
-    .attr("transform", "translate(" + 0 + "," + 0 + ")")
-
-svg3.append("path")
-    .attr("class","line");
-
-var lineFunction = d3.line()
-
-
-//taken from lab to call updateVisualisation when data is set using =
-// Initialize data
+    vis.x = d3.scaleLinear()
+        .range([0, vis.width]);
 
 
-// Load CSV file
-function loadData() {
-    d3.csv("data/bitcoinPrice.csv", function(error, csv) {
+    vis.y = d3.scaleLinear()
+        .range([vis.height, 0]);
 
-        csv.forEach(function(d){
-            // Convert string to 'date object'
-            d.Date = parseDate(d.Date);
-            // Convert numeric values to 'numbers'
-            d.Close_Price = +d.Close_Price;
-        });
+    //Axis
+    vis.xAxis = d3.axisBottom()
+        .tickFormat(formatDate);
 
-        // Store csv data in global variable
-        data = csv;
+    vis.yAxis = d3.axisLeft();
 
 
-        x.domain([
-            d3.min(data,function (d) {return d.Date}),
-            d3.max(data,function (d) {return d.Date})
-        ]);
-        y.domain ([
-            0,
-            d3.max(data,function (d) {return d.Close_Price})
-        ]);
-
-        xAxis
-            .scale(x);
-        yAxis
-            .scale(y);
-
-        svg3.select("g.x-axis")
-            .call(xAxis);
-
-        svg3.select("g.y-axis")
-            .call(yAxis);
-
-        lineFunction.x(function(d) { return x(d.Date); });
-        lineFunction.y(function(d) { return y(d.Close_Price); });
-
-        svg3.select(".line")
-            .attr("class", "line")
-            .attr("d", lineFunction(data));
-
-        var monthYear = d3.timeFormat("%m/%d/%Y");
+    vis.xG = vis.svg.append("g")
+        .attr("class", "axis x-axis")
+        .attr("transform", "translate(" + 0 + "," + vis.height + ")")
 
 
-        var textPop = svg3.append("text")
-            .attr("class","tracerText")
-            .attr("text-anchor", "start")
-            .attr("y", 15)
-            .attr("x", 0)
-            .attr("opacity",0)
-            .style('fill', 'white')
-            .attr("font-size","14px")
-            .attr("font-weight","bold")
-            .text("");
+    vis.yG = vis.svg.append("g")
+        .attr("class", "axis y-axis")
+        .attr("transform", "translate(" + 0 + "," + 0 + ")")
 
-        var textDate = svg3.append("text")
-            .attr("class","tracerText")
-            .attr("text-anchor", "start")
-            .attr("y", 35)
-            .attr("x", 0)
-            .attr("opacity",0)
-            .style("fill", "white")
-            .text("");
+    vis.pricePath = vis.svg.append("path")
+        .attr("class","line")
+        .attr("clip-path", "url(#clip)")
 
-        var tracerLine = svg3.append("rect")
-            .attr("class","tracer")
-            .attr("height",height)
-            .attr("width",0.5)
-            .attr("fill", "white")
-            .attr("x",0)
-            .attr("y",0)
-            .attr("opacity",0);
+    vis.lineFunction = d3.line()
+
+    vis.zoom = d3.zoom()
+        .on("zoom", function(){
+            vis.svg.selectAll(".line")
+                .attr("transform", d3.event.transform);
+            d3.selectAll('.line').style("stroke-width", 2/d3.event.transform.k);
+            vis.xG.call(vis.xAxis.scale(d3.event.transform.rescaleX(vis.x)));
+            vis.yG.call(vis.yAxis.scale(d3.event.transform.rescaleY(vis.y)));
+
+        })
+        .scaleExtent([1, 5])
+
+    vis.svg.call(vis.zoom);
 
 
-        svg3.selectAll("mouse-catcher.rect")
-            .data(data)
-            .enter()
-            .append("rect")
-            .attr("class","mouse-catcher")
-            .attr("height",height)
-            .attr("width",50)
-            .attr("x",function (d) {
-                return x(d.Date);
-            })
-            .style("opacity",0)
-            .on("mouseover", function(d) {
-                tracerLine.attr("x",x(d.Date));
-                tracerLine.attr("opacity",1);
-                textPop.attr("x",x(d.Date) + 5);
-                textPop.attr("opacity",1);
-                textPop.text("Price: $" + d.Close_Price);
-                textDate.attr("x",x(d.Date) + 5);
-                textDate.attr("opacity",1);
-                textDate.text(monthYear(d.Date));
-            })
-            .on("mouseout", function() {
-                tracerLine.attr("opacity",0);
-                textPop.attr("opacity",0);
-                textDate.attr("opacity",0);
-            });
+    vis.wrangleData();
 
 
+}
 
+/*
+ * Data wrangling
+ */
 
-        //  updateVisualization();
+PriceChart.prototype.wrangleData = function(){
+    var vis = this;
 
-    });
+    this.displayData = this.data;
 
-    //  updateVisualization();
+    // Update the visualization
+    vis.updateVis();
 }
 
 
-// Render visualization
-function updateVisualization() {
+/*
+ * The drawing function - should use the D3 update sequence (enter, update, exit)
+ * Function parameters only needed if different kinds of updates are needed
+ */
+
+PriceChart.prototype.updateVis = function() {
+    var vis = this;
+
+    console.log(vis.displayData);
+    vis.x.domain([
+        d3.min(vis.displayData,function (d) {return d.Date}),
+        d3.max(vis.displayData,function (d) {return d.Date})
+    ]);
+
+    vis.y.domain ([
+        0,
+        d3.max(vis.displayData,function (d) {return d.Close_Price})
+    ]);
+
+    vis.xAxis
+        .scale(vis.x);
+    vis.yAxis
+        .scale(vis.y);
+
+    vis.svg.select("g.x-axis")
+        .call(vis.xAxis);
+
+    vis.svg.select("g.y-axis")
+        .call(vis.yAxis);
+
+    vis.lineFunction.x(function(d) { return vis.x(d.Date); });
+    vis.lineFunction.y(function(d) { return vis.y(d.Close_Price); });
+
+    vis.svg.select(".line")
+        .attr("class", "line")
+        .attr("d", vis.lineFunction(vis.displayData))
+        .attr("clip-path", "url(#clip)")
 
 
+    var monthYear = d3.timeFormat("%m/%d/%Y");
 
-// function for line
-// add line to the already appended path
+    vis.textPop = vis.svg.append("text")
+        .attr("class","tracerText")
+        .attr("text-anchor", "start")
+        .attr("y", 15)
+        .attr("x", 0)
+        .attr("opacity",0)
+        .style('fill', 'white')
+        .attr("font-size","14px")
+        .attr("font-weight","bold")
+        .text("");
+
+    vis.textDate = vis.svg.append("text")
+        .attr("class","tracerText")
+        .attr("text-anchor", "start")
+        .attr("y", 35)
+        .attr("x", 0)
+        .attr("opacity",0)
+        .style("fill", "white")
+        .text("");
+
+    vis.tracerLine = vis.svg.append("rect")
+        .attr("class","tracer")
+        .attr("height",vis.height)
+        .attr("width",0.5)
+        .attr("fill", "white")
+        .attr("x",0)
+        .attr("y",0)
+        .attr("opacity",0);
 
 
+    vis.svg.selectAll("mouse-catcher.rect")
+        .data(vis.displayData)
+        .enter()
+        .append("rect")
+        .attr("class","mouse-catcher")
+        .attr("height",vis.height)
+        .attr("width",50)
+        .attr("x",function (d) {
+            return vis.x(d.Date);
+        })
+        .style("opacity",0)
+        .on("mouseover", function(d) {
+            vis.tracerLine.attr("x",vis.x(d.Date));
+            vis.tracerLine.attr("opacity",1);
+            vis.textPop.attr("x",vis.x(d.Date) + 5);
+            vis.textPop.attr("opacity",1);
+            vis.textPop.text("Price: $" + d.Close_Price);
+            vis.textDate.attr("x",vis.x(d.Date) + 5);
+            vis.textDate.attr("opacity",1);
+            vis.textDate.text(monthYear(d.Date));
+        })
+        .on("mouseout", function() {
+            vis.tracerLine.attr("opacity",0);
+            vis.textPop.attr("opacity",0);
+            vis.textDate.attr("opacity",0);
+        });
 }
