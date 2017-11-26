@@ -179,3 +179,8 @@ form {
     text-align: left;
     font-size: 18px;
 }
+
+#stacked-area > svg {
+    display: block;
+    margin: auto;
+}
