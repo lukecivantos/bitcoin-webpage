@@ -185,3 +185,16 @@ form {
     padding-left: 200px;
     padding-right: 200px;
 }
+#hashButton {
+    text-align: center;
+    margin: auto;
+}
+#hashText {
+    text-align: center;
+    color: white;
+}
+
+.pad {
+    width: 100%;
+    height: 150px;
+}
