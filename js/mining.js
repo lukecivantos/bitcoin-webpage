@@ -114,6 +114,6 @@ function runHash() {
             if (i < 100) {
                 myLoop();
             }
-        }, 100);
+        }, 50);
     }
 };
