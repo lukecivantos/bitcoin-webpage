@@ -75,9 +75,16 @@
     <div class="container">
         <div class="row">
             <h3>Technology Behind Bitcoin</h3>
+
+            <h4>This is now the mining explanation:</h4>
+            <p class="lead">This is text about the explanation</p>
+            <button id="hashButton" onclick="runHash()">Find Hash</button>
+            <p id="hashText">8358B3A2C8F9E1B7</p>
+
+            <div class="pad"></div>
+
             <br>
             <p class="lead">When a contentious issue (such as the maximum block size capacity) cannot be agreed on by bitcoin developers, a fork in bitcoin’s blockchain can occur. During a fork, the bitcoin blockchain diverges into two potential new chains. After a fork both new blockchains will share their previous transaction history, although moving forward all new transactions will only appear in the blockchain they are verified on. Click on the nodes in the tree visualization to learn more about each of the six forks that have occured since bitcoin’s inception.</p>
-            <h4>[Interactive Explanations of Mining, Encryption and the Blockchain will be here.]</h4>
             <div class="row">
                 <div class="col-md-6">
                     <div id="tree-area"></div>
@@ -237,6 +244,8 @@
 <script src="js/vendorMap.js"></script>
 <script src="js/priceChart.js"></script>
 <script src="js/marketCap.js"></script>
+<script src="js/mining.js"></script>
+
 
 
 

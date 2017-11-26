@@ -32,7 +32,6 @@ jQuery.ajax({
     success: function(resultData) {
         //here is your json.
         // process it
-        console.log(resultData);
         d3.select("#mapText").text("While bitcoin’s price has continued to appreciate, it has yet to flourish as a widely accepted currency. That being said, bitcoin’s user base continues to grow, and today "+ resultData.venues.length + " vendors in the US accept bitcoin as a method of payment. Explore the map below to see which vendors throughout the world currently accept bitcoin. Click the points on the map to find the name of the vendor and a link to the vendor’s website.");
         vendorMap = new VendorMap("vendorMap", resultData,[40.7589, -73.9851]);
 

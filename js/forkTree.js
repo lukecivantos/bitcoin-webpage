@@ -45,7 +45,6 @@ queue()
                     + " " + d.parent.y + "," + d.parent.x;
             });
 
-        console.log(nodes.descendants());
         // adds each node as a group
         var node = g.selectAll(".node")
             .data(nodes.descendants())
