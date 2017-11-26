@@ -1,9 +1,9 @@
 
 //loadData();
 
-var firstSentence = "In January 2009, history was made when the mysterious Satoshi Nakamoto released the first software program implementing Bitcoin."
+var firstSentence = "On October 31st 2008, less than a year after the start of the 2007 financial crisis, an academic paper entitled “Bitcoin: A Peer-to-Peer Electronic Cash System” was published under the  name Satoshi Nakamoto,  a fictitious name created by the true author, who’s identity has remained anonymous to this day. Although the software for its implementation was complex, the idea behind bitcoin was simple. Bitcoin would be a digital currency, decentralized from any governing body, that would allow user to user transfers without the need for a middleman. This would be possible through the ingenious invention of the blockchain, software that relies on verifications from multiple parties to make any transaction valid. For verifying these transactions, the parties, known as miners, would be rewarded with bitcoins of their own."
 var typed = new Typed('#top-text', {
-    strings: [firstSentence, "Enter to learn more."],
+    strings: [firstSentence, "Scroll down to learn more about Bitcoin’s development "],
     typeSpeed: 30
 });
 
@@ -31,7 +31,7 @@ jQuery.ajax({
         //here is your json.
         // process it
         console.log(resultData);
-        d3.select("#mapText").text("As more and more people begin to adopt Bitcoin, its acceptance at various vendors grows as well. Currently, we know that "+ resultData.venues.length + " locations across the world accept the cryptocurrency. Below, you can search your area for physical locations that accept Bitcoin.")
+        d3.select("#mapText").text("While bitcoin’s price has continued to appreciate, it has yet to flourish as a widely accepted currency. That being said, bitcoin’s user base continues to grow, and today "+ resultData.venues.length + " vendors in the US accept bitcoin as a method of payment. Explore the map below to see which vendors throughout the world currently accept bitcoin. Click the points on the map to find the name of the vendor and a link to the vendor’s website.");
         vendorMap = new VendorMap("vendorMap", resultData,[40.7589, -73.9851]);
 
 

@@ -2,7 +2,7 @@
   "name": "Bitcoin Core",
   "parent": "null",
   "date": "January 3rd 2009",
-  "blurb": "Bitcoin Core represents the first published code for Bitcoin.",
+  "blurb": "Bitcoin Core is the original bitcoin that was published by Satoshi Nakamoto. It was later renamed Bitcoin Core to help distinguish it from other versions of bitcoin created by forks.",
   "children": [
     {
       "name": "Bitcoin XT",
@@ -15,7 +15,7 @@
       "name": "Bitcoin Core",
       "parent": "Bitcoin Core",
       "date": "January 3rd 2009",
-      "blurb": "Bitcoin Core represents the first published code for Bitcoin.",
+      "blurb": "Bitcoin Core is the original bitcoin that was published by Satoshi Nakamoto. It was later renamed Bitcoin Core to help distinguish it from other versions of bitcoin created by forks.",
       "children": [
         {
           "name": "Bitcoin Classic",
@@ -28,7 +28,7 @@
           "name": "Bitcoin Core",
           "parent": "Bitcoin Core",
           "date": "January 3rd 2009",
-          "blurb": "Bitcoin Core represents the first published code for Bitcoin.",
+          "blurb": "Bitcoin Core is the original bitcoin that was published by Satoshi Nakamoto. It was later renamed Bitcoin Core to help distinguish it from other versions of bitcoin created by forks.",
           "children": [
             {
               "name": "Bitcore",
@@ -41,7 +41,7 @@
               "name": "Bitcoin Core",
               "parent": "Bitcoin Core",
               "date": "January 3rd 2009",
-              "blurb": "Bitcoin Core represents the first published code for Bitcoin.",
+              "blurb": "Bitcoin Core is the original bitcoin that was published by Satoshi Nakamoto. It was later renamed Bitcoin Core to help distinguish it from other versions of bitcoin created by forks.",
               "children": [
                 {
                   "name": "Bitcoin Unlimited",
@@ -54,7 +54,7 @@
                   "name": "Bitcoin Core",
                   "parent": "Bitcoin Core",
                   "date": "January 3rd 2009",
-                  "blurb": "Bitcoin Core represents the first published code for Bitcoin.",
+                  "blurb": "Bitcoin Core is the original bitcoin that was published by Satoshi Nakamoto. It was later renamed Bitcoin Core to help distinguish it from other versions of bitcoin created by forks.",
                   "children": [
                     {
                       "name": "Bitcoin Cash",
@@ -67,7 +67,7 @@
                       "name": "Bitcoin Core",
                       "parent": "Bitcoin Core",
                       "date": "January 3rd 2009",
-                      "blurb": "Bitcoin Core represents the first published code for Bitcoin.",
+                      "blurb": "Bitcoin Core is the original bitcoin that was published by Satoshi Nakamoto. It was later renamed Bitcoin Core to help distinguish it from other versions of bitcoin created by forks.",
                       "children": [
                         {
                           "name": "Bitcoin Gold",
@@ -80,7 +80,7 @@
                           "name": "Bitcoin Core",
                           "parent": "Bitcoin Core",
                           "date": "January 3rd 2009",
-                          "blurb": "Bitcoin Core represents the first published code for Bitcoin."
+                          "blurb": "Bitcoin Core is the original bitcoin that was published by Satoshi Nakamoto. It was later renamed Bitcoin Core to help distinguish it from other versions of bitcoin created by forks."
                         }
                       ]
                     }
