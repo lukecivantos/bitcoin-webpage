@@ -30,8 +30,7 @@ PriceChart.prototype.initVis = function() {
         .attr("id", "clip")
         .append("rect")
         .attr("width", vis.width)
-        .attr("height", vis.height);
-
+        .attr("height", vis.height)
 
     vis.x = d3.scaleLinear()
         .range([0, vis.width]);
@@ -56,23 +55,25 @@ PriceChart.prototype.initVis = function() {
         .attr("class", "axis y-axis")
         .attr("transform", "translate(" + 0 + "," + 0 + ")")
 
-    vis.svg.append("path")
+    vis.pricePath = vis.svg.append("path")
         .attr("class","line")
         .attr("clip-path", "url(#clip)")
 
     vis.lineFunction = d3.line()
 
-    // vis.zoom = d3.zoom()
-    //     .scaleExtent([1, 5])
-    //     .on("zoom", function(){
-    //         vis.svg.selectAll(".line")
-    //             .attr("transform", d3.event.transform);
-    //         d3.selectAll('.line').style("stroke-width", 2/d3.event.transform.k);
-    //         vis.xG.call(vis.xAxis.scale(d3.event.transform.rescaleX(vis.x)));
-    //         vis.yG.call(vis.yAxis.scale(d3.event.transform.rescaleY(vis.y)));
-    //     });
-    //
-    // vis.svg.call(vis.zoom);
+    vis.zoom = d3.zoom()
+        .on("zoom", function(){
+            vis.svg.selectAll(".line")
+                .attr("transform", d3.event.transform);
+            d3.selectAll('.line').style("stroke-width", 2/d3.event.transform.k);
+            vis.xG.call(vis.xAxis.scale(d3.event.transform.rescaleX(vis.x)));
+            vis.yG.call(vis.yAxis.scale(d3.event.transform.rescaleY(vis.y)));
+
+        })
+        .scaleExtent([1, 5])
+
+    vis.svg.call(vis.zoom);
+
 
     vis.wrangleData();
 
@@ -131,8 +132,8 @@ PriceChart.prototype.updateVis = function() {
         .attr("d", vis.lineFunction(vis.displayData))
         .attr("clip-path", "url(#clip)")
 
-    var monthYear = d3.timeFormat("%m/%d/%Y");
 
+    var monthYear = d3.timeFormat("%m/%d/%Y");
 
     vis.textPop = vis.svg.append("text")
         .attr("class","tracerText")
