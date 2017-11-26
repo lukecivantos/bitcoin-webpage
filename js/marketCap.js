@@ -27,7 +27,7 @@ StackedAreaChart.prototype.initVis = function(){
 
     vis.margin = { top: 25, right: 0, bottom: 50, left: 100 };
 
-    vis.width = 850 - vis.margin.left - vis.margin.right,
+    vis.width = 825 - vis.margin.left - vis.margin.right,
         vis.height = 525 - vis.margin.top - vis.margin.bottom;
 
 
