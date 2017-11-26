@@ -8,15 +8,17 @@ var typed = new Typed('#top-text', {
 });
 
 // Variable for the visualization instance
-var vendorMap, marketCap;
+var vendorMap, marketCap, priceChart;
 
 var marketCapData = [];
+var priceChartData = [];
 
 // Set ordinal color scale
 var colorScale = d3.scaleOrdinal(d3.schemeCategory20);
 
 // convert Strings into date objects
 var parseCapDate = d3.timeParse("%e-%b-%y");
+var parseDate = d3.timeParse("%Y-%m-%d %I:%M:%S");
 
 var url =  'https://coinmap.org/api/v1/venues/';
 var proxyurl = "https://cors-anywhere.herokuapp.com/";
@@ -44,6 +46,7 @@ jQuery.ajax({
 });
 
 queue()
+    .defer(d3.csv, "data/bitcoinPrice.csv")
     .defer(d3.csv,"data/BitcoinMarketCap.csv")
     .defer(d3.csv,"data/EthereumMarketCap.csv")
     .defer(d3.csv,"data/BitcoinCashMarketCap.csv")
@@ -52,7 +55,17 @@ queue()
     .defer(d3.csv,"data/LitecoinMarketCap.csv")
     .await(loadCapData);
 
-function loadCapData(error, bitcoinCap, ethereumCap, bitcoinCashCap, rippleCap, dashCap, litecoinCap){
+function loadCapData(error, bitcoinPrice, bitcoinCap, ethereumCap, bitcoinCashCap, rippleCap, dashCap, litecoinCap){
+
+    // process data for bitcoin price graph
+    bitcoinPrice.forEach(function(d){
+            // Convert string to 'date object'
+            d.Date = parseDate(d.Date);
+            // Convert numeric values to 'numbers'
+            d.Close_Price = +d.Close_Price;
+        });
+
+    priceChartData = bitcoinPrice;
 
     for (var i = 0; i < bitcoinCap.length; i++){
         var layer = {};
@@ -156,13 +169,14 @@ function loadCapData(error, bitcoinCap, ethereumCap, bitcoinCashCap, rippleCap, 
     colorScale.domain(d3.keys(marketCapData[0]).filter(function(d){ return d != "Year"; }));
 
     // check that correct keys are extracted
-    createStackedVis();
+    createVisualizations();
 }
 
-function createStackedVis(){
+function createVisualizations(){
 
     // create instance of StackedAreaChart
     marketCap = new StackedAreaChart("stacked-area", marketCapData);
+    priceChart = new PriceChart("priceChart", priceChartData);
 }
 
 
