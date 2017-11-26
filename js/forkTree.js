@@ -60,11 +60,6 @@ queue()
                 d3.select("#forkDate").text(d.data.date);
                 d3.select("#forkBlurb").text(d.data.blurb);
                 d3.select("#forkResult").text(d.data.result);
-                if (d.parent.data.name == null) {
-                    d3.select("#forkParent").text("Parent: None");
-                } else {
-                    d3.select("#forkParent").text(d.data.name + " was a result of Fork number " + d.depth + ".");
-                }
             });
 
         // adds the circle to the node

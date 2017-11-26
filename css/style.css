@@ -180,7 +180,15 @@ form {
     font-size: 18px;
 }
 
+
 #stacked-area > svg {
     display: block;
     margin: auto;
+
+
+#mapText {
+    text-align: center;
+    margin: auto;
+    padding-left: 200px;
+    padding-right: 200px;
 }

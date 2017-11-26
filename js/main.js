@@ -1,9 +1,9 @@
 
 //loadData();
 
-var firstSentence = "In January 2009, history was made when the mysterious Satoshi Nakamoto released the first software program implementing Bitcoin."
+var firstSentence = "On October 31st 2008, less than a year after the start of the 2007 financial crisis, an academic paper entitled “Bitcoin: A Peer-to-Peer Electronic Cash System” was published under the  name Satoshi Nakamoto,  a fictitious name created by the true author, who’s identity has remained anonymous to this day. Although the software for its implementation was complex, the idea behind bitcoin was simple. Bitcoin would be a digital currency, decentralized from any governing body, that would allow user to user transfers without the need for a middleman. This would be possible through the ingenious invention of the blockchain, software that relies on verifications from multiple parties to make any transaction valid. For verifying these transactions, the parties, known as miners, would be rewarded with bitcoins of their own."
 var typed = new Typed('#top-text', {
-    strings: [firstSentence, "Enter to learn more."],
+    strings: [firstSentence, "Scroll down to learn more about Bitcoin’s development "],
     typeSpeed: 30
 });
 
@@ -16,7 +16,7 @@ var marketCapData = [];
 var colorScale = d3.scaleOrdinal(d3.schemeCategory20);
 
 // convert Strings into date objects
-var parseCapDate = d3.timeParse("%e-%b-%y")
+var parseCapDate = d3.timeParse("%e-%b-%y");
 
 var url =  'https://coinmap.org/api/v1/venues/';
 var proxyurl = "https://cors-anywhere.herokuapp.com/";
@@ -30,6 +30,8 @@ jQuery.ajax({
     success: function(resultData) {
         //here is your json.
         // process it
+        console.log(resultData);
+        d3.select("#mapText").text("While bitcoin’s price has continued to appreciate, it has yet to flourish as a widely accepted currency. That being said, bitcoin’s user base continues to grow, and today "+ resultData.venues.length + " vendors in the US accept bitcoin as a method of payment. Explore the map below to see which vendors throughout the world currently accept bitcoin. Click the points on the map to find the name of the vendor and a link to the vendor’s website.");
         vendorMap = new VendorMap("vendorMap", resultData,[40.7589, -73.9851]);
 
 
@@ -60,7 +62,7 @@ function loadCapData(error, bitcoinCap, ethereumCap, bitcoinCashCap, rippleCap, 
         // check for ethereum
         var ethereum = ethereumCap.filter(function(d){
             return d.Date == bitcoinCap[i].Date;
-        })
+        });
 
         // add ethereum to layer
         if (ethereum[0] != undefined){
@@ -73,7 +75,7 @@ function loadCapData(error, bitcoinCap, ethereumCap, bitcoinCashCap, rippleCap, 
         // check for bitcoinCash
         var cash = bitcoinCashCap.filter(function(d){
             return d.Date == bitcoinCap[i].Date;
-        })
+        });
 
         // add bitcoinCash to layer
         if (cash[0] != undefined){
@@ -86,7 +88,7 @@ function loadCapData(error, bitcoinCap, ethereumCap, bitcoinCashCap, rippleCap, 
         // check for ripple
         var ripple = rippleCap.filter(function(d){
             return d.Date == bitcoinCap[i].Date;
-        })
+        });
 
         // add ripple to layer
         if (ripple[0] != undefined){
@@ -99,7 +101,7 @@ function loadCapData(error, bitcoinCap, ethereumCap, bitcoinCashCap, rippleCap, 
         // check for dash
         var dash = dashCap.filter(function(d){
             return d.Date == bitcoinCap[i].Date;
-        })
+        });
 
         // add dash to layer
         if (dash[0] != undefined){
@@ -112,7 +114,7 @@ function loadCapData(error, bitcoinCap, ethereumCap, bitcoinCashCap, rippleCap, 
         // check for litecoin
         var litecoin = litecoinCap.filter(function(d){
             return d.Date == bitcoinCap[i].Date;
-        })
+        });
 
         // add ethereum to layer
         if (litecoin[0] != undefined){
@@ -151,7 +153,7 @@ function loadCapData(error, bitcoinCap, ethereumCap, bitcoinCashCap, rippleCap, 
 
     // Update color scale (all column headers except "Year")
     // We will use the color scale later for the stacked area chart
-    colorScale.domain(d3.keys(marketCapData[0]).filter(function(d){ return d != "Year"; }))
+    colorScale.domain(d3.keys(marketCapData[0]).filter(function(d){ return d != "Year"; }));
 
     // check that correct keys are extracted
     createStackedVis();
