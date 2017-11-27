@@ -105,6 +105,7 @@ var hashes = [
 function runHash() {
 
     var i = 0;
+    d3.select("#errorHash").text("");
     myLoop();
     function myLoop() {
         setTimeout(function() {
@@ -117,6 +118,8 @@ function runHash() {
                 var g = Math.floor(Math.random() * (100 - 1 + 1)) + 1;
                 console.log(g);
                 d3.select("#hashText").text(hashes[g]);
+
+                d3.select("#errorHash").text("Sorry. This hash is NOT below the level of difficulty. Right now, miners have to create 2^32 * level of diifuclity hashes to get one that works. Try again!");
             }
         }, 50);
 

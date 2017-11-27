@@ -206,6 +206,11 @@ form {
     color: white;
     font-size: 50px;
 }
+#errorHash {
+    text-align: center;
+    color: red;
+    font-size: 25px;
+}
 
 .pad {
     width: 100%;
