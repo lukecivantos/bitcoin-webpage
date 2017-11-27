@@ -215,3 +215,15 @@ form {
 .area{
     clip-path: url(#clip2);
 }
+
+#firstName {
+    color: black;
+}
+
+
+#lastName {
+    color: black;
+}
+#filterYear {
+    color: black;
+}

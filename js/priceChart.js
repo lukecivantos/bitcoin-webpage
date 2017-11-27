@@ -1,9 +1,8 @@
-var formatDate = d3.timeFormat("%Y");
+var formatDate = d3.timeFormat("%b, %Y");
 
 PriceChart = function(_parentElement, _data, _eventHandler){
     this.parentElement = _parentElement;
     this.data = _data;
-    console.log(_data);
     this.eventHandler = _eventHandler;
     this.currentBrushRegion = null;
 
@@ -16,7 +15,7 @@ PriceChart.prototype.initVis = function() {
 
     vis.margin = { top: 20, right: 350, bottom: 60, left: 50 };
 
-    vis.width = 850 - vis.margin.left - vis.margin.right,
+    vis.width = 1500 - vis.margin.left - vis.margin.right,
         vis.height = 500 - vis.margin.top - vis.margin.bottom;
 
     // SVG drawing area
@@ -49,7 +48,9 @@ PriceChart.prototype.initVis = function() {
 
     vis.xG = vis.svg.append("g")
         .attr("class", "axis x-axis")
-        .attr("transform", "translate(" + 0 + "," + vis.height + ")");
+        .attr("transform", "translate(" + 0 + "," + vis.height + ")")
+        .selectAll("text")
+        .attr("transform", "rotate(90)");
 
 
     vis.yG = vis.svg.append("g")
@@ -74,7 +75,27 @@ PriceChart.prototype.initVis = function() {
 PriceChart.prototype.wrangleData = function(){
     var vis = this;
 
-    this.displayData = this.data;
+    var mini = $('#firstName').val();
+    var maxi = $('#lastName').val();
+    vis.filteredData = vis.data;
+    var parseTime = d3.timeParse("%Y");
+
+    if (mini != "") {
+        mini = parseTime(mini);
+        vis.filteredData = vis.filteredData.filter(function (d) {
+            return d.Date > mini;
+        })
+    }
+
+    if (maxi != "") {
+        maxi = parseTime(maxi);
+        vis.filteredData = vis.filteredData.filter(function (d) {
+            return d.Date < maxi;
+        })
+    }
+    vis.displayData = vis.filteredData;
+
+
 
     // Update the visualization
     vis.updateVis();
@@ -89,7 +110,6 @@ PriceChart.prototype.wrangleData = function(){
 PriceChart.prototype.updateVis = function() {
     var vis = this;
 
-    console.log(vis.displayData);
     vis.x.domain([
         d3.min(vis.displayData,function (d) {return d.Date}),
         d3.max(vis.displayData,function (d) {return d.Date})

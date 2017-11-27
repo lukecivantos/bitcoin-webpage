@@ -169,7 +169,6 @@ function loadCapData(error, bitcoinPrice, bitcoinCap, ethereumCap, bitcoinCashCa
        timelineData.push(year);
     });
 
-    console.log(timelineData);
 
 
 
@@ -224,4 +223,9 @@ function brushed() {
     // Update focus chart (detailed information)
     marketCap.wrangleData();
 
+}
+
+
+function filterYears() {
+    priceChart.wrangleData();
 }
