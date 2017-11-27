@@ -59,6 +59,13 @@
             <h3>What is Bitcoin?</h3>
             <br>
             <p class="lead">Since 2009 when the first software implementing bitcoin was released, bitcoins rise in value has been nothing short of spectacular. Throughout 2017 bitcoin’s price has consistently reached new all-time highs and it’s grow shows no signs of showing. Hover over the chart to see Bitcoin’s exact price at any point since 2009, or Zoom in on the x axis to get a more detailed view of Bitcoin’s price over a smaller time period.</p>
+            <form id="filter-years">
+                Min Year<br>
+                <input type="text" name="firstName"><br>
+                Max Year<br>
+                <input type="text" name="lastName"><br><br>
+                <button type="button" onclick="filterYears()">Update</button>
+            </form>
             <div id="priceChart" class="col-md-6"></div>
             <div id="priceText" class="col-md-6">
                 <br>

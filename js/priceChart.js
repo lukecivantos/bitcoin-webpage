@@ -3,6 +3,7 @@ var formatDate = d3.timeFormat("%Y");
 PriceChart = function(_parentElement, _data, _eventHandler){
     this.parentElement = _parentElement;
     this.data = _data;
+    console.log(_data);
     this.eventHandler = _eventHandler;
     this.currentBrushRegion = null;
 
@@ -48,12 +49,12 @@ PriceChart.prototype.initVis = function() {
 
     vis.xG = vis.svg.append("g")
         .attr("class", "axis x-axis")
-        .attr("transform", "translate(" + 0 + "," + vis.height + ")")
+        .attr("transform", "translate(" + 0 + "," + vis.height + ")");
 
 
     vis.yG = vis.svg.append("g")
         .attr("class", "axis y-axis")
-        .attr("transform", "translate(" + 0 + "," + 0 + ")")
+        .attr("transform", "translate(" + 0 + "," + 0 + ")");
 
     vis.pricePath = vis.svg.append("path")
         .attr("class","line")
@@ -116,7 +117,7 @@ PriceChart.prototype.updateVis = function() {
     vis.svg.select(".line")
         .attr("class", "line")
         .attr("d", vis.lineFunction(vis.displayData))
-        .attr("clip-path", "url(#clip)")
+        .attr("clip-path", "url(#clip)");
 
 
     var monthYear = d3.timeFormat("%m/%d/%Y");
@@ -177,4 +178,4 @@ PriceChart.prototype.updateVis = function() {
             vis.textPop.attr("opacity",0);
             vis.textDate.attr("opacity",0);
         });
-}
+};
