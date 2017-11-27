@@ -113,7 +113,13 @@ function runHash() {
             i += 1;
             if (i < 100) {
                 myLoop();
+            } else {
+                var g = Math.floor(Math.random() * (100 - 1 + 1)) + 1;
+                console.log(g);
+                d3.select("#hashText").text(hashes[g]);
             }
         }, 50);
+
+
     }
 };

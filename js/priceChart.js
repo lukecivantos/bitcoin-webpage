@@ -7,7 +7,7 @@ PriceChart = function(_parentElement, _data, _eventHandler){
     this.currentBrushRegion = null;
 
     this.initVis();
-}
+};
 
 PriceChart.prototype.initVis = function() {
 
@@ -24,14 +24,14 @@ PriceChart.prototype.initVis = function() {
         .attr("height", vis.height + vis.margin.top + vis.margin.bottom)
         .append("g")
         .attr("transform", "translate(" + vis.margin.left + "," + vis.margin.top + ")");
-
+/*
     // Define the clipping region (copied from lab)
     vis.svg.append("defs").append("clipPath")
         .attr("id", "clip")
         .append("rect")
         .attr("width", vis.width)
         .attr("height", vis.height)
-
+*/
     vis.x = d3.scaleLinear()
         .range([0, vis.width]);
 
@@ -57,28 +57,14 @@ PriceChart.prototype.initVis = function() {
 
     vis.pricePath = vis.svg.append("path")
         .attr("class","line")
-        .attr("clip-path", "url(#clip)")
+        .attr("clip-path", "url(#clip)");
 
-    vis.lineFunction = d3.line()
-
-    vis.zoom = d3.zoom()
-        .on("zoom", function(){
-            vis.svg.selectAll(".line")
-                .attr("transform", d3.event.transform);
-            d3.selectAll('.line').style("stroke-width", 2/d3.event.transform.k);
-            vis.xG.call(vis.xAxis.scale(d3.event.transform.rescaleX(vis.x)));
-            vis.yG.call(vis.yAxis.scale(d3.event.transform.rescaleY(vis.y)));
-
-        })
-        .scaleExtent([1, 5])
-
-    vis.svg.call(vis.zoom);
-
+    vis.lineFunction = d3.line();
 
     vis.wrangleData();
 
 
-}
+};
 
 /*
  * Data wrangling
@@ -91,7 +77,7 @@ PriceChart.prototype.wrangleData = function(){
 
     // Update the visualization
     vis.updateVis();
-}
+};
 
 
 /*
