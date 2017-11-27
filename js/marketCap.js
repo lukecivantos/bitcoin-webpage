@@ -41,7 +41,7 @@ StackedAreaChart.prototype.initVis = function(){
 
     // TO-DO: Overlay with path clipping
     vis.svg.append("defs").append("clipPath")
-        .attr("id", "clip")
+        .attr("id", "clip2")
         .append("rect")
         .attr("width", vis.width)
         .attr("height", vis.height);
@@ -49,6 +49,7 @@ StackedAreaChart.prototype.initVis = function(){
     //append text label to be updated by tooltip
     vis.svg.append("text")
         .attr("id", "category-label")
+        .attr("fill", "white")
         .attr("x", -10)
         .attr("y",-10);
 
@@ -140,7 +141,8 @@ StackedAreaChart.prototype.updateVis = function(){
 
 // Draw the layers
     var categories = vis.svg.selectAll(".area")
-        .data(vis.displayData);
+        .data(vis.displayData)
+
 
     categories.enter().append("path")
         .attr("class", "area")
