@@ -12,6 +12,7 @@ var vendorMap, marketCap, priceChart;
 
 var marketCapData = [];
 var priceChartData = [];
+var timelineData = [];
 
 // Set ordinal color scale
 var colorScale = d3.scaleOrdinal(d3.schemeCategory20);
@@ -161,6 +162,16 @@ function loadCapData(error, bitcoinPrice, bitcoinCap, ethereumCap, bitcoinCashCa
         d.Year = parseCapDate(d.Year);
     });
 
+    marketCapData.forEach(function(d){
+       var year = {}
+       year["Year"] = d.Year;
+       year["MarketCap"] = d.Bitcoin + d.BitcoinCash + d.Dash + d.Ethereum + d.Litecoin + d.Ripple;
+       timelineData.push(year);
+    });
+
+    console.log(timelineData);
+
+
 
 
     // Update color scale (all column headers except "Year")
@@ -175,6 +186,7 @@ function createVisualizations(){
 
     // create instance of StackedAreaChart
     marketCap = new StackedAreaChart("stacked-area", marketCapData);
+    timeline = new Timeline("timeline", timelineData);
     priceChart = new PriceChart("priceChart", priceChartData);
 }
 
@@ -198,3 +210,18 @@ function adjustCategory(v) {
     vendorMap.wrangleData(null,v);
 }
 
+
+function brushed() {
+
+    // TO-DO: React to 'brushed' event
+
+    // Get the extent of the current brush
+    var selectionRange = d3.brushSelection(d3.select(".brush").node());
+
+    // Convert the extent into the corresponding domain values
+    marketCap.x.domain(selectionRange.map(timeline.xScale.invert));
+
+    // Update focus chart (detailed information)
+    marketCap.wrangleData();
+
+}
