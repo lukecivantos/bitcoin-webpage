@@ -216,13 +216,28 @@ form {
     clip-path: url(#clip2);
 }
 
-#firstName {
+#minMonth {
     color: black;
+    margin: auto;
+
 }
 
 
-#lastName {
+#maxMonth {
     color: black;
+    margin: auto;
+
+}
+#minYear {
+    color: black;
+    margin: auto;
+}
+
+
+#maxYear {
+    color: black;
+    margin: auto;
+
 }
 #filterYear {
     color: black;

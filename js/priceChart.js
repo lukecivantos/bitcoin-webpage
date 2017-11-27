@@ -13,9 +13,9 @@ PriceChart.prototype.initVis = function() {
 
     var vis = this;
 
-    vis.margin = { top: 20, right: 350, bottom: 60, left: 50 };
+    vis.margin = { top: 20, right: 50, bottom: 60, left: 50 };
 
-    vis.width = 1500 - vis.margin.left - vis.margin.right,
+    vis.width = 1100 - vis.margin.left - vis.margin.right,
         vis.height = 500 - vis.margin.top - vis.margin.bottom;
 
     // SVG drawing area
@@ -75,23 +75,31 @@ PriceChart.prototype.initVis = function() {
 PriceChart.prototype.wrangleData = function(){
     var vis = this;
 
-    var mini = $('#firstName').val();
-    var maxi = $('#lastName').val();
+    var minYear = $('#minYear').val();
+    var maxYear = $('#maxYear').val();
+    var minMonth = $('#minMonth').val();
+    var maxMonth = $('#maxMonth').val();
+
+    var minDate = minMonth + " " + minYear;
+    var maxDate = maxMonth + " " + maxYear;
+
     vis.filteredData = vis.data;
-    var parseTime = d3.timeParse("%Y");
 
-    if (mini != "") {
-        mini = parseTime(mini);
+    var parseTime = d3.timeParse("%m %Y");
+
+    if (minDate != " ") {
+        minDate = parseTime(minDate);
         vis.filteredData = vis.filteredData.filter(function (d) {
-            return d.Date > mini;
-        })
+            return d.Date > minDate;
+        });
     }
+    console.log(maxDate)
 
-    if (maxi != "") {
-        maxi = parseTime(maxi);
+    if (maxDate != " ") {
+        maxDate = parseTime(maxDate);
         vis.filteredData = vis.filteredData.filter(function (d) {
-            return d.Date < maxi;
-        })
+            return d.Date < maxDate;
+        });
     }
     vis.displayData = vis.filteredData;
 
