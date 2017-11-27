@@ -13,9 +13,9 @@ PriceChart.prototype.initVis = function() {
 
     var vis = this;
 
-    vis.margin = { top: 20, right: 50, bottom: 60, left: 50 };
+    vis.margin = { top: 20, right: 100, bottom: 60, left: 50 };
 
-    vis.width = 1100 - vis.margin.left - vis.margin.right,
+    vis.width = 1000 - vis.margin.left - vis.margin.right,
         vis.height = 500 - vis.margin.top - vis.margin.bottom;
 
     // SVG drawing area
@@ -134,18 +134,23 @@ PriceChart.prototype.updateVis = function() {
         .scale(vis.y);
 
     vis.svg.select("g.x-axis")
-        .call(vis.xAxis);
+        .transition()
+        .duration(800)
+            .call(vis.xAxis);
 
     vis.svg.select("g.y-axis")
-        .call(vis.yAxis);
+        .transition()
+        .duration(800)
+            .call(vis.yAxis);
 
     vis.lineFunction.x(function(d) { return vis.x(d.Date); });
     vis.lineFunction.y(function(d) { return vis.y(d.Close_Price); });
 
     vis.svg.select(".line")
         .attr("class", "line")
-        .attr("d", vis.lineFunction(vis.displayData))
-        .attr("clip-path", "url(#clip)");
+        .transition()
+        .duration(800)
+            .attr("d", vis.lineFunction(vis.displayData))
 
 
     var monthYear = d3.timeFormat("%m/%d/%Y");
