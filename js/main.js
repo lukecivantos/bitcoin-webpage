@@ -67,6 +67,8 @@ function loadCapData(error, bitcoinPrice, bitcoinCap, ethereumCap, bitcoinCashCa
 
     priceChartData = bitcoinPrice;
 
+    createPriceVis();
+
     for (var i = 0; i < bitcoinCap.length; i++){
         var layer = {};
         layer["Year"] = bitcoinCap[i].Date;
@@ -178,16 +180,21 @@ function loadCapData(error, bitcoinPrice, bitcoinCap, ethereumCap, bitcoinCashCa
     colorScale.domain(d3.keys(marketCapData[0]).filter(function(d){ return d != "Year"; }));
 
     // check that correct keys are extracted
-    createVisualizations();
+    createMarketVis();
 }
 
-function createVisualizations(){
+function createMarketVis(){
 
     // create instance of StackedAreaChart
     marketCap = new StackedAreaChart("stacked-area", marketCapData);
     timeline = new Timeline("timeline", timelineData);
+
+}
+
+function createPriceVis(){
     priceChart = new PriceChart("priceChart", priceChartData);
 }
+
 
 
 
