@@ -58,10 +58,15 @@
         <div class="row">
             <h3>What is Bitcoin?</h3>
             <br>
-            <p class="lead">Since 2009 when the first software implementing bitcoin was released, bitcoins rise in value has been nothing short of spectacular. Throughout 2017 bitcoin’s price has consistently reached new all-time highs and it’s grow shows no signs of showing. Hover over the chart to see Bitcoin’s exact price at any point since 2009, or Zoom in on the x axis to get a more detailed view of Bitcoin’s price over a smaller time period.</p>
+            <p class ="lead">Bitcoin is a digital currency, decentralized from any governing body, that allows user to user transfers without the need for a middleman. This is possible through the ingenious invention of the blockchain, software that relies on verifications from multiple parties to make any transaction valid. For verifying these transactions, the parties, known as miners, are rewarded with Bitcoins of their own.</p>
+            <br>
+            <p class="lead">Before we walk you through the technology behind Bitcoin, let's take a look at Bitcoin's price history. Since 2009 when the first software implementing Bitcoin was released, Bitcoin's rise in value has been nothing short of spectacular. Throughout 2017 Bitcoin’s price has consistently reached new all-time highs and it’s grow shows no signs of showing. Hover over the chart to see Bitcoin’s exact price at any point since 2009, or Zoom in on the x axis to get a more detailed view of Bitcoin’s price over a smaller time period.</p>
+            <br>
+            <br>
             <div class="container">
                 <div class="row" id="minForm">
                     <div class="col-md-6">
+                        <div id="timeLabel">Start:</div>
                         <select id='minMonth' onchange="filterYears()">
                             <option value='1'>Janaury</option>
                             <option value='2'>February</option>
@@ -88,6 +93,7 @@
                         </select>
                     </div>
                     <div class="col-md-6">
+                        <div id="timeLabel">End:</div>
                         <select id='maxMonth' onchange="filterYears()">
                             <option value='1'>Janaury</option>
                             <option value='2'>February</option>
@@ -115,28 +121,43 @@
                     </div>
                 </div>
             </div>
+            <br>
+            <br>
             <div id="priceChart"></div>
         </div>
     </div>
 </section>
+<div class="padding"></div>
 
 <section id="tech" class="bg-light">
     <div class="container">
         <div class="row">
             <h3>Technology Behind Bitcoin</h3>
-
+            <br>
+            <br>
             <h4>What is blockchain?</h4>
+            <br>
             <p class="lead">A blockchain can be thought of as a decentralized database. This database maintains a growing list of records, or blocks, which are linked in chronological order to the previous block. Bitcoin’s blockchain is a public ledger that contains a record of every previous bitcoin transaction, but provides anonymity to these transactions through preventing the public from seeing the specific details of each transaction. </p>
+            <br>
             <h4>What is mining?</h4>
+            <br>
             <p class="lead">Transactions using bitcoin are made possible by the blockchain, software that relies on verifications from multiple parties to make any transaction valid. For verifying these transactions, the parties, known as miners, are  rewarded with bitcoins of their own. In order to mine a block, the miner’s must find the answer to a complex mathematical problem. This is done by a method of brute force, with miners computers testing millions of different solutions until they find the correct one. Over time, verifying these transactions becomes harder, meaning the average number of attempts to find the solution increases, and more powerful and expensive computers are needed.</p>
-            <button id="hashButton" onclick="runHash()">Find Hash</button>
+            <br>
+            <br>
+            <div id="button-wrapper">
+                <button id="hashButton" onclick="runHash()">Find Hash</button>
+            </div>
+            <br>
+            <br>
             <p id="hashText">8358B3A2C8F9E1B7</p>
+            <br>
             <p id="errorHash"></p>
 
             <div class="pad"></div>
-
+            <h3>Bitcoin Forks</h3>
             <br>
             <p class="lead">When a contentious issue (such as the maximum block size capacity) cannot be agreed on by bitcoin developers, a fork in bitcoin’s blockchain can occur. During a fork, the bitcoin blockchain diverges into two potential new chains. After a fork both new blockchains will share their previous transaction history, although moving forward all new transactions will only appear in the blockchain they are verified on. Click on the nodes in the tree visualization to learn more about each of the six forks that have occured since bitcoin’s inception.</p>
+            <br>
             <div class="row">
                 <div class="col-md-6">
                     <div id="tree-area"></div>
@@ -144,10 +165,12 @@
                 <div class="col-md-6">
                     <br>
                     <br>
-                    <h4 id="forkName"></h4>
-                    <h4 id="forkDate"></h4>
-                    <p id="forkBlurb" class="lead"></p>
-                    <p id="forkResult" class="lead"></p>
+                    <h4 id="forkName">Bitcoin Core</h4>
+                    <br>
+                    <h4 id="forkDate">January 3rd 2009</h4>
+                    <br>
+                    <p id="forkBlurb">Bitcoin Core is the original bitcoin that was published by Satoshi Nakamoto. It was later renamed Bitcoin Core to help distinguish it from other versions of bitcoin created by forks.</p>
+                    <p id="forkResult"></p>
                 </div>
             </div>
         </div>
@@ -166,12 +189,18 @@
             <div class="padding"></div>
         </div>
     </div>
+
+    <div class="padding"></div>
+    <br>
+    <br>
     <div class="container">
         <div class="row">
             <h3>The Move to Mainstream</h3>
             <br>
-            <p id="mapText" class="lead"></p>
+            <p id="mapText" class="lead">While bitcoin’s price has continued to appreciate, it has yet to flourish as a widely accepted currency. That being said, bitcoin’s user base continues to grow, and today 10746 vendors in the US accept bitcoin as a method of payment. Explore the map below to see which vendors throughout the world currently accept bitcoin. Click the points on the map to find the name of the vendor and a link to the vendor’s website.</p>
         </div>
+        <br>
+        <br>
         <br>
         <div id="checkers">
             <!-- primary -->
@@ -248,6 +277,7 @@
                             document.getElementById('btnSearch').click()"/>
             <input type = "button" id = "btnSearch" value = "Find Zip" onclick = "adjustZip();"/>
         </div>
+        <br>
         <div id="vendorMap"></div>
     </div>
 </section>
@@ -257,7 +287,9 @@
         <div class="row">
             <h3>Looking Forward</h3>
             <br>
-            <p class="lead">Currently, the majority of bitcoin transitions occur over bitcoin exchanges rather than in  a retail  capacity. This must change for bitcoin to became a mainstream currency in the future. In order for Bitcoin to become widely accepted as a medium of exchange, it both needs to shed it’s association with the dark web, which still lingers from the high publicity surrounding the silk road website and be supported by more commercial businesses as a means of payment. The recent news concerning the creation of a bitcoin futures market by CME group Inc. is a huge step in the direction of widespread adoption for bitcoin,  giving the cryptocurrency  an element of authenticity that is has been lacking thus far. It will be extremely interesting to see how the futures market affects bitcoin’s price volatility,  and whether its creation will pave the way for more widespread retail adoption of bitcoin as an acceptable payment method in the future.</p>
+            <p class="lead">Currently, the majority of bitcoin transitions occur over bitcoin exchanges rather than in  a retail  capacity. This must change for bitcoin to became a mainstream currency in the future. In order for Bitcoin to become widely accepted as a medium of exchange, it both needs to shed it’s association with the dark web, which still lingers from the high publicity surrounding the silk road website and be supported by more commercial businesses as a means of payment.</p>
+            <br>
+            <p class="lead">The recent news concerning the creation of a bitcoin futures market by CME group Inc. is a huge step in the direction of widespread adoption for bitcoin, giving the cryptocurrency an element of authenticity that is has been lacking thus far. It will be extremely interesting to see how the futures market affects bitcoin’s price volatility, and whether its creation will pave the way for more widespread retail adoption of bitcoin as an acceptable payment method in the future.</p>
             <div class="padding"></div>
         </div>
     </div>

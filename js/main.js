@@ -1,9 +1,10 @@
 
 //loadData();
 
-var firstSentence = "On October 31st 2008, less than a year after the start of the 2007 financial crisis, an academic paper entitled “Bitcoin: A Peer-to-Peer Electronic Cash System” was published under the  name Satoshi Nakamoto,  a fictitious name created by the true author, who’s identity has remained anonymous to this day. Although the software for its implementation was complex, the idea behind bitcoin was simple. Bitcoin would be a digital currency, decentralized from any governing body, that would allow user to user transfers without the need for a middleman. This would be possible through the ingenious invention of the blockchain, software that relies on verifications from multiple parties to make any transaction valid. For verifying these transactions, the parties, known as miners, would be rewarded with bitcoins of their own."
+var firstSentence = "On October 31st 2008, less than a year after the start of the 2007 financial crisis, an academic paper entitled “Bitcoin: A Peer-to-Peer Electronic Cash System” was published. The author credited was Satoshi Nakamoto, a fictitious name created by the true author, who’s identity has remained anonymous to this day. Although the software for Bitcoin's implementation was complex, the idea behind Bitcoin was simple."
+
 var typed = new Typed('#top-text', {
-    strings: [firstSentence, "Scroll down to learn more about Bitcoin’s development "],
+strings: [firstSentence, "Scroll down to learn more about Bitcoin’s development."],
     typeSpeed: 30
 });
 
