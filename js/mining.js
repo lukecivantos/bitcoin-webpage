@@ -122,6 +122,7 @@ function runHash() {
                     .style("color", "green");
                 } else {
                     d3.select("#errorHash").text("Sorry. This hash is not below the level of difficulty. Right now, miners have to create an average of 5.7853271e+21  hashes to get one that works. Try again!")
+                        .style("color", "#c34539");
                 }
             }
         }, 40);
