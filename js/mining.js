@@ -1,3 +1,5 @@
+
+//Initalizes hashes for scrolling text to run through
 var hashes = [
     "649XQSFQHTK9R785",
     "BA1FPKNVMER4TXV9",
@@ -101,15 +103,16 @@ var hashes = [
     "P2ELM1HQ50SDFA16"
 ];
 
-
 function runHash() {
 
     var i = 0;
     d3.select("#errorHash").text("");
     myLoop();
+
+    // Recursively loops through hashes creating scrolling effect
     function myLoop() {
         setTimeout(function() {
-            //your code to be executed after 1 second
+            //executes code after 40 milliseconds
             d3.select("#hashText").text(hashes[i]);
             i += 1;
             if (i < 100) {
@@ -117,6 +120,7 @@ function runHash() {
             } else {
                 var g = Math.floor(Math.random() * (100 - 1 + 1)) + 1;
                 d3.select("#hashText").text(hashes[g]);
+                // Returns true once every 100 times
                 if (g == 36) {
                     d3.select("#errorHash").text("Wow! This hash worked! In theory, you just mined a coin! Right now, miners have to create a 5.7853271e+21 level of diifuclity hashes to get one that works. Good luck doing that again!")
                     .style("color", "green");

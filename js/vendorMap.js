@@ -1,9 +1,10 @@
 
 
 /*
- *  StationMap - Object constructor function
+ *  VendorMap - Object constructor function
  *  @param _parentElement   -- HTML element in which to draw the visualization
  *  @param _data            -- Array with all stations of the bike-sharing network
+ *  @param _mapPosition     -- Coordinates to set the map
  */
 
 VendorMap = function(_parentElement, _data, _mapPosition) {
@@ -18,7 +19,7 @@ VendorMap = function(_parentElement, _data, _mapPosition) {
 
 
 /*
- *  Initialize station map
+ *  Initialize Vendor Map
  */
 
 VendorMap.prototype.initVis = function() {
