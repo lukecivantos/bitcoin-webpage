@@ -44,14 +44,13 @@ queue()
                     + " " + (d.y + d.parent.y) / 2 + "," + d.parent.x
                     + " " + d.parent.y + "," + d.parent.x;
             });
-
         // adds each node as a group
         var node = g.selectAll(".node")
             .data(nodes.descendants())
             .enter().append("g")
             .attr("class", function(d) {
                 return "node" +
-                    (d.children ? " node--internal" : " node--leaf"); })
+                    (d.children ? " node--internal" : " node--leaf");})
             .attr("transform", function(d) {
                 return "translate(" + d.y + "," + d.x + ")"; })
             .on("click", function (d) {
@@ -63,7 +62,14 @@ queue()
 
         // adds the circle to the node
         node.append("circle")
-            .attr("r", 10);
+            .attr("r", 10)
+            .attr("id", function (d) {
+                if (d.depth == 1 && !d.children) {
+                        return "blink_me";
+                } else {
+                        return "";
+                }
+            });
 
         // adds the text to the node
         node.append("text")
@@ -73,6 +79,4 @@ queue()
             .style("text-anchor", function(d) {
                 return d.children ? "end" : "start"; })
             .text(function(d) { return d.data.name; });
-
-
     });

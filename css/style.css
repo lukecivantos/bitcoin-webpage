@@ -103,6 +103,14 @@ h3{
     fill: #f5ff1d;
 }
 
+#blink_me {
+    animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+    50% { opacity: 0; }
+}
+
 /*for price line chart */
 
 .line {
