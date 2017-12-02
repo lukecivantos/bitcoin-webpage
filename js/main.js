@@ -5,7 +5,7 @@ var firstSentence = "On October 31st 2008, less than a year after the start of t
 
 var typed = new Typed('#top-text', {
 strings: [firstSentence, "Scroll down to learn more about Bitcoin’s development."],
-    typeSpeed: 30
+    typeSpeed: 1
 });
 
 // Variable for the visualization instance
