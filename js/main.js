@@ -10,8 +10,8 @@ strings: [firstSentence],
 
 var typed2 = new Typed('#scrollDown', {
     strings: [secondSentence],
-    typeSpeed: 1,
-    startDelay: 9000
+    typeSpeed: 0,
+    startDelay: 7000
 });
 
 // Variable for the visualization instance
