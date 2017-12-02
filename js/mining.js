@@ -122,10 +122,10 @@ function runHash() {
                 d3.select("#hashText").text(hashes[g]);
                 // Returns true once every 100 times
                 if (g == 36) {
-                    d3.select("#errorHash").text("Wow! This hash worked! In theory, you just mined a coin! Right now, miners have to create an average of 5.7853271e+21 hashes to get one that works. Good luck doing that again!")
+                    d3.select("#errorHash").text("Wow! This hash worked! In theory, you just mined a coin! Right now, miners have to create an average of 5,785,327,100,000,000,000,000 (nearly six sextillion!)  hashes to get one that works. Good luck doing that again!")
                     .style("color", "green");
                 } else {
-                    d3.select("#errorHash").text("Sorry. This hash is not below the level of difficulty. Right now, miners have to create an average of 5.7853271e+21  hashes to get one that works. Try again!")
+                    d3.select("#errorHash").text("Sorry. This hash is not below the level of difficulty. Right now, miners have to create an average of 5,785,327,100,000,000,000,000 (nearly six sextillion!)  hashes to get one that works. Try again!")
                         .style("color", "#c34539");
                 }
             }
