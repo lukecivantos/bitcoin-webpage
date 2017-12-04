@@ -115,7 +115,7 @@ VendorMap.prototype.initVis = function() {
             $.getJSON(proxyurl + url + d.id, function(data){
                 el.innerHTML =
                     '<p class="mapTool">Name: ' + data.venue.name + '</p><p>Category: '+ data.venue.category +'</p></p><p>City: '+ data.venue.city +
-                    '</p><p>Website: <a href="' + data.venue.website + '">' + data.venue.website + '</a></p>';
+                    '</p><p>Website: <a target="_blank" href="' + data.venue.website + '">' + data.venue.website + '</a></p>';
             });
             return el;
         });
