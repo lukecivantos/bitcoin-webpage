@@ -62,14 +62,23 @@ queue()
 
         // adds the circle to the node
         node.append("circle")
+            .attr("r", 10);
+
+        svg.append("circle")
             .attr("r", 10)
-            .attr("id", function (d) {
-                if (d.depth == 1 && !d.children) {
-                        return "blink_me";
-                } else {
-                        return "";
-                }
+            .attr("id", "blink_me")
+            .attr("cx", 150)
+            .attr("cy", 80)
+            .attr("fill", "#f5ff1d")
+            .on("click", function (d) {
+                d3.select("#forkName").text("Bitcoin XT");
+                d3.select("#forkDate").text("August 15th 2015");
+                d3.select("#forkBlurb").text("As with many of the bitcoin forks, the debate leading up to the split centered around Bitcoin’s block size cap. Bitcoin’s 1mb block size cap means the network can process a maximum of around 300,000 transactions a day. BitcoinXT sought to rectify this by increasing the block size to 8mb immediately while planning to double that number every two years moving forward.");
+                d3.select("#forkResult").text("The proposal did not get much support, and since August 2015 the number of users has consistently declined. BitcoinXT saw less than 30 users in January 2017 and does not exist today.");
+                d3.select(this).remove();
             });
+
+
 
         // adds the text to the node
         node.append("text")
