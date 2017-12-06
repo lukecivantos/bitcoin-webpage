@@ -83,13 +83,13 @@ var typed7 = new Typed('#s7', {
 var typed8 = new Typed('#s8', {
     strings: [s8],
     typeSpeed: 15,
-    startDelay: 23500
+    startDelay: 24500
 });
 
 var typed9 = new Typed('#scrollDown', {
     strings: [secondSentence],
     typeSpeed: 15,
-    startDelay: 27000
+    startDelay: 28000
 });
 
 // Variable for the visualization instance
