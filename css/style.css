@@ -150,7 +150,7 @@ h3{
 
 
 #vendorMap {
-    width: 60%;
+    width: 70%;
     height: 500px;
     text-align: center;
     margin: auto;
@@ -162,7 +162,8 @@ h3{
     font-size: 20px;
 }
 .basic-header {
-    font-size: 40px;
+    font-size: 32px;
+    text-align: center;
 }
 
 h4 {
@@ -224,7 +225,7 @@ form {
 }
 
 #s0 {
-    font-size: 50px;
+    font-size: 32px;
     font-family: avenir;
     color: white;
 }
@@ -398,4 +399,13 @@ button:hover{
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
+}
+
+.leaflet-popup-tip-container {
+    width: 40px;
+    height: 20px;
+    left: 50%;
+    margin-left: -50%;
+    overflow: hidden;
+    pointer-events: none;
 }
