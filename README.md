@@ -1,4 +1,4 @@
-# Project Title
+# Cracking the Bitcoin Code
 
 One Paragraph of project description goes here
 
