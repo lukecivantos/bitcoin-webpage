@@ -129,6 +129,10 @@ VendorMap.prototype.initVis = function() {
             vis.defaultMarkers.addLayer(vis.mark);
 
         }
+
+
+
+
     });
 
 
