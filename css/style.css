@@ -90,7 +90,6 @@ section{
 }
 
 h3{
-    text-align: center;
     color: white;
 }
 
@@ -158,16 +157,18 @@ h3{
 
 .lead {
     color: grey;
-    padding-left: 5%;
-    padding-right: 5%;
-    text-align: center;
+    text-align: left;
+    font-size: 35px;
+}
+.basic-header {
+    font-size: 60px;
 }
 
 h4 {
     color: white;
     margin: auto;
-    text-align: center;
-    font-size: 20px;
+    text-align: left;
+    font-size: 40px;
 }
 
 .mapTool {
@@ -221,10 +222,6 @@ form {
     margin: auto;
 }
 
-#mapText {
-    text-align: center;
-    margin: auto;
-}
 #hashButton {
     text-align: center;
     margin: auto;
@@ -319,4 +316,3 @@ button:hover{
 #tree-area{
     padding-left: 6%;
 }
-
