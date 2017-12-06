@@ -28,6 +28,9 @@ var s2 = "less than a year after the start of the 2007 financial crisis,";
 var s3 = "an academic paper entitled “Bitcoin: A Peer-to-Peer Electronic Cash System” was published.";
 var s4 = "The author credited was Satoshi Nakamoto, a fictitious name created by the true author, who’s identity has remained anonymous to this day.";
 var s5 = "Although the software for Bitcoin's implementation was complex, the idea behind Bitcoin was simple.";
+var s6 = "Bitcoin would be a digital currency, decentralized from any governing body, that would allow user to user transfers without the need for a middleman.";
+var s7 = "This would be possible through the ingenious invention of the blockchain, software that relies on verifications from multiple parties to make any transaction valid. ";
+var s8 = "For verifying these transactions, the parties, known as miners, would be rewarded with bitcoins of their own.";
 var secondSentence = "Scroll down to learn more about Bitcoin’s development.";
 var typed0 = new Typed('#s0', {
     strings: [s0],
@@ -65,10 +68,28 @@ var typed5 = new Typed('#s5', {
     startDelay: 12500
 });
 
-var typed7 = new Typed('#scrollDown', {
+var typed6 = new Typed('#s6', {
+    strings: [s6],
+    typeSpeed: 15,
+    startDelay: 16500
+});
+
+var typed7 = new Typed('#s7', {
+    strings: [s7],
+    typeSpeed: 15,
+    startDelay: 20500
+});
+
+var typed8 = new Typed('#s8', {
+    strings: [s8],
+    typeSpeed: 15,
+    startDelay: 23500
+});
+
+var typed9 = new Typed('#scrollDown', {
     strings: [secondSentence],
     typeSpeed: 15,
-    startDelay: 16000
+    startDelay: 27000
 });
 
 // Variable for the visualization instance

@@ -15,7 +15,7 @@ h2 {
 .intro-text {
     color: white;
     font-family: "Courier New";
-    font-size: 25px;
+    font-size: 20px;
     display: inline;
 
 }
@@ -223,8 +223,9 @@ form {
 }
 
 #s0 {
-    font-size: 80px;
+    font-size: 70px;
     font-family: avenir;
+    color: white;
 }
 
 #hashButton {
