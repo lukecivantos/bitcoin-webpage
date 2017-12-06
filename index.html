@@ -247,12 +247,10 @@
         <br>
         <div data-entrance="fade" id="checkers">
             <!-- primary -->
-            <div class="pretty p-default">
-                <input type="checkbox" name="default" id="default" value="default" checked="checked" onclick = "adjustCategory(document.getElementById('default').value);">
-                <div class="state p-primary">
-                    <label> Default</label>
-                </div>
-            </div>
+            <label class="con">Default
+                <input type="checkbox" name="default" id="defaults" value="default" checked="checked" onclick = "adjustCategory(document.getElementById('default').value);">
+                <span class="checkmark"></span>
+            </label>
             <div class="pretty p-default">
                 <input type="checkbox" name="atm" id="atm" value="atm" checked="checked" onclick = "adjustCategory(document.getElementById('atm').value);">
                 <div class="state p-primary">

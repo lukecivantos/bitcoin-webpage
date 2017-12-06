@@ -24,14 +24,14 @@ PriceChart.prototype.initVis = function() {
         .attr("height", vis.height + vis.margin.top + vis.margin.bottom)
         .append("g")
         .attr("transform", "translate(" + vis.margin.left + "," + vis.margin.top + ")");
-/*
-    // Define the clipping region (copied from lab)
-    vis.svg.append("defs").append("clipPath")
-        .attr("id", "clip")
-        .append("rect")
-        .attr("width", vis.width)
-        .attr("height", vis.height)
-*/
+    /*
+        // Define the clipping region (copied from lab)
+        vis.svg.append("defs").append("clipPath")
+            .attr("id", "clip")
+            .append("rect")
+            .attr("width", vis.width)
+            .attr("height", vis.height)
+    */
     vis.x = d3.scaleLinear()
         .range([0, vis.width]);
 
@@ -119,13 +119,19 @@ PriceChart.prototype.updateVis = function() {
     var vis = this;
 
     vis.x.domain([
-        d3.min(vis.displayData,function (d) {return d.Date}),
-        d3.max(vis.displayData,function (d) {return d.Date})
+        d3.min(vis.displayData, function (d) {
+            return d.Date
+        }),
+        d3.max(vis.displayData, function (d) {
+            return d.Date
+        })
     ]);
 
-    vis.y.domain ([
+    vis.y.domain([
         0,
-        d3.max(vis.displayData,function (d) {return d.Close_Price})
+        d3.max(vis.displayData, function (d) {
+            return d.Close_Price
+        })
     ]);
 
     vis.xAxis
@@ -136,79 +142,143 @@ PriceChart.prototype.updateVis = function() {
     vis.svg.select("g.x-axis")
         .transition()
         .duration(800)
-            .call(vis.xAxis);
+        .call(vis.xAxis);
 
     vis.svg.select("g.y-axis")
         .transition()
         .duration(800)
-            .call(vis.yAxis);
+        .call(vis.yAxis);
 
-    vis.lineFunction.x(function(d) { return vis.x(d.Date); });
-    vis.lineFunction.y(function(d) { return vis.y(d.Close_Price); });
+    vis.lineFunction.x(function (d) {
+        return vis.x(d.Date);
+    });
+    vis.lineFunction.y(function (d) {
+        return vis.y(d.Close_Price);
+    });
 
     vis.svg.select(".line")
         .attr("class", "line")
         .transition()
         .duration(800)
-            .attr("d", vis.lineFunction(vis.displayData))
+        .attr("d", vis.lineFunction(vis.displayData))
 
 
     var monthYear = d3.timeFormat("%m/%d/%Y");
 
-    vis.textPop = vis.svg.append("text")
-        .attr("class","tracerText")
-        .attr("text-anchor", "start")
-        .attr("y", 15)
-        .attr("x", 0)
-        .attr("opacity",0)
-        .style('fill', 'white')
-        .attr("font-size","14px")
-        .attr("font-weight","bold")
-        .text("");
+    /*  var focus = vis.svg.append("g")
+          .attr("class", "focus")
+          .style("display", "none");
 
-    vis.textDate = vis.svg.append("text")
-        .attr("class","tracerText")
-        .attr("text-anchor", "start")
-        .attr("y", 35)
-        .attr("x", 0)
-        .attr("opacity",0)
+      var bisectDate = d3.bisector(function(d) { return d.Date; }).left;
+
+      focus.append("circle")
+          .attr("r", 4.5);
+
+      focus.append("text")
+          .attr("x", 9)
+          .attr("dy", ".35em");
+
+      vis.svg.append("rect")
+          .attr("class", "overlay")
+          .attr("width", vis.width)
+          .attr("height", vis.height)
+          .on("mouseover", function() { focus.style("display", null); })
+          .on("mouseout", function() { focus.style("display", "none"); })
+          .on("mousemove", mousemove);
+
+      function mousemove() {
+          var x0 = vis.x.invert(d3.mouse(this)[0]),
+              i = bisectDate(vis.data, x0, 1),
+              d0 = vis.data[i - 1],
+              d1 = vis.data[i],
+              d = x0 - d0.Date > d1.Date - x0 ? d1 : d0;
+          focus.attr("transform", "translate(" + vis.x(d.Date) + "," + vis.y(d.Close_Price) + ")");
+          focus.select("text").text(d.Close_Price);
+      }
+
+  */
+
+    var monthYear = d3.timeFormat("%m/%d/%Y");
+
+    var focus = vis.svg.append("g")
+        .attr("class", "focus")
+        .style("display", "none");
+
+    focus.append("rect")
+        .attr("class", "y")
+        .style("fill", "white")
+        .style("stroke", "none")
+        .attr("width", 1)
+        .attr("height", vis.height);
+
+    // append the text at the intersection
+    focus.append("text")
+        .attr("class", "y-price")
         .style("fill", "white")
         .text("");
 
-    vis.tracerLine = vis.svg.append("rect")
-        .attr("class","tracer")
-        .attr("height",vis.height)
-        .attr("width",0.5)
-        .attr("fill", "white")
-        .attr("x",0)
-        .attr("y",0)
-        .attr("opacity",0);
+    // append the text at the intersection
+    focus.append("text")
+        .attr("class", "y-date")
+        .style("fill", "white")
+        .text("");
 
 
-    vis.svg.selectAll("mouse-catcher.rect")
-        .data(vis.displayData)
-        .enter()
-        .append("rect")
-        .attr("class","mouse-catcher")
-        .attr("height",vis.height)
-        .attr("width",50)
-        .attr("x",function (d) {
-            return vis.x(d.Date);
+    // append the rectangle to capture mouse
+    vis.svg.append("rect")
+        .attr("width", vis.width)
+        .attr("height", vis.height)
+        .style("fill", "none")
+        .style("pointer-events", "all")
+        .on("mouseover", function () {
+            focus.style("display", null);
         })
-        .style("opacity",0)
-        .on("mouseover", function(d) {
-            vis.tracerLine.attr("x",vis.x(d.Date));
-            vis.tracerLine.attr("opacity",1);
-            vis.textPop.attr("x",vis.x(d.Date) + 5);
-            vis.textPop.attr("opacity",1);
-            vis.textPop.text("Price: $" + d.Close_Price);
-            vis.textDate.attr("x",vis.x(d.Date) + 5);
-            vis.textDate.attr("opacity",1);
-            vis.textDate.text(monthYear(d.Date));
+        .on("mouseout", function () {
+            focus.style("display", "none");
         })
-        .on("mouseout", function() {
-            vis.tracerLine.attr("opacity",0);
-            vis.textPop.attr("opacity",0);
-            vis.textDate.attr("opacity",0);
-        });
+        .on("mousemove", mousemove);
+
+    var padding = 50;
+
+
+    var bisectDate = d3.bisector(function (d) {
+        return d.Date;
+    }).left;
+
+    function mousemove() {
+        var x0 = vis.x.invert(d3.mouse(this)[0]),
+            i = bisectDate(vis.data, x0, 1),
+            d0 = vis.data[i - 1],
+            d1 = vis.data[i],
+            d = x0 - d0.Close_Price > d1.Close_Price - x0 ? d1 : d0;
+
+        focus.select("rect.y")
+            .style("stroke", "white")
+            .attr("transform",
+                "translate(" + vis.x(d.Date) + "," +
+                0 + ")");
+
+        focus.select("text.y-price")
+            .text("Price: $" + d.Close_Price)
+            .attr("transform", function () {
+                if (vis.x(d.Date) + 5 < vis.width - padding) {
+                    return "translate(" + (vis.x(d.Date) + 5) + "," +
+                        (padding + 12) + ")";
+                } else {
+                    return "translate(" + (vis.x(d.Date) - 100) + "," +
+                        (padding + 12) + ")";
+                }
+            });
+        focus.select("text.y-date")
+            .text(monthYear(d.Date))
+            .attr("transform", function () {
+                if (vis.x(d.Date) + 5 < vis.width - padding) {
+                    return "translate(" + (vis.x(d.Date) + 5) + "," +
+                        (padding + 28) + ")";
+                } else {
+                    return "translate(" + (vis.x(d.Date) - 80) + "," +
+                        (padding + 28) + ")";
+                }
+            });
+    }
 };
