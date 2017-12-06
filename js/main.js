@@ -104,7 +104,7 @@ var colorScale = d3.scaleOrdinal(d3.schemeCategory20);
 
 // convert Strings into date objects
 var parseCapDate = d3.timeParse("%e-%b-%y");
-var parseDate = d3.timeParse("%Y-%m-%d %I:%M:%S");
+var parseDate = d3.timeParse("%Y-%m-%d");
 
 var url =  'https://coinmap.org/api/v1/venues/';
 var proxyurl = "https://cors-anywhere.herokuapp.com/";

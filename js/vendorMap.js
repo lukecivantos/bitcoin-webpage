@@ -93,10 +93,11 @@ VendorMap.prototype.initVis = function() {
                 return "blue"
         }
     }
-
-
-    d3.select('#atm .checkmark')
-        .style("background-color","green");
+    var n =  d3.selectAll('.checkmark');
+    var i1 = 0;
+    while (i1 < 11) {
+        n[i1].style("background-color", styleColor());
+    }
 
     vis.displayData.venues.forEach(function (d) {
         // Create marker
