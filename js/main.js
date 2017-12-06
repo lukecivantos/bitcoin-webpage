@@ -1,17 +1,64 @@
 
-//loadData();
+$(document).ready(function(){
 
-var firstSentence = "On October 31st 2008, less than a year after the start of the 2007 financial crisis, an academic paper entitled “Bitcoin: A Peer-to-Peer Electronic Cash System” was published. The author credited was Satoshi Nakamoto, a fictitious name created by the true author, who’s identity has remained anonymous to this day. Although the software for Bitcoin's implementation was complex, the idea behind Bitcoin was simple."
-var secondSentence = "Scroll down to learn more about Bitcoin’s development.";
-var typed = new Typed('#top-text', {
-strings: [firstSentence],
-    typeSpeed: 1
+    // hide .navbar first
+    $(".navbar-fixed-top").hide();
+
+    // fade in .navbar
+    $(function () {
+        $(window).scroll(function () {
+            // set distance user needs to scroll before we fadeIn navbar
+            if ($(this).scrollTop() > 100) {
+                $('.navbar-fixed-top').fadeIn();
+            } else {
+                $('.navbar-fixed-top').fadeOut();
+            }
+        });
+
+
+    });
+
 });
 
-var typed2 = new Typed('#scrollDown', {
+
+//loadData();
+
+var s1 = "On October 31st 2008,";
+var s2 = "less than a year after the start of the 2007 financial crisis,";
+var s3 = "an academic paper entitled “Bitcoin: A Peer-to-Peer Electronic Cash System” was published.";
+var s4 = "The author credited was Satoshi Nakamoto, a fictitious name created by the true author, who’s identity has remained anonymous to this day.";
+var s5 = "Although the software for Bitcoin's implementation was complex, the idea behind Bitcoin was simple.";
+var secondSentence = "Scroll down to learn more about Bitcoin’s development.";
+var typed1 = new Typed('#s1', {
+strings: [s1],
+    typeSpeed: 25
+});
+var typed2 = new Typed('#s2', {
+    strings: [s2],
+    typeSpeed: 15,
+    startDelay: 2000
+
+});
+var typed3 = new Typed('#s3', {
+    strings: [s3],
+    typeSpeed: 15,
+    startDelay: 4000
+});
+var typed4 = new Typed('#s4', {
+    strings: [s4],
+    typeSpeed: 15,
+    startDelay: 9000
+});
+var typed5 = new Typed('#s5', {
+    strings: [s5],
+    typeSpeed: 15,
+    startDelay: 13000
+});
+
+var typed7 = new Typed('#scrollDown', {
     strings: [secondSentence],
-    typeSpeed: 0,
-    startDelay: 7000
+    typeSpeed: 15,
+    startDelay: 17000
 });
 
 // Variable for the visualization instance

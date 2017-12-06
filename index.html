@@ -11,6 +11,10 @@
     <!-- CSS libraries -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/leaflet.css">
+    <style>
+        /* Ensure elements are hidden while ScrollEntrance is loading */
+        [data-entrance] { visibility: hidden; }
+    </style>
 
 
     <!-- Custom CSS code -->
@@ -44,26 +48,32 @@
     </div>
 </nav>
 
-<header>
-    <div id="intro">
-        <div class="container text-center">
-            <p id="top-text"></p>
-            <p id="scrollDown"></p>
-            <div id="block"></div>
-        </div>
-    </div>
-</header>
+<div class="container" id="intro">
+    <p id="s1" class="intro-text"></p><br><br>
+    <p id="s2" class="intro-text"></p><br><br>
+    <p id="s3" class="intro-text"></p><br><br>
+    <p id="s4" class="intro-text"></p><br><br>
+    <p id="s5" class="intro-text"></p><br><br>
+    <p id="scrollDown" class="intro-text blink_me"></p>
+    <div id="block"></div>
+</div>
+
 
 <section id="basics">
     <div class="container">
-        <div class="row">
+        <div data-entrance="fade">
             <h3>What is Bitcoin?</h3>
-            <br>
+        </div>
+        <br>
+        <div data-entrance="fade">
             <p class ="lead">Bitcoin is a digital currency, decentralized from any governing body, that allows user to user transfers without the need for a middleman. This is possible through the ingenious invention of the blockchain, software that relies on verifications from multiple parties to make any transaction valid. For verifying these transactions, the parties, known as miners, are rewarded with Bitcoins of their own.</p>
-            <br>
+        </div>
+        <br>
+        <div data-entrance="fade">
             <p class="lead">Before we walk you through the technology behind Bitcoin, let's take a look at Bitcoin's price history. Since 2009 when the first software implementing Bitcoin was released, Bitcoin's rise in value has been nothing short of spectacular. Throughout 2017 Bitcoin’s price has consistently reached new all-time highs and it’s grow shows no signs of showing. Hover over the chart to see Bitcoin’s exact price at any point since 2009, or Zoom in on the x axis to get a more detailed view of Bitcoin’s price over a smaller time period.</p>
-            <br>
-            <br>
+        </div>
+        <br>
+        <br>
             <div class="container">
                 <div class="row" id="minForm">
                     <div class="col-md-6">
@@ -316,6 +326,8 @@
 <script src="js/queue.v1.min.js"></script>
 <script src="js/typed.js"></script>
 <script src="js/leaflet.js"></script>
+<script src="js/scroll-entrance.js"></script>
+
 <!-- Plugin JavaScript -->
 <script src="js/jquery-easing/jquery.easing.min.js"></script>
 

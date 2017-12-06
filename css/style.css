@@ -12,15 +12,24 @@ h2 {
     color: white;
 }
 
-#top-text {
+.intro-text {
     color: white;
     font-family: "Courier New";
-}
+    font-size: 25px;
+    display: inline;
 
+}
+.typed-cursor{
+    opacity: 0;
+}
 #scrollDown {
     color: white;
     font-family: "Courier New";
-    margin-top: 300px;
+    margin-top: 50px;
+}
+
+#intro {
+    margin-top: 70px;
 }
 
 
@@ -67,9 +76,6 @@ select {
     padding-right: 20px;
 }
 
-#intro{
-    background-color: black;
-}
 
 .navbar-inverse .navbar-brand {
     color: #c4c4c4;
@@ -103,7 +109,7 @@ h3{
     fill: #f5ff1d;
 }
 
-#blink_me {
+.blink_me {
     animation: blinker 1s linear infinite;
 }
 

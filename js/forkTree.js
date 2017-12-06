@@ -66,7 +66,7 @@ queue()
 
         svg.append("circle")
             .attr("r", 10)
-            .attr("id", "blink_me")
+            .attr("class", "blink_me")
             .attr("cx", 150)
             .attr("cy", 80)
             .attr("fill", "#f5ff1d")
