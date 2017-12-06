@@ -95,6 +95,9 @@ VendorMap.prototype.initVis = function() {
     }
 
 
+    d3.select('#atm .checkmark')
+        .style("background-color","green");
+
     vis.displayData.venues.forEach(function (d) {
         // Create marker
         //d.name + "<br>" + "Category: " + d.category
