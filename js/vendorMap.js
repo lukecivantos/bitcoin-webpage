@@ -84,7 +84,7 @@ VendorMap.prototype.initVis = function() {
                 return "silver";
                 break;
             case 'sports':
-                return "white";
+                return "LightSkyBlue";
                 break;
             case 'default':
                 return "blue";
@@ -94,7 +94,7 @@ VendorMap.prototype.initVis = function() {
         }
     }
 
-    var col = {0:"blue",1:"yellow",2:"red",3:"orange",4:"green",5:"purple",6:"lime",7:"aqua",8:"fuchsia",9:"silver",10:sports};
+    var col = {0:"blue",1:"yellow",2:"red",3:"orange",4:"green",5:"purple",6:"lime",7:"aqua",8:"fuchsia",9:"silver",10:"LightSkyBlue"};
     var n =  d3.selectAll('.checkmark')
         .each(function (d,i) {
            d3.select(this).style("background-color", col[i]);
