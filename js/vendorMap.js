@@ -93,11 +93,19 @@ VendorMap.prototype.initVis = function() {
                 return "blue"
         }
     }
-    var n =  d3.selectAll('.checkmark');
-    var i1 = 0;
+
+    var col = {0:"blue",1:"yellow",2:"red",3:"orange",4:"green",5:"purple",6:"lime",7:"aqua",8:"fuchsia",9:"silver",10:sports};
+    var n =  d3.selectAll('.checkmark')
+        .each(function (d,i) {
+           d3.select(this).style("background-color", col[i]);
+        });
+
+    /*
     while (i1 < 11) {
-        n[i1].style("background-color", styleColor());
-    }
+        console.log(n._groups[0][i1]);
+        n._groups[0][i1].style("background-color", styleColor());
+        i1 += 1;
+    }*/
 
     vis.displayData.venues.forEach(function (d) {
         // Create marker
