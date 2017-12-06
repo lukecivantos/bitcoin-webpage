@@ -62,6 +62,7 @@ queue()
 
         // adds the circle to the node
         node.append("circle")
+            .attr("cursor", "pointer")
             .attr("r", 10);
 
         svg.append("circle")
@@ -70,6 +71,7 @@ queue()
             .attr("cx", 150)
             .attr("cy", 80)
             .attr("fill", "#f5ff1d")
+            .attr("cursor", "pointer")
             .on("click", function (d) {
                 d3.select("#forkName").text("Bitcoin XT");
                 d3.select("#forkDate").text("August 15th 2015");
