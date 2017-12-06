@@ -47,18 +47,18 @@ var typed3 = new Typed('#s3', {
 var typed4 = new Typed('#s4', {
     strings: [s4],
     typeSpeed: 15,
-    startDelay: 9000
+    startDelay: 6500
 });
 var typed5 = new Typed('#s5', {
     strings: [s5],
     typeSpeed: 15,
-    startDelay: 13000
+    startDelay: 10500
 });
 
 var typed7 = new Typed('#scrollDown', {
     strings: [secondSentence],
     typeSpeed: 15,
-    startDelay: 17000
+    startDelay: 14000
 });
 
 // Variable for the visualization instance

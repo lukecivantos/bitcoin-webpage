@@ -74,7 +74,7 @@
         </div>
         <br>
         <br>
-            <div class="container">
+            <div data-entrance="fade" class="container">
                 <div class="row" id="minForm">
                     <div class="col-md-6">
                         <div id="timeLabel">Start:</div>
@@ -134,7 +134,7 @@
             </div>
             <br>
             <br>
-            <div id="priceChart"></div>
+            <div data-entrance="fade" id="priceChart"></div>
         </div>
     </div>
 </section>
@@ -143,26 +143,38 @@
 <section id="tech" class="bg-light">
     <div class="container">
         <div class="row">
-            <h3>Technology Behind Bitcoin</h3>
+            <div data-entrance="fade">
+                <h3>Technology Behind Bitcoin</h3>
+            </div>
             <br>
             <br>
+            <div data-entrance="fade">
             <h4>What is blockchain?</h4>
+            </div>
             <br>
-            <p class="lead">A blockchain can be thought of as a decentralized database. This database maintains a growing list of records, or blocks, which are linked in chronological order to the previous block. Bitcoin’s blockchain is a public ledger that contains a record of every previous bitcoin transaction, but provides anonymity to these transactions through preventing the public from seeing the specific details of each transaction. </p>
+            <div data-entrance="fade">
+                <p class="lead">A blockchain can be thought of as a decentralized database. This database maintains a growing list of records, or blocks, which are linked in chronological order to the previous block. Bitcoin’s blockchain is a public ledger that contains a record of every previous bitcoin transaction, but provides anonymity to these transactions through preventing the public from seeing the specific details of each transaction. </p>
+            </div>
             <br>
-            <h4>What is mining?</h4>
+            <div data-entrance="fade">
+                <h4>What is mining?</h4>
+            </div>
             <br>
-            <p class="lead">Transactions using bitcoin are made possible by the blockchain, software that relies on verifications from multiple parties to make any transaction valid. For verifying these transactions, the parties, known as miners, are  rewarded with bitcoins of their own. In order to mine a block, the miner’s must find the answer to a complex mathematical problem. This is done by a method of brute force, with miners computers testing millions of different solutions until they find the correct one. Over time, verifying these transactions becomes harder, meaning the average number of attempts to find the solution increases, and more powerful and expensive computers are needed.</p>
+            <div data-entrance="fade">
+                <p class="lead">Transactions using bitcoin are made possible by the blockchain, software that relies on verifications from multiple parties to make any transaction valid. For verifying these transactions, the parties, known as miners, are  rewarded with bitcoins of their own. In order to mine a block, the miner’s must find the answer to a complex mathematical problem. This is done by a method of brute force, with miners computers testing millions of different solutions until they find the correct one. Over time, verifying these transactions becomes harder, meaning the average number of attempts to find the solution increases, and more powerful and expensive computers are needed.</p>
+            </div>
             <br>
             <br>
-            <div id="button-wrapper">
+            <div data-entrance="fade" id="button-wrapper">
                 <button id="hashButton" onclick="runHash()">Find Hash</button>
             </div>
             <br>
             <br>
-            <p id="hashText">8358B3A2C8F9E1B7</p>
-            <br>
-            <p id="errorHash"></p>
+            <div data-entrance="fade">
+                <p id="hashText">8358B3A2C8F9E1B7</p>
+                <br>
+                <p id="errorHash"></p>
+            </div>
 
             <div class="pad"></div>
             <h3>Bitcoin Forks</h3>
