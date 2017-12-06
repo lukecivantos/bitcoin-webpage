@@ -222,6 +222,11 @@ form {
     margin: auto;
 }
 
+#s0 {
+    font-size: 80px;
+    font-family: avenir;
+}
+
 #hashButton {
     text-align: center;
     margin: auto;
