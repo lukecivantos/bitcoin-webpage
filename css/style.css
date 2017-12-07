@@ -157,9 +157,11 @@ h3{
 }
 
 .lead {
-    color: grey;
+    color: #d0d0d0;
     text-align: left;
     font-size: 20px;
+    padding-left: 4%;
+    padding-right: 4%;
 }
 .basic-header {
     font-size: 32px;
@@ -238,6 +240,7 @@ form {
     text-align: center;
     color: white;
     font-size: 50px;
+    font-family: "Courier New"
 }
 #errorHash {
     text-align: center;
@@ -408,4 +411,47 @@ button:hover{
     margin-left: -50%;
     overflow: hidden;
     pointer-events: none;
+}
+
+.card{
+    margin: 0 auto;
+    float: none;
+}
+
+.card-img-top{
+    width: 250px;
+    height: 148px;
+    border-radius: 7px 7px 0px 0px;
+}
+
+.card-block{
+    background-color: white;
+    width: 250px;
+    border-radius: 0px 0px 7px 7px;
+    padding: 10%;
+}
+
+.btn-card{
+    background-color: #222222;
+    color: white;
+    padding-left: 9%;
+    padding-right: 9%;
+    text-align: center;
+
+}
+
+.btn-card:hover{
+    background-color: #222222b3;
+    color:white;
+}
+
+.btn-card:focus{
+    background-color: #222222;
+    color: white;
+}
+
+.card-title{
+    color: black;
+    font-size: 18px;
+    padding-bottom: 4%;
 }
