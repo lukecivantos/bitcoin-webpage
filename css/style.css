@@ -62,7 +62,7 @@ select {
     margin-left: 50px;
 }
 
-#block {
+.block {
     height: 500px;
 }
 
@@ -109,7 +109,7 @@ h3{
 }
 
 .blink_me {
-    animation: blinker 1s linear infinite;
+    animation: blinker 3s linear infinite;
 }
 
 @keyframes blinker {
@@ -455,3 +455,38 @@ button:hover{
     font-size: 18px;
     padding-bottom: 4%;
 }
+
+#amelia {
+    width: 200px;
+    height: 200px;
+}
+#luke {
+    width: 200px;
+    height: 200px;
+
+}
+#flood {
+    width: 200px;
+    height: 200px;
+}
+#conamelia {
+    text-align: center;
+    margin: auto;
+}
+
+#conluke {
+    text-align: center;
+    margin: auto;
+}
+
+#conflood {
+    text-align: center;
+    margin: auto;
+}
+
+.img-circle {
+    border-radius: 50%;
+}
+
+
+
