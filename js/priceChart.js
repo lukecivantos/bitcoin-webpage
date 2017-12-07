@@ -11,17 +11,15 @@ PriceChart = function(_parentElement, _data, _eventHandler){
 
 PriceChart.prototype.initVis = function() {
 
-    var slider = document.getElementById('slider');
+    var startSlider = document.getElementById('slider');
 
-    noUiSlider.create(slider, {
+    noUiSlider.create(startSlider, {
         start: [20, 80],
-        connect: true,
         range: {
-            'min': 0,
-            'max': 100
+            'min': [ 0 ],
+            'max': [ 100 ]
         }
     });
-
 
     var vis = this;
 
