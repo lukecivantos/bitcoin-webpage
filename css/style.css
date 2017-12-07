@@ -409,3 +409,38 @@ button:hover{
     overflow: hidden;
     pointer-events: none;
 }
+
+#amelia {
+    width: 100px;
+    height: auto;
+}
+#luke {
+    width: 100px;
+    height: auto;
+
+}
+#flood {
+    width: 100px;
+    height: auto;
+}
+#conamelia {
+    text-align: center;
+    margin: auto;
+}
+
+#conluke {
+    text-align: center;
+    margin: auto;
+}
+
+#conflood {
+    text-align: center;
+    margin: auto;
+}
+
+
+
+
+
+
+
