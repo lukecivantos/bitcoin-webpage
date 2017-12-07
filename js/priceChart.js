@@ -164,31 +164,9 @@ PriceChart.prototype.initVis = function() {
 PriceChart.prototype.wrangleData = function(){
     var vis = this;
 
-    var minYear = $('#minYear').val();
-    var maxYear = $('#maxYear').val();
-    var minMonth = $('#minMonth').val();
-    var maxMonth = $('#maxMonth').val();
-
-    var minDate = minMonth + " " + minYear;
-    var maxDate = maxMonth + " " + maxYear;
-
     vis.filteredData = vis.data;
 
     var parseTime = d3.timeParse("%m %Y");
-/*
-    if (minDate != " ") {
-        minDate = parseTime(minDate);
-        vis.filteredData = vis.filteredData.filter(function (d) {
-            return d.Date > minDate;
-        });
-    }
-
-    if (maxDate != " ") {
-        maxDate = parseTime(maxDate);
-        vis.filteredData = vis.filteredData.filter(function (d) {
-            return d.Date < maxDate;
-        });
-    }*/
 
     vis.filteredData = vis.filteredData.filter(function (d) {
         return d.Date > vis.start;
