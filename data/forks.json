@@ -1,46 +1,46 @@
 {
   "name": "Bitcoin Core",
   "parent": "null",
-  "date": "January 3rd 2009",
+  "date": "January 3rd, 2009",
   "blurb": "Bitcoin Core is the original bitcoin that was published by Satoshi Nakamoto. It was later renamed Bitcoin Core to help distinguish it from other versions of bitcoin created by forks.",
   "children": [
     {
       "name": "Bitcoin XT",
       "parent": "Bitcoin Core",
-      "date": "August 15th 2015",
+      "date": "August 15th, 2015",
       "blurb": "As with many of the bitcoin forks, the debate leading up to the split centered around Bitcoin’s block size cap. Bitcoin’s 1mb block size cap means the network can process a maximum of around 300,000 transactions a day. BitcoinXT sought to rectify this by increasing the block size to 8mb immediately while planning to double that number every two years moving forward.",
       "result": "The proposal did not get much support, and since August 2015 the number of users has consistently declined. BitcoinXT saw less than 30 users in January 2017 and does not exist today."
     },
     {
       "name": "Bitcoin Core",
       "parent": "Bitcoin Core",
-      "date": "January 3rd 2009",
+      "date": "January 3rd, 2009",
       "blurb": "Bitcoin Core is the original bitcoin that was published by Satoshi Nakamoto. It was later renamed Bitcoin Core to help distinguish it from other versions of bitcoin created by forks.",
       "children": [
         {
           "name": "Bitcoin Classic",
           "parent": "Bitcoin Core",
-          "date": "February 10th 2016",
+          "date": "February 10th, 2016",
           "blurb": "Similar to the BitcoinXT fork, Bitcoin classic hoped to increase Bitcoin’s block size cap, although only to 2mb. This idea was initially met with support by many Bitcoin users and companies, including Coinbase (the US’s largest bitcoin exchange by users). Opponents however argued that any increase in the block size could lead to centralization and monopoly power for the largest mining companies.",
           "result": "After seeing some support during 2016, Bitcoin Classic ceased operation in November 2017 after the failure of a hard fork to double the block size and Bitcoin Classic users transferred their support to Bitcoin Cash."
         },
         {
           "name": "Bitcoin Core",
           "parent": "Bitcoin Core",
-          "date": "January 3rd 2009",
+          "date": "January 3rd, 2009",
           "blurb": "Bitcoin Core is the original bitcoin that was published by Satoshi Nakamoto. It was later renamed Bitcoin Core to help distinguish it from other versions of bitcoin created by forks.",
           "children": [
             {
               "name": "Bitcore",
               "parent": "Bitcoin Core",
-              "date": "April 1st 2017",
+              "date": "April 1st, 2017",
               "blurb": "Bitcore is a spinoff of bitcoin, not created through an actual fork, that aimed to create a cryptocurrency with both the best features of bitcoin and a much larger block size for maximal transactions.",
               "result": "Bitcore is currently valued around $30 (USD) per coin, with a market cap of around $35,000,000. The block size is 10mb or 20mb for users that have updated to a version with segregated witness."
             },
             {
               "name": "Bitcoin Core",
               "parent": "Bitcoin Core",
-              "date": "January 3rd 2009",
+              "date": "January 3rd, 2009",
               "blurb": "Bitcoin Core is the original bitcoin that was published by Satoshi Nakamoto. It was later renamed Bitcoin Core to help distinguish it from other versions of bitcoin created by forks.",
               "children": [
                 {
@@ -53,33 +53,33 @@
                 {
                   "name": "Bitcoin Core",
                   "parent": "Bitcoin Core",
-                  "date": "January 3rd 2009",
+                  "date": "January 3rd, 2009",
                   "blurb": "Bitcoin Core is the original bitcoin that was published by Satoshi Nakamoto. It was later renamed Bitcoin Core to help distinguish it from other versions of bitcoin created by forks.",
                   "children": [
                     {
                       "name": "Bitcoin Cash",
                       "parent": "Bitcoin Core",
-                      "date": "August 1st 2017",
+                      "date": "August 1st, 2017",
                       "blurb": "After 97% of bitcoin miners voted to activate segregated witness, some members believed a block size increase was still necessary. A hard fork was initiated on August 1st 2017, and the new cryptocurrency had a block size limit of 8mb. Since its creation it is has often been more profitable for miners to mine bitcoin cash than bitcoin core, due to an “Emergency Difficulty Adjustment”  algorithm that dynamically adjusts the mining difficulty. ",
                       "result": "Bitcoin Cash currently trades for around $1700, and is the 3rd largest cryptocurrency today with a market cap of just under $30 billion."
                     },
                     {
                       "name": "Bitcoin Core",
                       "parent": "Bitcoin Core",
-                      "date": "January 3rd 2009",
+                      "date": "January 3rd, 2009",
                       "blurb": "Bitcoin Core is the original bitcoin that was published by Satoshi Nakamoto. It was later renamed Bitcoin Core to help distinguish it from other versions of bitcoin created by forks.",
                       "children": [
                         {
                           "name": "Bitcoin Gold",
                           "parent": "Bitcoin Core",
-                          "date": "October 23rd 2017",
+                          "date": "October 23rd, 2017",
                           "blurb": "Bitcoin Gold was created to allow GPUs to be used for mining, rather than only ASIC hardware. By implementing this, Bitcoin Gold users hoped to create a cryptocurrency that was as decentralized as possible. Bitcoin Gold’s block size limit however remained 1mb. Bitcoin gold is currently trading for around $400 (USD).",
                           "result": "Bitcoin Gold was created to allow GPUs to be used for mining, rather than only ASIC hardware. By implementing this, Bitcoin Gold users hoped to create a cryptocurrency that was as decentralized as possible. Bitcoin Gold’s block size limit however remained 1mb. Bitcoin gold is currently trading for around $400 (USD)."
                         },
                         {
                           "name": "Bitcoin Core",
                           "parent": "Bitcoin Core",
-                          "date": "January 3rd 2009",
+                          "date": "January 3rd, 2009",
                           "blurb": "Bitcoin Core is the original bitcoin that was published by Satoshi Nakamoto. It was later renamed Bitcoin Core to help distinguish it from other versions of bitcoin created by forks."
                         }
                       ]

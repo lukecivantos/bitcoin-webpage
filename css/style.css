@@ -172,7 +172,8 @@ h4 {
     color: white;
     margin: auto;
     text-align: left;
-    font-size: 30px;
+    font-size: 25px;
+    padding-left: 4%;
 }
 
 .mapTool {
@@ -203,12 +204,17 @@ form {
 }
 
 #forkName {
+    color: black;
     text-align: left;
     font-size: 20px;
+    font-weight: 500;
 }
 #forkDate {
+    color:black;
     text-align: left;
     font-size: 18px;
+    font-style: italic;
+    padding-top: 1%;
 }
 
 
@@ -321,8 +327,8 @@ button:hover{
 }
 
 #forkBlurb, #forkResult{
-    font-size: 20px;
-    color: grey;
+    font-size: 16px;
+    color: #606060;
 }
 
 #tree-area{
@@ -497,4 +503,16 @@ button:hover{
 .leaflet-popup-content {
 
     font-family: Avenir;
+}
+
+#forkDetail {
+    background-color: white;
+    border-radius: 10px;
+    padding: 4%;
+    width: 90%;
+}
+
+hr {
+    border-top: 1px solid #607D8B;
+    width: 100%;
 }
