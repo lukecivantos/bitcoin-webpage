@@ -62,7 +62,7 @@ select {
     margin-left: 50px;
 }
 
-#block {
+.block {
     height: 500px;
 }
 
@@ -109,7 +109,7 @@ h3{
 }
 
 .blink_me {
-    animation: blinker 1s linear infinite;
+    animation: blinker 3s linear infinite;
 }
 
 @keyframes blinker {
