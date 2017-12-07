@@ -177,6 +177,7 @@ h4 {
 
 .mapTool {
     color: Black;
+    padding-bottom: 3%;
 }
 
 
@@ -488,5 +489,12 @@ button:hover{
     border-radius: 50%;
 }
 
+#cardRow{
+    padding: 5%;
+}
 
 
+.leaflet-popup-content {
+
+    font-family: Avenir;
+}
