@@ -19,8 +19,17 @@ $(document).ready(function(){
     });
 
 });
-
-
+/*
+d3.select("")
+.on('mouseover', function(d){
+    d3.select(this).style({opacity:'0.8'})
+    d3.select("text").style({opacity:'1.0'});
+})
+    .on('mouseout', function(d){
+        d3.select(this).style({opacity:'0.0',})
+        d3.select("text").style({opacity:'0.0'});
+    })
+*/
 //loadData();
 var s0 = "Cracking the Bitcoin Code.";
 var s1 = "On October 31st 2008,";

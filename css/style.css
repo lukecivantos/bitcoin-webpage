@@ -412,16 +412,16 @@ button:hover{
 
 #amelia {
     width: 200px;
-    height: auto;
+    height: 100px;
 }
 #luke {
     width: 200px;
-    height: auto;
+    height: 100px;
 
 }
 #flood {
     width: 200px;
-    height: auto;
+    height: 100px;
 }
 #conamelia {
     text-align: center;
@@ -438,7 +438,9 @@ button:hover{
     margin: auto;
 }
 
-
+.img-circle {
+    border-radius: 50%;
+}
 
 
 
