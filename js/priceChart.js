@@ -259,25 +259,25 @@ PriceChart.prototype.updateVis = function() {
                 0 + ")");
 
         focus.select("text.y-price")
-            .text("Price: $" + d.Close_Price)
+            .text("Price: $" + (Math.round(d.Close_Price* 100) / 100))
             .attr("transform", function () {
-                if (vis.x(d.Date) + 5 < vis.width - padding) {
+                if (vis.x(d.Date) + 45 < vis.width - padding) {
                     return "translate(" + (vis.x(d.Date) + 5) + "," +
-                        (padding + 12) + ")";
+                        (13) + ")";
                 } else {
                     return "translate(" + (vis.x(d.Date) - 100) + "," +
-                        (padding + 12) + ")";
+                        (13) + ")";
                 }
             });
         focus.select("text.y-date")
             .text(monthYear(d.Date))
             .attr("transform", function () {
-                if (vis.x(d.Date) + 5 < vis.width - padding) {
+                if (vis.x(d.Date) + 45 < vis.width - padding) {
                     return "translate(" + (vis.x(d.Date) + 5) + "," +
-                        (padding + 28) + ")";
+                        (30) + ")";
                 } else {
                     return "translate(" + (vis.x(d.Date) - 80) + "," +
-                        (padding + 28) + ")";
+                        (30) + ")";
                 }
             });
     }
