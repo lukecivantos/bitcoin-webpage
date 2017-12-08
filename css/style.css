@@ -523,7 +523,15 @@ hr {
 
 
 #slider {
-    width: 100%;
+    width: 60%;
+    text-align: center;
+    margin: auto;
+}
+#event-start {
+    margin-left: 20%;
+}
+#event-end {
+    margin-left: 20%;
 }
 
 #event-end {
