@@ -46,7 +46,7 @@ PriceChart.prototype.initVis = function() {
         step: 7 * 24 * 60 * 60 * 1000,
 
     // Two more timestamps indicate the handle starting positions.
-        start: [ timestamp('2011'), timestamp('2018') ]
+        start: [ timestamp('2009'), timestamp('2018') ]
 
 
     });
