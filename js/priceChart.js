@@ -40,6 +40,7 @@ PriceChart.prototype.initVis = function() {
             min: timestamp('2009'),
             max: timestamp('2018')
         },
+        connect: true,
 
     // Steps of one week
         step: 7 * 24 * 60 * 60 * 1000,

@@ -519,9 +519,13 @@ hr {
     width: 100%;
 }
 
+/*.noUi-base {
+    background-color: #D0D0D0;
+}
 
-
-
+.noUi-handle {
+    background-color: #D0D0D0;
+}*/
 #slider {
     width: 60%;
     text-align: center;
