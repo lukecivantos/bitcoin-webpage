@@ -231,37 +231,37 @@ StackedAreaChart.prototype.initVis = function(){
         .attr("id", "legend1")
         .text("Bitcoin")
         .attr("fill", "#2678B2")
-        .attr("x", 40)
+        .attr("x", 80)
         .attr("y",-10);
     vis.svg.append("text")
         .attr("id", "legend2")
         .text("Ethereum")
         .attr("fill", "#AFC8E7")
-        .attr("x", 120)
+        .attr("x", 160)
         .attr("y",-10);
     vis.svg.append("text")
         .attr("id", "legend3")
         .text("BitcoinCash")
         .attr("fill", "#FD7F28")
-        .attr("x", 200)
+        .attr("x", 260)
         .attr("y",-10);
     vis.svg.append("text")
         .attr("id", "legend4")
         .text("Ripple")
         .attr("fill", "#FDBB7D")
-        .attr("x", 280)
+        .attr("x", 370)
         .attr("y",-10);
     vis.svg.append("text")
         .attr("id", "legend5")
         .text("Dash")
         .attr("fill", "#339E34")
-        .attr("x", 360)
+        .attr("x", 450)
         .attr("y",-10);
     vis.svg.append("text")
         .attr("id", "legend6")
         .text("Litecoin")
         .attr("fill", "#9ADE8D")
-        .attr("x", 440)
+        .attr("x", 530)
         .attr("y",-10);
 
 
