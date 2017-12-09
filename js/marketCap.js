@@ -234,9 +234,22 @@ StackedAreaChart.prototype.initVis = function(){
         .scale(vis.x)
         .ticks(6);
 
+
+    var formatNumber = d3.format(".0f"),
+        formatBillion = function(x) { return formatNumber(x / 1e9) + "B"; },
+        formatMillion = function(x) { return formatNumber(x / 1e6) + "M"; },
+        formatThousand = function(x) { return formatNumber(x / 1e3) + "k"; };
+
+    function formatAbbreviation(x) {
+        var v = Math.abs(x);
+        return (v >= .9995e9 ? formatBillion
+            : v >= .9995e6 ? formatMillion
+                : formatThousand)(x);
+    }
+
     vis.yAxis = d3.axisLeft()
         .scale(vis.y)
-        .tickFormat(d3.format(".1s"));
+        .tickFormat (function (d) { return formatAbbreviation(d).replace('G', 'B'); });
 
 
     vis.svg.append("g")
