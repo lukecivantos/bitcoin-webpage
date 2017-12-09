@@ -235,7 +235,9 @@ StackedAreaChart.prototype.initVis = function(){
         .ticks(6);
 
     vis.yAxis = d3.axisLeft()
-        .scale(vis.y);
+        .scale(vis.y)
+        .tickFormat(d3.format(".1s"));
+
 
     vis.svg.append("g")
         .attr("class", "x-axis axis")
