@@ -194,7 +194,7 @@ StackedAreaChart = function(_parentElement, _data){
 StackedAreaChart.prototype.initVis = function(){
     var vis = this;
 
-    vis.margin = { top: 25, right: 0, bottom: 50, left: 100 };
+    vis.margin = { top: 25, right: 10, bottom: 50, left: 100 };
 
     vis.width = 825 - vis.margin.left - vis.margin.right,
         vis.height = 525 - vis.margin.top - vis.margin.bottom;
@@ -221,6 +221,54 @@ StackedAreaChart.prototype.initVis = function(){
         .attr("fill", "white")
         .attr("x", -10)
         .attr("y",-10);
+
+
+
+
+
+
+    vis.svg.append("text")
+        .attr("id", "legend1")
+        .text("Bitcoin")
+        .attr("fill", "#2678B2")
+        .attr("x", 40)
+        .attr("y",-10);
+    vis.svg.append("text")
+        .attr("id", "legend2")
+        .text("Ethereum")
+        .attr("fill", "#AFC8E7")
+        .attr("x", 120)
+        .attr("y",-10);
+    vis.svg.append("text")
+        .attr("id", "legend3")
+        .text("BitcoinCash")
+        .attr("fill", "#FD7F28")
+        .attr("x", 200)
+        .attr("y",-10);
+    vis.svg.append("text")
+        .attr("id", "legend4")
+        .text("Ripple")
+        .attr("fill", "#FDBB7D")
+        .attr("x", 280)
+        .attr("y",-10);
+    vis.svg.append("text")
+        .attr("id", "legend5")
+        .text("Dash")
+        .attr("fill", "#339E34")
+        .attr("x", 360)
+        .attr("y",-10);
+    vis.svg.append("text")
+        .attr("id", "legend6")
+        .text("Litecoin")
+        .attr("fill", "#9ADE8D")
+        .attr("x", 440)
+        .attr("y",-10);
+
+
+
+
+
+
 
     // Scales and axes
     vis.x = d3.scaleTime()
@@ -287,7 +335,6 @@ StackedAreaChart.prototype.initVis = function(){
         .y1(function(d){return vis.y(d.data[vis.filter]); });
 
     // TO-DO: Tooltip placeholder
-
 
     // TO-DO: (Filter, aggregate, modify data)
     vis.wrangleData();
