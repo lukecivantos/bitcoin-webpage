@@ -521,4 +521,30 @@ hr {
 
 .noUi-connect{
     background: #2c8bdd;
+
+/*.noUi-base {
+    background-color: #D0D0D0;
+}
+
+.noUi-handle {
+    background-color: #D0D0D0;
+}*/
+#slider {
+    width: 60%;
+    text-align: center;
+    margin: auto;
+}
+#event-start {
+    margin-left: 20%;
+}
+#event-end {
+    margin-left: 20%;
+}
+
+#event-end {
+    color: white;
+}
+#event-start {
+    color: white;
+    margin-top: 10px;
 }

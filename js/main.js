@@ -307,8 +307,3 @@ function brushed() {
     marketCap.wrangleData();
 
 }
-
-
-function filterYears() {
-    priceChart.wrangleData();
-}

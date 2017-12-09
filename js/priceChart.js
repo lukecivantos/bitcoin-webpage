@@ -10,18 +10,82 @@ PriceChart = function(_parentElement, _data, _eventHandler){
 };
 
 PriceChart.prototype.initVis = function() {
+    var vis = this;
 
-    var startSlider = document.getElementById('slider');
 
-    noUiSlider.create(startSlider, {
-        start: [20, 80],
+
+    // Create a list of day and month names.
+    vis.weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    vis.months = [
+        "January", "February", "March",
+        "April", "May", "June", "July",
+        "August", "September", "October",
+        "November", "December"
+    ];
+
+    function timestamp(str){
+        return new Date(str).getTime();
+    }
+    var dateSlider = document.getElementById('slider');
+    var maxmin = d3.extent(vis.data, function(d){
+        return d.Date;
+    });
+    var mins = maxmin[0]
+    var maxs = maxmin[1]
+
+
+    noUiSlider.create(dateSlider, {
+    // Create two timestamps to define a range.
         range: {
-            'min': [ 0 ],
-            'max': [ 100 ]
-        }
+            min: timestamp('2009'),
+            max: timestamp('2018')
+        },
+        connect: true,
+
+    // Steps of one week
+        step: 7 * 24 * 60 * 60 * 1000,
+
+    // Two more timestamps indicate the handle starting positions.
+        start: [ timestamp('2009'), timestamp('2018') ]
+
+
     });
 
-    var vis = this;
+
+    var dateValues = [
+        document.getElementById('event-start'),
+        document.getElementById('event-end')
+    ];
+
+    // Append a suffix to dates.
+    // Example: 23 => 23rd, 1 => 1st.
+    function nth (d) {
+        if(d>3 && d<21) return 'th';
+        switch (d % 10) {
+            case 1:  return "st";
+            case 2:  return "nd";
+            case 3:  return "rd";
+            default: return "th";
+        }
+    }
+
+    // Create a string representation of the date.
+    function formatsDate ( date ) {
+        return vis.weekdays[date.getDay()] + ", " +
+            date.getDate() + nth(date.getDate()) + " " +
+            vis.months[date.getMonth()] + " " +
+            date.getFullYear();
+    }
+
+
+
+
+
+
+
+
+
+
 
     vis.margin = { top: 20, right: 100, bottom: 60, left: 50 };
 
@@ -73,6 +137,22 @@ PriceChart.prototype.initVis = function() {
 
     vis.lineFunction = d3.line();
 
+
+
+
+
+
+    dateSlider.noUiSlider.on('update', function( values, handle ) {
+        dateValues[handle].innerHTML = formatsDate(new Date(+values[handle]))
+        if (handle == 0) {
+            vis.start = new Date(+values[handle]);
+        } else {
+            vis.end = new Date(+values[handle]);
+        }
+        vis.wrangleData()
+    });
+
+
     vis.wrangleData();
 
 
@@ -85,34 +165,17 @@ PriceChart.prototype.initVis = function() {
 PriceChart.prototype.wrangleData = function(){
     var vis = this;
 
-    var minYear = $('#minYear').val();
-    var maxYear = $('#maxYear').val();
-    var minMonth = $('#minMonth').val();
-    var maxMonth = $('#maxMonth').val();
-
-    var minDate = minMonth + " " + minYear;
-    var maxDate = maxMonth + " " + maxYear;
-
     vis.filteredData = vis.data;
 
     var parseTime = d3.timeParse("%m %Y");
 
-    if (minDate != " ") {
-        minDate = parseTime(minDate);
-        vis.filteredData = vis.filteredData.filter(function (d) {
-            return d.Date > minDate;
-        });
-    }
-    console.log(maxDate)
-
-    if (maxDate != " ") {
-        maxDate = parseTime(maxDate);
-        vis.filteredData = vis.filteredData.filter(function (d) {
-            return d.Date < maxDate;
-        });
-    }
+    vis.filteredData = vis.filteredData.filter(function (d) {
+        return d.Date > vis.start;
+    });
+    vis.filteredData = vis.filteredData.filter(function (d) {
+        return d.Date < vis.end;
+    });
     vis.displayData = vis.filteredData;
-
 
 
     // Update the visualization
