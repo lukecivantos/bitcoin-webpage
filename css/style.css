@@ -595,3 +595,11 @@ hr {
     visibility: hidden;
 
 }
+
+#sourceTitle{
+    color: white;
+    margin: auto;
+    text-align: left;
+    font-size: 20px;
+    padding-left: 2%;
+}
