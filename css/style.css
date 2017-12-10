@@ -554,8 +554,10 @@ hr {
 }*/
 #slider {
     width: 60%;
-    text-align: center;
-    margin: auto;
+}
+
+.slider-wrapper{
+    padding-left: 7%;
 }
 #event-start {
     margin-left: 20%;
