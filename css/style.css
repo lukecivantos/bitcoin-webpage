@@ -560,13 +560,10 @@ hr {
 
 #event-start {
     margin-left: 35%;
-    display: inline;
 }
 #event-end {
     text-align: right;
-    margin-left: 35%;
-    display: inline;
-    margin-right: 5px;
+    margin-right: 42%
 }
 
 #event-end {
