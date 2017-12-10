@@ -177,6 +177,8 @@
             <div data-entrance="fade">
                 <p class="lead">As Bitcoin has gained more and more publicity and mainstream appeal, hundreds of alternative cryptocurrencies, known commonly as alt coins, have developed. While many of these alt coins are somewhat obscure, a small number have grown to the point of possessing a significant share of the entire cryptocurrency market. These include Ethereum, Litecoin and recently Bitcoin Cash. Explore the area chart below to see how the cryptocurrency market has grown, and how bitcoin’s market share has fluctuated as Ethereum and Bitcoin Cash have become increasingly prominent during the last year.</p>
             </div>
+            <br>
+            <br>
             <div data-entrance="fade">
                 <div id="stacked-area"></div>
                 <div id="timeline"></div>
@@ -201,6 +203,12 @@
         </div>
         <br>
         <br>
+        <br>
+        <div data-entrance="fade" id="zipSearch">
+            <input type = "text" id ="txtSearch" style="padding: 10px; border-radius: 7px 0px 0px 7px; border:none" onkeydown = "if (event.keyCode == 13)
+                            document.getElementById('btnSearch').click()"/>
+            <input type = "button" id ="btnSearch" style="background-color:#2c8bdd; color: white; border-radius: 0px 7px 7px 0px; padding: 10px; border: none" value = "Find Zip" onclick = "adjustZip();"/>
+        </div>
         <br>
         <div data-entrance="fade" id="checkers">
             <!-- primary -->
@@ -270,12 +278,6 @@
                     <span class="checkmark"></span>
                 </label>
             </div>
-        </div>
-        <br>
-        <div data-entrance="fade" id="zipSearch">
-            <input type = "text" id = "txtSearch" onkeydown = "if (event.keyCode == 13)
-                            document.getElementById('btnSearch').click()"/>
-            <input type = "button" id = "btnSearch" value = "Find Zip" onclick = "adjustZip();"/>
         </div>
         <br>
         <div data-entrance="fade" id="vendorMap"></div>
