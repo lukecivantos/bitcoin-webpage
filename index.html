@@ -79,19 +79,20 @@
             <p class="lead">Since 2009 when the first software implementing Bitcoin was released, Bitcoin's rise in value has been nothing short of spectacular.<span style="color:white; font-weight:600; font-style:italic"> Hover over the chart to see Bitcoin’s price </span> at any point since 2009, or filter the dates to get a more detailed view of Bitcoin’s price over a smaller time period.</p>
         </div>    
 
-        <br><br><br><br><br><br>
+        <br><br><br><br>
             <div id="slider"></div><br>
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                    <div id="event-start">Thursday, 30th December 2010</div>
+                    <div id="event-start"> December 30th, 2010</div>
                     </div>
                     <div class="col-md-6">
-                    <div id="event-end">Thursday, 1st January 2015</div>
+                    <div id="event-end" style="text-align:right"> January 1st, 2015</div>
                     </div>
                 </div>
-
             </div>
+        <br>
+        <br>
         <br>
         <br>
             <div id="priceChart"></div>
@@ -133,7 +134,12 @@
             <div data-entrance="fade">
                 <p id="hashText">8358B3A2C8F9E1B7</p>
                 <br>
-                <p id="errorHash"></p>
+                <div id="errorWrapper">
+                    <h3 style="color:black; padding-top: 0%; text-align: center">Sorry!</h3>
+                    <hr>
+                    <p id="errorHash"></p>
+                </div>
+
             </div>
 
             <div class="block"></div>

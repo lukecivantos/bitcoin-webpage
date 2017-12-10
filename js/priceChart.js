@@ -72,7 +72,7 @@ PriceChart.prototype.initVis = function() {
     // Create a string representation of the date.
     function formatsDate ( date ) {
         return vis.months[date.getMonth()] + " " +
-            date.getDate() + nth(date.getDate()) + " " +
+            date.getDate() + nth(date.getDate()) + ", " +
             date.getFullYear();
     }
 
