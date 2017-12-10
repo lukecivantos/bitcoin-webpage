@@ -30,6 +30,14 @@ Uses [Leaflet.js](http://leafletjs.com/) to create a map with various vendors of
 
 Uses various data sources to create a stacked area chart of the six cryptocurrencies with the highest market caps. 
 
+#### timeline.js
+
+Creates the brushed timeline to filter dates for the stacked area chart of market caps. 
+
+#### forkTree.js
+
+Creates a Tree using data of Bitcoin Forks. Uses nodes.descendants() to format the tree-like structure of the data. 
+
 ### Other Visualizations
 
 #### mining.js
