@@ -554,6 +554,8 @@ hr {
 }*/
 #slider {
     width: 60%;
+    text-align: center;
+    margin: auto;
 }
 
 #event-start {
