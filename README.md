@@ -8,6 +8,27 @@ The site is currently live at www.bitguide.live
 
 It has been optimized for Chrome
 
+## Breakdown 
+
+### Index.html
+
+This file contains the entire layout. The site is one scrolling page with various bootstrap grids and visualizations. 
+
+### Main.js
+
+In this file, the text is typed in using the Typed.js library. Additionally, various visualizations are initialized including the following: 
+
+#### priceChart.js
+
+Creates a Chart for the Bitcoin price. 
+
+#### vendorMap.js
+
+Uses [Leaflet.js](http://leafletjs.com/) to create a map with various vendors from 
+
+#### marketCap.js
+
+
 ## Built With
 
 * [D3 v4](https://d3js.org/) - Javascript library used for visualizations
