@@ -8,6 +8,8 @@ The site is currently live at www.bitguide.live
 
 It has been optimized for Chrome
 
+Our screencast can be accessed at https://www.youtube.com/watch?v=wvckwdMqjzU
+
 ## Breakdown 
 
 ### Index.html
