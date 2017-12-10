@@ -24,7 +24,7 @@ Creates a Chart for the Bitcoin price.
 
 #### vendorMap.js
 
-Uses [Leaflet.js](http://leafletjs.com/) to create a map with various vendors from 
+Uses [Leaflet.js](http://leafletjs.com/) to create a map with various vendors of bitcoing using the [CoinMap](https://coinmap.org/api/) Api. 
 
 #### marketCap.js
 
