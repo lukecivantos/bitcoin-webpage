@@ -54,6 +54,8 @@ Iterates through various "hashes" to create a scrolling text effect. When scroll
 * [Companies that accept bitcoin and their locations data](https://99bitcoins.com/who-accepts-bitcoins-payment-companies-stores-take-bitcoins/) 
 * [Data on Bitcoin Mining](https://www.bitcoinmining.com/) 
 * [Bitcoin Price Data](https://blockchain.info/charts/market-price)
+* [CoinMap API](https://coinmap.org/api/)
+* [Coin Market Cap](https://coinmarketcap.com/)
 
 ## Built With
 
