@@ -30,8 +30,8 @@ PriceChart.prototype.initVis = function() {
     var maxmin = d3.extent(vis.data, function(d){
         return d.Date;
     });
-    var mins = maxmin[0]
-    var maxs = maxmin[1]
+    var mins = maxmin[0];
+    var maxs = maxmin[1];
 
 
     noUiSlider.create(dateSlider, {
@@ -71,9 +71,8 @@ PriceChart.prototype.initVis = function() {
 
     // Create a string representation of the date.
     function formatsDate ( date ) {
-        return vis.weekdays[date.getDay()] + ", " +
+        return vis.months[date.getMonth()] + " " +
             date.getDate() + nth(date.getDate()) + " " +
-            vis.months[date.getMonth()] + " " +
             date.getFullYear();
     }
 
@@ -138,12 +137,8 @@ PriceChart.prototype.initVis = function() {
     vis.lineFunction = d3.line();
 
 
-
-
-
-
     dateSlider.noUiSlider.on('update', function( values, handle ) {
-        dateValues[handle].innerHTML = formatsDate(new Date(+values[handle]))
+        dateValues[handle].innerHTML = formatsDate(new Date(+values[handle]));
         if (handle == 0) {
             vis.start = new Date(+values[handle]);
         } else {

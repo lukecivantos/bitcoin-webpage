@@ -561,9 +561,12 @@ hr {
 }
 #event-start {
     margin-left: 20%;
+    display: inline;
 }
 #event-end {
     margin-left: 20%;
+    display: inline;
+    margin-right: 5px;
 }
 
 #event-end {
