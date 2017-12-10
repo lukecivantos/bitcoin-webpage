@@ -84,14 +84,15 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                    <div id="event-start">Thursday, 30th December 2010</div>
+                    <div id="event-start"> December 30th, 2010</div>
                     </div>
                     <div class="col-md-6">
-                    <div id="event-end">Thursday, 1st January 2015</div>
+                    <div id="event-end" style="text-align:right"> January 1st, 2015</div>
                     </div>
                 </div>
-
             </div>
+        <br>
+        <br>
         <br>
         <br>
             <div id="priceChart"></div>
@@ -133,7 +134,12 @@
             <div data-entrance="fade">
                 <p id="hashText">8358B3A2C8F9E1B7</p>
                 <br>
-                <p id="errorHash"></p>
+                <div id="errorWrapper">
+                    <h3 style="color:black; padding-top: 0%; text-align: center">Sorry!</h3>
+                    <hr>
+                    <p id="errorHash"></p>
+                </div>
+
             </div>
 
             <div class="block"></div>
@@ -143,7 +149,7 @@
             </div>
             <br>
             <div data-entrance="fade">
-                <p class="lead">When a contentious issue (such as the maximum block size capacity) cannot be agreed on by bitcoin developers, a fork in bitcoin’s blockchain can occur. During a fork, the bitcoin blockchain diverges into two potential new chains. After a fork both new blockchains will share their previous transaction history, although moving forward all new transactions will only appear in the blockchain they are verified on. Click on the nodes in the tree visualization to learn more about each of the six forks that have occured since bitcoin’s inception.</p>
+                <p class="lead">When a contentious issue (such as the maximum block size capacity) cannot be agreed on by bitcoin developers, a fork in bitcoin’s blockchain can occur. During a <span style="color:#2c8bdd; font-weight: 600">fork</span>, the bitcoin blockchain diverges into two potential new chains. After a fork both new blockchains will share their previous transaction history, although moving forward all new transactions will only appear in the blockchain they are verified on. <span style="color:white; font-weight: 600; font-style:italic">Click on the nodes in the tree visualization</span> to learn more about each of the six forks that have occured since bitcoin’s inception.</p>
             </div>
             <br>
             <div data-entrance="fade" class="row">
@@ -178,7 +184,7 @@
             </div>
             <br>
             <div data-entrance="fade">
-                <p class="lead">As Bitcoin has gained more and more publicity and mainstream appeal, hundreds of alternative cryptocurrencies, known commonly as alt coins, have developed. While many of these alt coins are somewhat obscure, a small number have grown to the point of possessing a significant share of the entire cryptocurrency market. These include Ethereum, Litecoin and recently Bitcoin Cash. Explore the area chart below to see how the cryptocurrency market has grown, and how Bitcoin’s market share has fluctuated as Ethereum and Bitcoin Cash have become increasingly prominent during the last year.</p>
+                <p class="lead">As Bitcoin has gained more and more publicity and mainstream appeal, hundreds of alternative cryptocurrencies, known commonly as <span style="color:#2c8bdd; font-weight: 600">alt coins</span>, have developed. While many of these alt coins are somewhat obscure, a small number have grown to the point of possessing a significant share of the entire cryptocurrency market. <br><br> <span style="color:white; font-style: italic; font-weight:600">Explore the area chart below to see how the cryptocurrency space has exploded over the last five years </span>. Change the timeframe by brushing the timeline or explore individual cryptocurrencies by clicking on their area.</p>
             </div>
             <br>
             <br>
@@ -199,10 +205,11 @@
             </div>
             <br>
             <div data-entrance="fade">
-                <p class="lead">While Bitcoin’s price has continued to appreciate, it has yet to flourish as a widely accepted currency. That being said, Bitcoin’s user base continues to grow, and today 10746 vendors in the US accept bitcoin as a method of payment. Explore the map below to see which vendors throughout the world currently accept bitcoin. Click the points on the map to find the name of the vendor and a link to the vendor’s website.</p>
+                <p class="lead">While Bitcoin’s price has continued to appreciate, it has yet to flourish as a widely accepted currency. That being said, Bitcoin’s user base continues to grow, and today <span style="color:#2c8bdd; font-weight: 600">11046 vendors </span> in the US accept bitcoin as a method of payment. Explore the map below to see which vendors throughout the world currently accept bitcoin.</p>
                 <p class="lead" style="font-weight: 600; font-style: italic; color: white">Check out vendors such as Clover Food Labs that are accepting bitcoin in Harvard Square by searching 02138!</p>
             </div>
         </div>
+        <br>
         <br>
         <br>
         <div data-entrance="fade" id="zipSearch">
@@ -210,6 +217,8 @@
                             document.getElementById('btnSearch').click()"/>
             <input type = "button" id ="btnSearch" style="background-color:#2c8bdd; color: white; border-radius: 0px 7px 7px 0px; padding: 10px; border: none" value = "Find Zip" onclick = "adjustZip();"/>
         </div>
+        <br>
+        <br>
         <br>
         <br>
         <div data-entrance="fade" id="checkers">
@@ -295,16 +304,11 @@
             </div>
             <br>
             <div data-entrance="fade">
-                <p class="lead">Currently, the majority of Bitcoin transitions occur over bitcoin exchanges rather than in  a retail  capacity. This must change for Bitcoin to became a mainstream currency in the future. In order for Bitcoin to become widely accepted as a medium of exchange, it both needs to shed it’s association with the dark web, which still lingers from the high publicity surrounding the silk road website and be supported by more commercial businesses as a means of payment.</p>
+                <p class="lead"> In order for Bitcoin to become widely accepted as a medium of exchange, it both needs to shed it’s association with the <span style="color:#2c8bdd; font-weight: 600">dark web</span>, which still lingers from the high publicity surrounding the silk road website and be supported by more commercial businesses as a means of payment.</p>
             </div>
             <br>
             <div data-entrance="fade">
-                <p class="lead">The recent news concerning the creation of a Bitcoin futures market by CME group Inc. is a huge step in the direction of widespread adoption for bitcoin, giving the cryptocurrency an element of authenticity that is has been lacking thus far. It will be extremely interesting to see how the futures market affects bitcoin’s price volatility, and whether its creation will pave the way for more widespread retail adoption of bitcoin as an acceptable payment method in the future.</p>
-            </div>
-            <br>
-            <br>
-            <div data-entrance="fade">
-                <h4>Follow these links to read more:</h4>
+                <p class="lead">The recent news concerning the creation of a Bitcoin futures market by CME group Inc. is a huge step in the direction of widespread adoption for bitcoin, giving the cryptocurrency an element of authenticity that is has been lacking thus far. It will be interesting to see how the futures market affects bitcoin’s price volatility, and whether its creation will pave the way for more widespread retail adoption of bitcoin as an acceptable payment method in the future.<span style="color:white; font-style: italic; font-weight: 600"> Explore the three links below to read more about what the future of bitcoin might entail.</span></p>
             </div>
             <br>
             <div data-entrance="fade">
@@ -373,19 +377,21 @@
             </div>
         </div>
         <div class="padding"></div>
-        <h3 class="basic-header links">Sources</h3><br><br>
-        <ul>
-            <li><a href="www.coindesk.com/what-is-the-Bitcoin-block-size-debate-and-why-does-it-matter/">“What is the Bitcoin Block Size Debate and Why Does it Matter?” CoinDesk, 25 Aug. 2015.</a></li>
-            <li><a href="Bitcoingold.org/">GPU Bitcoin Mining (Official Website).” Bitcoin Gold. Accessed November 30th 2017</a></li>
-            <li><a href="https://coinmarketcap.com">Coin Market Cap. Accessed December 4th 2017.</a></li>
-            <li><a href="">Miller, Michael, 2015, The ultimate guide to Bitcoin, Indianapolis, IN : Que, c2015.</a></li>
-            <li><a href="https://bitcoinxt.software/">Bitcoin XT. Retrieved December 07, 2017, from https://bitcoinxt.software/</a></li>
-            <li><a href="https://www.coindesk.com/first-cash-now-gold-another-bitcoin-hard-fork-way/">First Cash, Now Gold? Another Bitcoin Hard Fork Is on the Way. (2017, October 19). Retrieved December 07, 2017, from https://www.coindesk.com/first-cash-now-gold-another-bitcoin-hard-fork-way/</a></li>
-            <li><a href="https://bitcoinclassic.com/">Bitcoin Classic. (n.d.). Retrieved December 07, 2017, from https://bitcoinclassic.com/</a></li>
-            <li><a href="https://bitcore.cc/">BitCore - BTX Claiming Service. Retrieved December 07, 2017, from https://bitcore.cc/</a></li>
-            <li><a href="https://Bitcoin.org/Bitcoin.pdf">Satoshi Nakamoto, October 2008,  “Bitcoin: A Peer to Peer Electronic Cash System”, https://Bitcoin.org/Bitcoin.pdf</a></li>
-        </ul>
-
+        <div id="sourceTitle">Sources</div>
+        <br>
+        <div class="links">
+            <ul>
+                <li><a href="www.coindesk.com/what-is-the-Bitcoin-block-size-debate-and-why-does-it-matter/">“What is the Bitcoin Block Size Debate and Why Does it Matter?” CoinDesk, 25 Aug. 2015.</a></li>
+                <li><a href="Bitcoingold.org/">GPU Bitcoin Mining (Official Website).” Bitcoin Gold. Accessed November 30th 2017</a></li>
+                <li><a href="https://coinmarketcap.com">Coin Market Cap. Accessed December 4th 2017.</a></li>
+                <li><a href="">Miller, Michael, 2015, The ultimate guide to Bitcoin, Indianapolis, IN : Que, c2015.</a></li>
+                <li><a href="https://bitcoinxt.software/">Bitcoin XT. Retrieved December 07, 2017, from https://bitcoinxt.software/</a></li>
+                <li><a href="https://www.coindesk.com/first-cash-now-gold-another-bitcoin-hard-fork-way/">First Cash, Now Gold? Another Bitcoin Hard Fork Is on the Way. (2017, October 19). Retrieved December 07, 2017, from https://www.coindesk.com/first-cash-now-gold-another-bitcoin-hard-fork-way/</a></li>
+                <li><a href="https://bitcoinclassic.com/">Bitcoin Classic. (n.d.). Retrieved December 07, 2017, from https://bitcoinclassic.com/</a></li>
+                <li><a href="https://bitcore.cc/">BitCore - BTX Claiming Service. Retrieved December 07, 2017, from https://bitcore.cc/</a></li>
+                <li><a href="https://Bitcoin.org/Bitcoin.pdf">Satoshi Nakamoto, October 2008,  “Bitcoin: A Peer to Peer Electronic Cash System”, https://Bitcoin.org/Bitcoin.pdf</a></li>
+            </ul>
+        </div>
     </div>
 </section>
 

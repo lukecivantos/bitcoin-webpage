@@ -106,6 +106,7 @@ var hashes = [
 function runHash() {
 
     var i = 0;
+    d3.select("#errorWrapper").style("visibility", "hidden");
     d3.select("#errorHash").text("");
     myLoop();
 
@@ -125,8 +126,8 @@ function runHash() {
                     d3.select("#errorHash").text("Wow! This hash worked! In theory, you just mined a coin! Right now, miners have to create an average of 5,785,327,100,000,000,000,000 (nearly six sextillion!)  hashes to get one that works. Good luck doing that again!")
                     .style("color", "green");
                 } else {
-                    d3.select("#errorHash").text("Sorry. This hash is not below the level of difficulty. Right now, miners have to create an average of 5,785,327,100,000,000,000,000 (nearly six sextillion!)  hashes to get one that works. Try again!")
-                        .style("color", "#c34539");
+                    d3.select("#errorWrapper").style("visibility", "visible");
+                    $("#errorHash").html("This hash is not below the level of difficulty. Right now, miners have to create an average of <span style='color:#2c8bdd; font-weight:600'> 5,785,327,100,000,000,000,000</span> (nearly six sextillion!)  hashes to get one that works. Try again!")
                 }
             }
         }, 40);

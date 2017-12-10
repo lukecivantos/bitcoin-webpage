@@ -276,10 +276,9 @@ form {
 }
 #errorHash {
     text-align: center;
-    color: #c34539;
     font-size: 20px;
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 1%;
+    padding-right: 1%;
 
 }
 
@@ -584,3 +583,23 @@ hr {
     padding-top: 2%;
 }
 
+#errorWrapper{
+    background-color: white;
+    border-radius: 10px;
+    padding-bottom: 4%;
+    padding-left: 4%;
+    padding-right:4%;
+    padding-top: 1%;
+    width: 600px;
+    margin: 0 auto;
+    visibility: hidden;
+
+}
+
+#sourceTitle{
+    color: white;
+    margin: auto;
+    text-align: left;
+    font-size: 20px;
+    padding-left: 2%;
+}
