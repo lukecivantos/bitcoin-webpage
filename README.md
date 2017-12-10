@@ -8,6 +8,18 @@ The site is currently live at www.bitguide.live
 
 It has been optimized for Chrome
 
+## Breakdown 
+
+### Index.html
+
+This file contains the entire layout. The site is one scrolling page with various bootstrap grids and visualizations. 
+
+### Main.js
+
+In this file, the text is typed in using the Typed.js library. Additionally, various visualizations are initialized. 
+
+
+
 ## Built With
 
 * [D3 v4](https://d3js.org/) - Javascript library used for visualizations
