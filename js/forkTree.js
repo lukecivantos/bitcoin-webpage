@@ -70,7 +70,7 @@ queue()
             .attr("class", "blink_me")
             .attr("cx", 150)
             .attr("cy", 80)
-            .attr("fill", "#f5ff1d")
+            .attr("fill", "#2c8bdd")
             .attr("cursor", "pointer")
             .on("click", function (d) {
                 d3.select("#forkName").text("Bitcoin XT");
