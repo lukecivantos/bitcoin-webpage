@@ -26,7 +26,7 @@ Creates a Chart for the Bitcoin price.
 
 Uses [Leaflet.js](http://leafletjs.com/) to create a map with various vendors of bitcoing using the [CoinMap](https://coinmap.org/api/) Api. 
 
-#### [marketCap.js] (js/marketCap.js)
+#### marketCap.js
 
 Uses various data sources to create a stacked area chart of the six cryptocurrencies with the highest market caps. 
 
