@@ -30,7 +30,7 @@ Uses [Leaflet.js](http://leafletjs.com/) to create a map with various vendors of
 
 #### marketCap.js
 
-Uses various data sources to create a stacked area chart of the six cryptocurrencies with the highest market caps. 
+Uses [Coin Market Cap](https://coinmarketcap.com/) to create a stacked area chart of the six cryptocurrencies with the highest market caps. 
 
 #### timeline.js
 
