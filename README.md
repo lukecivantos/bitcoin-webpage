@@ -1,87 +1,36 @@
 # Cracking the Bitcoin Code
 
-One Paragraph of project description goes here
+Cracking the Bitcoin Code is an interactive site that uses data visualizations to provide a brief description of how Bitcoin works and how it came to be. 
 
-## Getting Started
+## Accessing the Site
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+The site is currently live at www.bitguide.live 
 
-### Prerequisites
-
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
-
-### Installing
-
-A step by step series of examples that tell you have to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
+It has been optimized for Chrome
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+* [D3 v4](https://d3js.org/) - Javascript library used for visualizations
+* [Typed.js](https://github.com/mattboldt/typed.js/) - Text Animations
+* [Leaflet.js](http://leafletjs.com/) - Map visualizations
+* [Bootstrap](https://getbootstrap.com/) - Used for formatting
+* [NoUiSlider.js](https://refreshless.com/nouislider/) - Creates slider visualizations
+* [Scroll-Entrance.js](https://andycaygill.github.io/scroll-entrance/) - Fades in views
+* [Queue.v1.min.js](https://github.com/d3/d3-queue) - Queues data
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Amelia Miller** 
+* **Luke Civantos**
+* **Charlie Flood** 
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This work is licensed under a Creative Commons Attribution 4.0 International License.
 
 ## Acknowledgments
 
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
+* Thanks to Nathan Lee for overseeing this project.
+* Thanks to Zona Kostic for guiding us through D3. 
