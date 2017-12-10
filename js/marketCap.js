@@ -144,12 +144,13 @@ StackedAreaChart.prototype.initVis = function(){
     // vis.area = d3.area()
     //	...
     vis.area = d3.area()
-        .curve(d3.curveCardinal)
+        .curve(d3.curveLinear)
         .x(function(d){return vis.x(d.data.Year); })
         .y0(function(d){return vis.y(d[0]); })
         .y1(function(d){return vis.y(d[1]); });
 
     vis.area2 = d3.area()
+        .curve(d3.curveLinear)
         .x(function(d) { return vis.x(d.data.Year); })
         .y0(vis.height)
         .y1(function(d){return vis.y(d.data[vis.filter]); });
