@@ -30,6 +30,12 @@ Uses [Leaflet.js](http://leafletjs.com/) to create a map with various vendors of
 
 Uses various data sources to create a stacked area chart of the six cryptocurrencies with the highest market caps. 
 
+### Other Visualizations
+
+#### mining.js
+
+Iterates through various "hashes" to create a scrolling text effect. When scrolling is finished an error message appears. One of out two hundred times a success message will appear. 
+
 ## Built With
 
 * [D3 v4](https://d3js.org/) - Javascript library used for visualizations
