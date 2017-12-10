@@ -81,3 +81,4 @@ This work is licensed under a Creative Commons Attribution 4.0 International Lic
 
 * Thanks to Nathan Lee for overseeing this project.
 * Thanks to Zona Kostic for guiding us through D3. 
+* Thank to Johanna Beyer for a great semester.
