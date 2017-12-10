@@ -28,7 +28,7 @@ See also the list of [contributors](https://github.com/your/project/contributors
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This work is licensed under a Creative Commons Attribution 4.0 International License.
 
 ## Acknowledgments
 
