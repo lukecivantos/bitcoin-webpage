@@ -44,6 +44,15 @@ Creates a Tree using data of Bitcoin Forks. Uses nodes.descendants() to format t
 
 Iterates through various "hashes" to create a scrolling text effect. When scrolling is finished an error message appears. One of out two hundred times a success message will appear. 
 
+## Data
+
+* [Bitcoin Price Data](https://www.kaggle.com/mczielinski/bitcoin-historical-data)
+* [Bitcoin Price Data](https://www.kaggle.com/sudalairajkumar/cryptocurrencypricehistory)
+* [History of Bitcoin](http://www.nytimes.com/interactive/technology/bitcoin-timeline.html#/#time284_8155)
+* [Companies that accept bitcoin and their locations data](https://99bitcoins.com/who-accepts-bitcoins-payment-companies-stores-take-bitcoins/) 
+* [Data on Bitcoin Mining](https://www.bitcoinmining.com/) 
+* [Bitcoin Price Data](https://blockchain.info/charts/market-price)
+
 ## Built With
 
 * [D3 v4](https://d3js.org/) - Javascript library used for visualizations
@@ -59,8 +68,6 @@ Iterates through various "hashes" to create a scrolling text effect. When scroll
 * **Amelia Miller** 
 * **Luke Civantos**
 * **Charlie Flood** 
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
 ## License
 
