@@ -20,9 +20,9 @@ It has been optimized for Chrome
 
 ## Authors
 
-* **Amelia Miller** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-* **Luke Civantos** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-* **Charlie Flood** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Amelia Miller** 
+* **Luke Civantos**
+* **Charlie Flood** 
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
