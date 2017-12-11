@@ -25,10 +25,10 @@ StackedAreaChart = function(_parentElement, _data){
 StackedAreaChart.prototype.initVis = function(){
     var vis = this;
 
-    vis.margin = { top: 25, right: 10, bottom: 50, left: 100 };
+    vis.margin = { top: 50, right: 10, bottom: 50, left: 100 };
 
     vis.width = 825 - vis.margin.left - vis.margin.right,
-        vis.height = 525 - vis.margin.top - vis.margin.bottom;
+        vis.height = 480 - vis.margin.top - vis.margin.bottom;
 
 
     // SVG drawing area
@@ -52,37 +52,37 @@ StackedAreaChart.prototype.initVis = function(){
         .text("Bitcoin")
         .attr("fill", "#2678B2")
         .attr("x", 80)
-        .attr("y",-10);
+        .attr("y",-20);
     vis.svg.append("text")
         .attr("id", "legend2")
         .text("Ethereum")
         .attr("fill", "#AFC8E7")
         .attr("x", 160)
-        .attr("y",-10);
+        .attr("y",-20);
     vis.svg.append("text")
         .attr("id", "legend3")
         .text("BitcoinCash")
         .attr("fill", "#FD7F28")
         .attr("x", 260)
-        .attr("y",-10);
+        .attr("y",-20);
     vis.svg.append("text")
         .attr("id", "legend4")
         .text("Ripple")
         .attr("fill", "#FDBB7D")
         .attr("x", 370)
-        .attr("y",-10);
+        .attr("y",-20);
     vis.svg.append("text")
         .attr("id", "legend5")
         .text("Dash")
         .attr("fill", "#339E34")
         .attr("x", 450)
-        .attr("y",-10);
+        .attr("y",-20);
     vis.svg.append("text")
         .attr("id", "legend6")
         .text("Litecoin")
         .attr("fill", "#9ADE8D")
         .attr("x", 530)
-        .attr("y",-10);
+        .attr("y",-20);
 
 
 

@@ -86,10 +86,10 @@ PriceChart.prototype.initVis = function() {
 
 
 
-    vis.margin = { top: 20, right: 100, bottom: 60, left: 50 };
+    vis.margin = { top: 20, right: 0, bottom: 60, left: 50 };
 
-    vis.width = 1000 - vis.margin.left - vis.margin.right,
-        vis.height = 500 - vis.margin.top - vis.margin.bottom;
+    vis.width = 800 - vis.margin.left - vis.margin.right,
+        vis.height = 440 - vis.margin.top - vis.margin.bottom;
 
     // SVG drawing area
     vis.svg = d3.select("#" + vis.parentElement).append("svg")
