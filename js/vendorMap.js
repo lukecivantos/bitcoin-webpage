@@ -29,8 +29,7 @@ VendorMap.prototype.initVis = function() {
     vis.map = L.map('vendorMap', {
         preferCanvas: true
     }).setView(vis.mapPosition, 13);
-
-
+    d3.select("#numMap").text(vis.data.venues.length);
 
     L.tileLayer('http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'}).addTo(vis.map);
